@@ -35,6 +35,7 @@
     int totalBatchCount;
     BOOL isResived;
     int uploadCountSum;
+    BOOL uploadOfflineNumFlg;
     
     //功能标志位
     BOOL upAirMeasureFlg;    //上气、下气测量标志位
@@ -82,7 +83,7 @@
  * Upload offline data.
  * @param userID  the only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).
  * @param clientID  see bellow.
- * @param clientsecret  ‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+ * @param clientsecret  ‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  * @param disposeAuthenticationBlock   A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
  * The interpretation for the verification:
  *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.
@@ -108,6 +109,23 @@
  *   5.  BPDidDisconnect:   device is disconnected.
  *   6.  BPAskToStopMeasure:   measurement has been stopped.
  */
--(void)commandTransferMemoryDataWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock totalCount:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray errorBlock:(BlockError)error;
+-(void)commandTransferMemoryDataWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock withGroupNumber:(NSNumber *)groupNumber totalCount:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray errorBlock:(BlockError)error;
+
+/**
+ * Upload offline data total Count.
+ * @param  TotalCount: item quantity of total data
+ * @param error  A block to return the error
+ */
+
+-(void)commandTransferMemorytotalCount:(BlockBachCount)totalCount withGroupNumber:(NSNumber *)groupNumber errorBlock:(BlockError)error;
+
+/**
+ * upload offline data finished.
+ */
+-(void)commandBatchUploadFinish;
+/**
+ * Disconnect current device.
+ */
+-(void)commandDisconnectDevice;
 
 @end

@@ -18,6 +18,6 @@
 #import "AM4Controller.h"
 
 #import "AMMacroFile.h"
-#import "User.h"
+#import "HealthUser.h"
 
 #endif

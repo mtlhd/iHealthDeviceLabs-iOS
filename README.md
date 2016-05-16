@@ -1,7 +1,7 @@
 # iHealth Device Developer 
 
 
-###Latest version: 2.0.1
+###Latest version: 2.0.2
 
 
 ###Documnentation
@@ -61,46 +61,83 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
 3、Configuration
 
 
-Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20, com.jiuan.P930, com.jiuan.BPV21,com.jiuan.BGV30,com.jiuan.BGV31,com.ihealth.sc221￼
-￼￼￼Add 1 new Item in ‘Required background modes’: App communicates with an accessory、 App communicates using CoreBluetooth![box-model](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/public/iOS_ihealth_Configuration_doc.png?raw=true)
+Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20, com.jiuan.P930, com.jiuan.BPV21,com.jiuan.BGV30,com.jiuan.BGV31,com.ihealth.sc221
+￼
+
+
+
+￼￼￼Add 1 new Item in ‘Required background modes’: App communicates with an accessory、 App communicates using CoreBluetooth
+
+![box-model](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/public/iOS_ihealth_Configuration_doc.png?raw=true)
 
 ### How to apply for SDK permissions
 
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/Developer_Registration_Application_Instruction.md)
-### How to use the iHealth SDK
-``` 1. Operation procedure for BP3.
-```Reference BP5```
+
+### How to use the iHealth SDK
+```
+
+ 1. Operation procedure for BP3.
+
+```Reference BP5```
 
  2. Operation procedure for BP5.
 
 	a) Register plug-in device info: `BP5ConnectNoti`;
-	b) Initialize controller classes:
-	```BP5Controller *controller = [BP5ControllershareBP5Controller];```
-	c) Access control class instance after receive `BP5ConnectNoti`: 
-	```NSArray *bpDeviceArray = [controllergetAllCurrentBP5Instace];```	``` BP5 *bpInstance = [bpDeviceArray objectAtIndex: i];```	d) Using ‘bpInstance’ call communication module of the device
- 3. Operation procedure for BP7.
+
+	b) Initialize controller classes:
+
+	```BP5Controller *controller = [BP5Controller
+shareBP5Controller];```
+
+	c) Access control class instance after receive `BP5ConnectNoti`: 
+
+	```NSArray *bpDeviceArray = [controller
+getAllCurrentBP5Instace];```
+
+	``` BP5 *bpInstance = [bpDeviceArray objectAtIndex: i];```
+
+	d) Using ‘bpInstance’ call communication module of the device
+
+ 3. Operation procedure for BP7.
 
 	```Reference BP5```
- 4. Operation procedure for ABI.
+
+
+ 4. Operation procedure for ABI.
 
 	For ABI Mesure(both arm and leg)
-	a) Register plug-in device info: `ABIConnectNoti`;
+
+	a) Register plug-in device info: `ABIConnectNoti`;
 	b) Initializedcontrollerclass:
 
-	```ABIController *controller = [ABIController       shareABIController];```
-	c) Access controller class instance after receive `ABIConnectNoti`:
-	```ABI *bpInstance = [controller getCurrentABIInstace];```
-	d) Using ‘bpInstance’ call communication module of the device.
-	
-	For Arm Mesure(arm only)
-	a) Register plug-in device info: `ArmConnectNoti`; 
+	```ABIController *controller = [ABIController
+       shareABIController];```
+
+	c) Access controller class instance after receive `ABIConnectNoti`:
+
+	```ABI *bpInstance = [controller getCurrentABIInstace];```
+
+	d) Using ‘bpInstance’ call communication module of the device.
+
+	
+
+	For Arm Mesure(arm only)
+
+	a) Register plug-in device info: `ArmConnectNoti`; 
 
 	b) Initializedcontrollerclass:
-	```ABIController *controller = [ABIController           shareABIController];```
-	c) Access controller class instance after receive ArmConnectNoti:
-	```ABI *bpInstance = [controller getCurrentArmInstance];```
-	d) Using ‘bpInstance’ call communication module of the device.
- 5. Operation procedure for BP3L.
+
+	```ABIController *controller = [ABIController
+           shareABIController];```
+
+	c) Access controller class instance after receive ArmConnectNoti:
+
+	```ABI *bpInstance = [controller getCurrentArmInstance];```
+
+	d) Using ‘bpInstance’ call communication module of the device.
+
+ 5. Operation procedure for BP3L.
 
 	a) Register plug-in device info: `BP3LDiscover`;
 
@@ -138,31 +175,75 @@ getAllCurrentBP3LInstace]; ```
  8. Operation procedure for HS4.
 
 	```Reference BP3L```
- 9. Operation procedure for HS5.
+
+ 9. Operation procedure for HS5.
 
 	```Reference BP5```
- 10. Operation procedure for AM3.	```Reference BP3L```
- 11. Operation procedure for AM3S.	```Reference BP3L```
- 12. Operation procedure for AM4.	```Reference BP3L```
- 13. Operation procedure for PO3.	```Reference BP3L```
- 14. Operation procedure for BG1.
-	a) Initialization for BG1 (connected BG via soundjack)
-	```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
-	b) Using ‘audioBG1Communication’ to call the communication module of the device
+ 10. Operation procedure for AM3.
+
+	```Reference BP3L```
+ 11. Operation procedure for AM3S.
+
+	```Reference BP3L```
+
+ 12. Operation procedure for AM4.
+
+	```Reference BP3L```
+
+ 13. Operation procedure for PO3.
+
+	```Reference BP3L```
+
+ 14. Operation procedure for BG1.
+
+	a) Initialization for BG1 (connected BG via sound
+jack)
+
+	```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
+
+	b) Using ‘audioBG1Communication’ to call the communication module of the device
 
  15. Operation procedure for BG5.
-	```Reference BP5``````
-## API Guide
+
+	```Reference BP5```
+
+
+```
+
+
+## API Guide
 
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/api-docs)
 
-## Examples[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/examples)
-## Release Note
+## Examples
+
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/tree/master/examples)
+
+
+## Release Note
 
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/ReleaseNote.md)
-## FAQ
 
-[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/FAQ.md)
+## FAQ
+
+[Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/FAQ.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

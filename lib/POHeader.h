@@ -12,5 +12,5 @@
 #import "PO3.h"
 #import "PO3Controller.h"
 #import "POMacroFile.h"
-#import "User.h"
+#import "HealthUser.h"
 #endif

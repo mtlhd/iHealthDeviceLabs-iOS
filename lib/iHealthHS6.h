@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "HealthUser.h"
 
 /*HS6 error instruction*/
 /*
@@ -69,7 +69,7 @@ typedef void (^BlockHS6UserAuthentication)(UserAuthenResult result);
  Import parameter:
  tempUser: Properties included: clientID，clientSecret，userID，height.
  deviceID: device Mac
- clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+ clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  Return parameters:
  BlockHS6UserAuthentication: The return parameters of ’‘userid’, ‘height’, ’clientID’, and ‘clientSecret’ after verification
  
@@ -98,14 +98,14 @@ typedef void (^BlockHS6UserAuthentication)(UserAuthenResult result);
  refer to “error” : HS6 error instruction.
  */
 
--(void)cloudCommandUserBinedQRDeviceWithUser:(User *)tempUser  deviceID:(NSString *)tempDeviceID BlockHS6UserAuthentication:(BlockHS6UserAuthentication)BlockHS6UserAuthentication binedResult:(BinedQRDeviceBlock)result binedError:(BinedQRDeviceErrorBlock)error;
+-(void)cloudCommandUserBinedQRDeviceWithUser:(HealthUser *)tempUser  deviceID:(NSString *)tempDeviceID BlockHS6UserAuthentication:(BlockHS6UserAuthentication)BlockHS6UserAuthentication binedResult:(BinedQRDeviceBlock)result binedError:(BinedQRDeviceErrorBlock)error;
 
 /*unBind QR Device*/
 /*
  Import parameter:
  tempUser: Properties included: clientID，clientSecret，userID，height.
  deviceID: device Mac
- clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+ clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  Return parameters:
  
  disBinedResult: Action = 1;(1:bind sucess 2：full user bind faild 3,:ts error bind faild 4 other),MAC
@@ -118,7 +118,7 @@ typedef void (^BlockHS6UserAuthentication)(UserAuthenResult result);
  */
 
 
--(void)cloudCommandUserDisBinedQRDeviceForUser:(User *)tempUser withDeviceID:(NSString *)tempDeviceID disBinedResult:(DisBinedQRDeviceBlock)result disBinedError:(DisBinedQRDeviceErrorBlock)error;
+-(void)cloudCommandUserDisBinedQRDeviceForUser:(HealthUser *)tempUser withDeviceID:(NSString *)tempDeviceID disBinedResult:(DisBinedQRDeviceBlock)result disBinedError:(DisBinedQRDeviceErrorBlock)error;
 
 /*set HS6 wifi*/
 /*

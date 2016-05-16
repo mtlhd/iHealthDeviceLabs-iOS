@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HSMacroFile.h"
-#import "User.h"
+#import "HealthUser.h"
 
 
 
@@ -52,7 +52,7 @@ typedef void (^StableWeight)(NSDictionary *StableWeightDic);
     HSUnit unitHS4;
     
     BlockUserAuthentication _disposeAuthenticationBlock;
-    User *myUser;
+    HealthUser *myUser;
     
     NSString *thirdUserID;
     NSString *clientSDKUserName;
@@ -75,7 +75,7 @@ typedef void (^StableWeight)(NSDictionary *StableWeightDic);
     tempUser: Properties included: clientID，clientSecret，userID，height.
     userID: either email or mobile phone number (mobile phone number is not currently supported yet)
     height: the height of a user (cm);
-    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  Return parameters:
     disposeAuthenticationBlock: The return parameters of ’‘userid’, ‘height’, ’clientID’, and ‘clientSecret’ after verification
  
@@ -98,7 +98,7 @@ typedef void (^StableWeight)(NSDictionary *StableWeightDic);
     refer to “error” : HS4 error instruction.
 */
 
--(void)commandMeasureWithUint:(HSUnit)tempUnit andUser:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock Weight:(UnStableWeight)unStableWeight StableWeight:(StableWeight)stableWeight DisposeErrorBlock:(DisposeHS4ErrorBlock)disposeErrorBlock;
+-(void)commandMeasureWithUint:(HSUnit)tempUnit andUser:(HealthUser *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock Weight:(UnStableWeight)unStableWeight StableWeight:(StableWeight)stableWeight DisposeErrorBlock:(DisposeHS4ErrorBlock)disposeErrorBlock;
 
 /*Upload memory data*/
 //If user doesn’t pass the verification, HS4UserInvalidate will be returned for calling this method, user information invalid.
@@ -113,7 +113,7 @@ typedef void (^StableWeight)(NSDictionary *StableWeightDic);
     disposeErrorBlock: Record the error code in uploading process.
     Error code definition: refer to ”error” : HS4 error instruction.
 */
--(void)commandTransferMemorryWithUser:(User *)tempUser memoryData:(StartHS4Transmission)startTransmission DisposeProgress:(DisposeProgress)progress MemorryData:(MemorryData)memorryData FinishTransmission:(FinishHS4Transmission)finishTransmission DisposeErrorBlock:(DisposeHS4ErrorBlock)disposeErrorBlock;
+-(void)commandTransferMemorryWithUser:(HealthUser *)tempUser memoryData:(StartHS4Transmission)startTransmission DisposeProgress:(DisposeProgress)progress MemorryData:(MemorryData)memorryData FinishTransmission:(FinishHS4Transmission)finishTransmission DisposeErrorBlock:(DisposeHS4ErrorBlock)disposeErrorBlock;
 
 
 -(void)commandEndCurrentConnection:(DisposeResult)result DisposeErrorBlock:(DisposeHS4ErrorBlock)disposeErrorBlock;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 zhiwei jing. All rights reserved.
 //
 
-#import "User.h"
+#import "HealthUser.h"
 
 #ifndef HSDemoCode_HSMacroFile_h
 #define HSDemoCode_HSMacroFile_h

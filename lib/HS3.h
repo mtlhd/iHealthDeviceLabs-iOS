@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "HealthUser.h"
 #import "HSMacroFile.h"
 
 
@@ -65,7 +65,7 @@ typedef void (^DisposeResult)(BOOL resetSuc);
     NSMutableArray *historyDataArray;
     
     BlockUserAuthentication _disposeAuthenticationBlock;
-    User *myUser;
+    HealthUser *myUser;
     
     NSString *thirdUserID;
     NSString *clientSDKUserName;
@@ -90,7 +90,7 @@ typedef void (^DisposeResult)(BOOL resetSuc);
     tempUser included properties: clientID, clientSecret, userID, and height
     userID: either email or mobile phone number (mobile phone number is not currently supported yet)
     height: the height of a user (cm);
-    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  
  Return Parameters:
     disposeAuthenticationBlock: The return parameters of ’‘userid’, ‘height’, ’clientID’, and ‘clientSecret’ after verification
@@ -117,7 +117,7 @@ typedef void (^DisposeResult)(BOOL resetSuc);
     error code definition：refer to ‘error’ in Section 6: HS3 error instructions.
  
  */
--(void)commandInitWithUser:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock TransferMemorryData:(StartHS3Transmission)startTransmission UploadDataNum:(DisposeHS3UploadDataNum)hs3UploadDataNum DisposeProgress:(DisposeHS3Progress)progress MemorryData:(HS3MemorryData)memorryData FinishTransmission:(FinishHS3Transmission)finishTransmission StableWeight:(StableHS3Weight)stableWeight DisposeErrorBlock:(DisposeHS3ErrorBlock)disposeHS3ErrorBlock;
+-(void)commandInitWithUser:(HealthUser *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock TransferMemorryData:(StartHS3Transmission)startTransmission UploadDataNum:(DisposeHS3UploadDataNum)hs3UploadDataNum DisposeProgress:(DisposeHS3Progress)progress MemorryData:(HS3MemorryData)memorryData FinishTransmission:(FinishHS3Transmission)finishTransmission StableWeight:(StableHS3Weight)stableWeight DisposeErrorBlock:(DisposeHS3ErrorBlock)disposeHS3ErrorBlock;
 
 /* Turn off Bluetooth Connection */
 //This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2

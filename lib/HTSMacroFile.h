@@ -10,8 +10,10 @@
 #ifndef HT_SDKDemo_HTMacroFile_h
 #define HT_SDKDemo_HTMacroFile_h
 
-#import "User.h"
+#import "HealthUser.h"
 
+#define HTSDiscover        @"HTSDiscover"
+#define HTSConnectFailed   @"HTSConnectFailed"
 #define HTSConnectNoti @"HTSConnectNoti"
 #define HTSDisConnectNoti @"HTSDisConnectNoti"
 

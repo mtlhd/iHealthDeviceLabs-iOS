@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "User.h"
+#import "HealthUser.h"
 
 typedef enum{
     HTSDeviceDisconnect, //Device disconnect
@@ -35,7 +35,7 @@ typedef void (^BlockHTSUserAuthentication)(UserAuthenResult result);
     BlockHTSUserAuthentication _BlockHTSUserAuthentication;
     
     
-    User *htsUser;
+    HealthUser *htsUser;
     NSString *thirdUserID;
     NSString *clientSDKUserName;
     NSString *clientSDKID;
@@ -56,7 +56,7 @@ typedef void (^BlockHTSUserAuthentication)(UserAuthenResult result);
  Import Parameters:
  tempUser included properties: clientID, clientSecret, userID
  userID: either email or mobile phone number (mobile phone number is not currently supported yet)
- clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+ clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  
  Return Parameters:
  disposeAuthenticationBlock: The return parameters of ’‘userid’, ’clientID’, and ‘clientSecret’ after verification
@@ -79,6 +79,6 @@ typedef void (^BlockHTSUserAuthentication)(UserAuthenResult result);
  
  */
 
--(void)commandTestHTSWithUser:(User *)tempUser Authentication:(BlockHTSUserAuthentication)disposeAuthenticationBlock  DisposeHTSResult:(DisposeHTSResult)DisposeHTSResult DisposeErrorBlock:(DisposeHTSErrorBlock)disposeErrorBlock;
+-(void)commandTestHTSWithUser:(HealthUser *)tempUser Authentication:(BlockHTSUserAuthentication)disposeAuthenticationBlock  DisposeHTSResult:(DisposeHTSResult)DisposeHTSResult DisposeErrorBlock:(DisposeHTSErrorBlock)disposeErrorBlock;
 
 @end

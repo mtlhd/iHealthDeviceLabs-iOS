@@ -9,7 +9,7 @@
 #ifndef HSDemoCode_HSHeader_h
 #define HSDemoCode_HSHeader_h
 
-#import "User.h"
+#import "HealthUser.h"
 #import "HS3.h"
 #import "HS4.h"
 #import "HS5.h"

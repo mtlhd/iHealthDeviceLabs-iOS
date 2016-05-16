@@ -181,7 +181,7 @@ typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
     
     AM3SCommand_State commandState;
     
-    User *_am3SUser;
+    HealthUser *_am3SUser;
     NSNumber *_goalNumber;
     
     NSString *thirdUserID;
@@ -207,7 +207,7 @@ typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
 
 /**
  * Establish memory and measurement connection,Only after verification through this interface can we move onto using other API's.
- * @param tempUser includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:lvjincan@jiuan.com for more information
+ * @param tempUser includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:lvjincan@ihealthlabs.com.cn.com for more information
  * @param disposeAuthenticationBlock The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
  * The interpretation for the verification:
  *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.
@@ -227,7 +227,7 @@ typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
  * @param currentSerialNub The connected user's MAC Address
  * @param disposeErrorBlock Communication error codes, see AM3S error descriptions.
  */
--(void)commandCreateUserManageConnectWithUser:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock currentUserSerialNub:(CurrentSerialNub)serialNub amUser:(DisposeAM3SAskUserID)disposeAskUserID binedAMSerialNub:(DisposeBinedAMSerialNub)binedSerialnub currentSerialNub:(DisposeCurrentSerialNub)currentSerialNub DisposeErrorBlock:(DisposeAM3SErrorBlock)disposeErrorBlock;
+-(void)commandCreateUserManageConnectWithUser:(HealthUser *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock currentUserSerialNub:(CurrentSerialNub)serialNub amUser:(DisposeAM3SAskUserID)disposeAskUserID binedAMSerialNub:(DisposeBinedAMSerialNub)binedSerialnub currentSerialNub:(DisposeCurrentSerialNub)currentSerialNub DisposeErrorBlock:(DisposeAM3SErrorBlock)disposeErrorBlock;
 
 
 
@@ -263,7 +263,7 @@ typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
  * @param disposeBlock True: Success， False: Failed.
  * @param disposeErrorBlock see AM3S error descriptions.
  */
--(void)commandSyncUserInfoWithUser:(User *)tempUser andGoal:(NSNumber*)goalNumber DisposeStateInfo:(DisposeAM3SStateInfo)disposeStateInfo DisposeBattery:(DisposeAM3SBattery)disposeBattery DisposeBlock:(DisposeAM3SBlock)disposeBlock DisposeErrorBlock:(DisposeAM3SErrorBlock)disposeErrorBlock;
+-(void)commandSyncUserInfoWithUser:(HealthUser *)tempUser andGoal:(NSNumber*)goalNumber DisposeStateInfo:(DisposeAM3SStateInfo)disposeStateInfo DisposeBattery:(DisposeAM3SBattery)disposeBattery DisposeBlock:(DisposeAM3SBlock)disposeBlock DisposeErrorBlock:(DisposeAM3SErrorBlock)disposeErrorBlock;
 
 
 

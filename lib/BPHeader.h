@@ -32,7 +32,7 @@
 #import "KD926Controller.h"
 
 #import "BPMacroFile.h"
-#import "User.h"
+#import "HealthUser.h"
 
 #import "ABI.h"
 #import "ABIController.h"

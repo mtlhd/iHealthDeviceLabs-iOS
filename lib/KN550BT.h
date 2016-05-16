@@ -82,7 +82,7 @@
  * Upload offline data.
  * @param userID  the only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).
  * @param clientID  see bellow.
- * @param clientsecret  ‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+ * @param clientsecret  ‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  * @param disposeAuthenticationBlock   A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
  * The interpretation for the verification:
  *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "HealthUser.h"
 #import "POMacroFile.h"
 
 
@@ -49,7 +49,7 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
     BOOL modelVerifyOK;
 
     
-    User *_myUser;
+    HealthUser *_myUser;
     NSString *_thirdUserID;
     NSString *_clientSDKUserName;
     NSString *_clientSDKID;
@@ -63,7 +63,7 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
 
 /**
  * Restore Sync time
- * @param tempUser TempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information
+ * @param tempUser TempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information
  * @param disposeAuthenticationBlock The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
  * The interpretation for the verification:
  *  1. UserAuthen_RegisterSuccess, New-user registration succeeded.
@@ -80,7 +80,7 @@ typedef void (^DisposeSynchronousTimeFinishBlock) (BOOL finishSynchronous);//Syn
  * @param disposeSynchronousTimeFinishBlock Sync completed. Yes = Success, No = Fail.
  * @param disposeErrorBlock Communication error codes, see section 5.
  */
--(void)commandCreatePO3User:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock DisposeResultBlock:(DisposeSynchronousTimeFinishBlock)disposeSynchronousTimeFinishBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
+-(void)commandCreatePO3User:(HealthUser *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock DisposeResultBlock:(DisposeSynchronousTimeFinishBlock)disposeSynchronousTimeFinishBlock DisposeErrorBlock:(DisposePO3ErrorBlock)disposeErrorBlock;
 
 
 /**

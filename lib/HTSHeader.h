@@ -9,7 +9,7 @@
 #ifndef HT_SDKDemo_HTHeader_h
 #define HT_SDKDemo_HTHeader_h
 
-#import "User.h"
+#import "HealthUser.h"
 #import "HTSMacroFile.h"
 #import "HTS.h"
 #import "HTSController.h"

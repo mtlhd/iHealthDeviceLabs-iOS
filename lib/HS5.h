@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "HealthUser.h"
 #import "HSMacroFile.h"
 
 
@@ -62,7 +62,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     
     //
     BlockUserAuthentication _disposeAuthenticationBlock;
-    User *myUser;
+    HealthUser *myUser;
     
     NSString *thirdUserID;
     NSString *clientSDKUserName;
@@ -87,7 +87,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     tempUser, included properties: userID、clientID、clientSecret。
     userID: either email or mobile phone number (mobile phone number is not currently supported yet)
     height: the height of a user (cm);
-    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.
+    clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  Return Parameters:
     disposeAuthenticationBlock: The return parameters of ’‘userid’, ‘height’, ’clientID’, and ‘clientSecret’ after verification
  
@@ -106,7 +106,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     MemorryUserListHS5Data：Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position
     disposeErrorBlock：error codes in transmission process: Errors in HS5
 */
--(void)commandCreateUserManageConnectWithUser:(User *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock currentUserSerialNub:(CurrentSerialNub)serialNub deviceUserList:(MemorryUserListHS5Data) MemorryUserListHS5Data Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandCreateUserManageConnectWithUser:(HealthUser *)tempUser Authentication:(BlockUserAuthentication)disposeAuthenticationBlock currentUserSerialNub:(CurrentSerialNub)serialNub deviceUserList:(MemorryUserListHS5Data) MemorryUserListHS5Data Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 /*Create new user*/
 //Use the function if the SerialNub of current user is not included in user list of HS5 and the user number is less than 20
@@ -123,7 +123,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     disposeHS5Result：Success:Yes，Fail:No.
     disposeErrorBlock: error codes in transmission process: Errors in HS5
 */
--(void)commandCreateUser:(User *)tempUser position:(uint8_t )tempPosition DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandCreateUser:(HealthUser *)tempUser position:(uint8_t )tempPosition DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 
 /*Edit User Info*/
@@ -135,7 +135,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     disposeHS5Result：Success:Yes，Fail:No.
     disposeErrorBlock: error codes in transmission process: Errors in HS5
  */
--(void)commandModifyUser:(User *)tempUser DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandModifyUser:(HealthUser *)tempUser DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 /*Delete Specified User*/
 //This will be used deleting account in HS5.
@@ -146,7 +146,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     disposeHS5Result：Success:Yes，Fail:No.
     disposeErrorBlock：error codes in transmission proces: Errors in HS5
  */
--(void)commandDelteUser:(User *)tempUser DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandDelteUser:(HealthUser *)tempUser DisposeHS5Result:(DisposeHS5Result)disposeHS5Result Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 
 /*create memory upload connection*/
@@ -161,7 +161,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     finishTransmission：Finish Memory Transmission
     disposeErrorBlock: error codes in transmission process: Errors in HS5
 */
--(void)commandCreateMemoryWithUser:(User *)tempUser uploadConnect: (DisposeHS5Result)disposeHS5Result TransferMemorryData:(StartHS5Transmission)startTransmission DisposeProgress:(DisposeHS5Progress)progress MemorryData:(MemorryHS5Data)memorryData FinishTransmission:(FinishHS5Transmission)finishTransmission Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandCreateMemoryWithUser:(HealthUser *)tempUser uploadConnect: (DisposeHS5Result)disposeHS5Result TransferMemorryData:(StartHS5Transmission)startTransmission DisposeProgress:(DisposeHS5Progress)progress MemorryData:(MemorryHS5Data)memorryData FinishTransmission:(FinishHS5Transmission)finishTransmission Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 
 /*Establish Measurement Connection*/
@@ -176,7 +176,7 @@ typedef void (^CurrentSerialNub)(NSInteger serialNub);
     disposeHS5Result: Success:Yes，Fail:No.
     disposeErrorBlock: error codes in transmission process: Errors in HS5
  */
--(void)commandCreateMeasureWithUser:(User *)tempUser unStableWeight:(UnStableHS5Weight)unStableHS5Weight MeasureWeight:(StableHS5Weight)stableHS5Weight ImpedanceType:(ImpedanceWeight)impedanceWeight BodyCompositionMeasurements:(BodyCompositionMeasurements)bodyCompositionMeasurements Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
+-(void)commandCreateMeasureWithUser:(HealthUser *)tempUser unStableWeight:(UnStableHS5Weight)unStableHS5Weight MeasureWeight:(StableHS5Weight)stableHS5Weight ImpedanceType:(ImpedanceWeight)impedanceWeight BodyCompositionMeasurements:(BodyCompositionMeasurements)bodyCompositionMeasurements Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)disposeErrorBlock;
 
 
 /**/

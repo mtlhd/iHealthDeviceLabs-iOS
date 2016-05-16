@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 hejiasu. All rights reserved.
 //
 
-#import "User.h"
+#import "HealthUser.h"
 
 #ifndef POSDK_POMacroFile_h
 #define POSDK_POMacroFile_h
