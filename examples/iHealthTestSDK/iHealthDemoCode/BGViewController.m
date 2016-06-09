@@ -69,7 +69,7 @@
 -(void)DeviceConnectForBG1:(NSNotification *)tempNoti{
     BG1 *bgInstance = [[BG1Controller shareBG1Controller]getCurrentBG1Instance];
     if(bgInstance != nil){
-        [bgInstance commandConnectBGwithDeviceModel:@0x00FF1304 DisposeDiscoverBlock:^(BOOL result) {
+        [bgInstance commandConnectBGwithDeviceModel:@0 DisposeDiscoverBlock:^(BOOL result) {
             NSLog(@"DisposeDiscoverBG1Block:%d",result);
             _tipTextView.text = [NSString stringWithFormat:@"DisposeDiscoverBG1Block:%d",result];
         } DisposeBGIDPSBlock:^(NSDictionary *idpsDic) {
