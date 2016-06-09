@@ -95,15 +95,17 @@ typedef enum{
     AM3SProcessCommand
 }AM3SCommand_State;
 
+
 //AM4
 typedef enum{
     AM4ErrorOverTime = 0,    //Communication error
+    AM4ErrorNoRespond,       //You did not receive a response within a certain period of time, usually clogged Bluetooth
     AM4ErrorResetDeviceFaild,//Reset failed
     AM4ErrorDisconnect,       //AM disconnect
+    AM4ErrorParameterError,    //ParameterError
+    AM4ErrorNetworkError,    //ParameterError
     AM4ErrorUserInvalidate    //invalidate user info
 }AM4ErrorID;
-
-
 typedef enum{
     AM4TimeFormat_hh,//12
     AM4TimeFormat_HH,//24
@@ -112,33 +114,23 @@ typedef enum{
     AM4TimeFormat_NoEuropeAndHH,
     AM4TimeFormat_EuropeAndHH,
 }AM4TimeFormatAndNation;
-
-
-
 typedef enum{
     AM4KmUnit_mile,
     AM4KmUnit_km,
 }AM4KmUnit;
-
 typedef enum{
     AM4SwimmingUnit_m,
     AM4SwimmingUnit_km,
 }AM4SwimmingUnit;
-
-
-
 typedef enum{
     AM4State_waist,
     AM4State_wrist,
     AM4State_sleep
 }AM4QueryState;
-
-
 typedef enum{
     AM4Picture_one,
     AM4Picture_two,
 }AM4Picture;
-
 typedef enum{
     AM4SwimmingAction_Crawl,
     AM4SwimmingAction_Breaststroke,
@@ -147,16 +139,11 @@ typedef enum{
     AM4SwimmingAction_MixedSwimming,
     AM4SwimmingAction_Unkonw
 }AM4SwimmingAction;
-
-
 typedef enum{
     AM4ReportStage_Swimming,
     AM4ReportStage_Work_out,
     AM4ReportStage_Sleep_summary,
-    AM4ReportStage_Activeminutes,
 }AM4ReportStage;
-
-
 typedef enum{
     AM4Active_State =0,
     AM4Sleep_State =1,
@@ -164,8 +151,6 @@ typedef enum{
     AM4Workout_State=4,
     AM4Swimming_State=5,
 }AM4ActiveState;
-
-
 typedef enum{
     AM4Gender_Male = 0,
     AM4Gender_Female
@@ -234,6 +219,120 @@ typedef void (^DisposeQueryBinedSerialNub) (NSString *serialNub);
 #define AMDeviceID @"ID"
 #define AMSDKSportRightApi  @"OpenApiActivity"
 #define AMSDKSleepRightApi  @"OpenApiSleep"
+
+
+
+///////////////////////////////////////////////////////////////
+
+#define AM4StepNum @"AM4stepNum"
+#define AM4StepSize @"AM4stepSize"
+#define AM4Calorie @"AM4calorie"
+#define AM4Date @"AM4Date"
+#define AM4QuerState "AM4QuerState"
+
+#define AM4SleepActiveHistoryDateYear @"SleepActiveHistoryDateYear"
+#define AM4SleepActiveHistoryDateMonth @"SleepActiveHistoryDateMonth"
+#define AM4SleepActiveHistoryDateDay @"SleepActiveHistoryDateDay"
+#define AM4SleepActiveHistoryDateHour @"SleepActiveHistoryDateHour"
+#define AM4SleepActiveHistoryDateMinute @"SleepActiveHistoryDateMinute"
+#define AM4SleepActiveHistoryDateSeconds @"SleepActiveHistoryDateSeconds"
+#define AM4TimeInterval @"TimeInterval"
+#define AM4StartActiveHistoryTotoalNum @"StartActiveHistoryTotoalNum"
+#define AM4StateFlage @"StateFlage"
+
+#define AM4SwimmingMeasureDate @"SwimmingMeasureDate"
+#define AM4SwimmingTimeNumber @"SwimmingTimeNumber"
+#define AM4SwimmingTimes @"SwimmingTimes"
+#define AM4Swimmingcalories @"Swimmingcalories"
+#define AM4SwimmingAct @"SwimmingAct"
+#define AM4SwimmingPoollength @"SwimmingPoollength"
+#define AM4SwimmingCircleCount @"SwimmingCircleCount"
+#define AM4EnterSwimmingTime @"EnterSwimmingTime"
+#define AM4OutSwimmingTime @"OutSwimmingTime"
+#define AM4SwimmingProcessMark @"SwimmingProcessMark"
+#define AM4SwimStartTimeStamp @"SwimStartTimeStamp"
+
+
+#define AM4Work_outMeasureDate @"Work_outMeasureDate"
+#define AM4Work_outTimeNumber @"Work_outTimeNumber"
+#define AM4Work_outStepNumber @"Work_outStepNumber"
+#define AM4Work_outLengthNumber @"Work_outLengthNumber"
+#define AM4Work_outCalories @"Work_outCalories"
+
+#define AM4Sleep_summaryMeasureDate @"Sleep_summaryMeasureDate"
+#define AM4Sleep_summarySleepTime @"Sleep_summarySleepTime"
+#define AM4Sleep_summarysleepEfficiency @"Sleep_summarysleepEfficiency"
+#define AM4Sleep_summarysleepAddMinute @"Sleep_summarysleepAddMinute"
+
+#define AM4ReportState @"ReportState"
+#define AM4ActiveminutesMeasureDate @"ActiveminutesMeasureDate"
+#define AM4ActiveminutesTime @"ActiveminutesTime"
+
+
+
+typedef void (^DisposeAM4GetUserBinedDeviceMACBlock)(NSString *deviceMAC);//UserBinedDeviceMAC
+typedef void (^DisposeAM4GetDeviceUserIDBlock)(unsigned int userID);//userID
+
+typedef void (^DisposeAM4ErrorBlock)(AM4ErrorID errorID);//Communication error codes, see AM4 error descriptions.
+
+typedef void (^DisposeAM4SetRandomNumberBlock)(NSString *randomNumString);//random number
+
+typedef void (^DisposeAM4SyncTimeBlock)(BOOL resetSuc);//SyncTime
+
+typedef void (^DisposeAM4TimeFormatAndNationBlock)(AM4TimeFormatAndNation  timeFormatAndNation);////dateFormatter
+
+typedef void (^DisposeAM4TimeFormatAndNationSettingBlock)(BOOL resetSuc);////setdateFormatter
+
+typedef void (^DisposeAM4SetDeviceUserIDBlock)(BOOL resetSuc);//set user ID
+typedef void (^DisposeAM4SetCloudBinedDevice)(BOOL resetSuc);//set user ID
+
+
+
+typedef void (^DisposeAM4SetUserInfoBlock)(BOOL resetSuc);//set user infomation
+
+
+typedef void (^DisposeAM4SetBMRBlock)(BOOL resetSuc);//setBMR
+
+
+typedef void (^DisposeAM4ActiveStartTransmission)(NSDictionary *startDataDictionary);//Start uploading motion data
+typedef void (^DisposeAM4ActiveHistoryData)(NSArray *historyDataArray);//sportData
+typedef void (^DisposeAM4ActiveFinishTransmission)();//Upload motion complete
+
+
+typedef void (^DisposeAM4SleepStartTransmission)(NSDictionary *startDataDictionary);//Start uploading sleep data
+typedef void (^DisposeAM4SleepHistoryData)(NSArray *historyDataArray);//sleepData
+typedef void (^DisposeAM4SleepFinishTransmission)();//Upload sleep complete
+
+typedef void (^DisposeAM4GetCurrentActiveInfo)(NSDictionary *activeDictionary);//Total calories and steps for today, including parameters：Step、Calories、TotalCalories
+
+typedef void (^DisposeAM4ResetDeviceBlock)(BOOL resetSuc);//Restore factory settings.
+typedef void (^DisposeAM4FromCloudDisBinedDeviceBlock)(BOOL resetSuc);//Restore factory settings.
+
+
+
+typedef void (^DisposeAM4TotoalAlarmData)(NSMutableArray *totoalAlarmArray);//Alarm array contains up to 3 alarms, each one needs the following parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)
+typedef void (^DisposeAM4SetAlarmBlock)(BOOL resetSuc);//set Alarm
+typedef void (^DisposeAM4DeleteAlarmBlock)(BOOL resetSuc);//delete Alarm
+
+
+typedef void (^DisposeAM4RemindAM4InfoBlock)(NSArray *remindInfo);//remind
+typedef void (^DisposeAM4SetReminderBlock)(BOOL resetSuc);//set remind
+
+
+typedef void (^DisposeAM4StateInfoBlock)(AM4QueryState queryState);//query State
+typedef void (^DisposeAM4BatteryBlock)(NSNumber *battery);//AM battery percentage, from 0～100.
+typedef void (^DisposeAM4DisconnectBlock)(BOOL resetSuc);//disconnect
+
+
+typedef void (^DisposeAM4SwimmingBlock)(BOOL swimmingIsOpen, NSNumber * swimmingLaneLength,NSNumber * NOSwimmingTime, AM4SwimmingUnit unit);//query swimming
+typedef void (^DisposeAM4SettingSwimmingBlock)(BOOL resetSuc);//set swimming
+
+
+typedef void (^DisposeAM4MeasureDataBlock)(NSArray *measureDataArray);
+typedef void (^DisposeAM4WorkoutFinishBlock)(BOOL resetSuc);
+
+
+typedef void (^DisposeAM4UserInfoBlock)(NSDictionary *userInfo);//query userinfo
 
 
 #endif

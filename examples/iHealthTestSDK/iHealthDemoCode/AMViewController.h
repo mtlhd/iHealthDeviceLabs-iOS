@@ -12,10 +12,9 @@
 @interface AMViewController : UIViewController{
     AM3 *tempAM3Instance;
     AM3S *tempAM3SInstance;
-    AM4 *tempAM4Instance;
-    BOOL tempIsAM3S;
     NSInteger tempCloudUserSerialNub;
 }
+- (IBAction)pushAM4:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;
 

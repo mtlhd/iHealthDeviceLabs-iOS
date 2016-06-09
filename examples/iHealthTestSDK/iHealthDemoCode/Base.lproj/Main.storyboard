@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -10,22 +10,23 @@
             <objects>
                 <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aHj-EE-day" kind="relationship" relationship="viewControllers" id="4pI-Kv-6sX"/>
-                        <segue destination="Srp-No-WyF" kind="relationship" relationship="viewControllers" id="thx-hD-Vhi"/>
                         <segue destination="TI0-Wo-5FJ" kind="relationship" relationship="viewControllers" id="DZc-Pb-zMi"/>
+                        <segue destination="aHj-EE-day" kind="relationship" relationship="viewControllers" id="4pI-Kv-6sX"/>
                         <segue destination="pBl-fP-NR7" kind="relationship" relationship="viewControllers" id="9bb-V6-zQU"/>
+                        <segue destination="Srp-No-WyF" kind="relationship" relationship="viewControllers" id="thx-hD-Vhi"/>
                         <segue destination="kf0-xi-7Zg" kind="relationship" relationship="viewControllers" id="M58-tR-Pf1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1156" y="-1484"/>
+            <point key="canvasLocation" x="-1155" y="-1532"/>
         </scene>
         <!--BP-->
         <scene sceneID="NG6-Jb-NNE">
@@ -46,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-0c-WgN">
-                                <rect key="frame" x="40" y="49" width="240" height="250"/>
+                                <rect key="frame" x="40" y="49" width="240" height="226"/>
                                 <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -61,18 +62,8 @@
                                     <action selector="BPStartMeasure:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="25C-06-sLY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p4-d5-XLT">
-                                <rect key="frame" x="10" y="435" width="158" height="30"/>
-                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="KD926 Get OfflineData">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="KD926GetOfflinData:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="U9F-Sa-A5D"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnS-f6-gZS">
-                                <rect key="frame" x="176" y="435" width="128" height="30"/>
+                                <rect key="frame" x="182" y="239" width="128" height="30"/>
                                 <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="KD926 Get Energy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,14 +72,14 @@
                                     <action selector="KD926GetEnergy:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="GJc-5x-E6X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the devices to start scan:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cko-Ij-qak">
-                                <rect key="frame" x="10" y="307" width="256" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cko-Ij-qak">
+                                <rect key="frame" x="10" y="293" width="61" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgO-Hd-4z6">
-                                <rect key="frame" x="10" y="336" width="49" height="30"/>
+                                <rect key="frame" x="10" y="326" width="49" height="30"/>
                                 <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="BP3L"/>
                                 <connections>
@@ -96,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xU-X7-qQq">
-                                <rect key="frame" x="72" y="336" width="49" height="30"/>
+                                <rect key="frame" x="72" y="326" width="49" height="30"/>
                                 <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="BP7S"/>
                                 <connections>
@@ -104,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-jU-LM6">
-                                <rect key="frame" x="129" y="336" width="49" height="30"/>
+                                <rect key="frame" x="129" y="326" width="49" height="30"/>
                                 <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="KD926"/>
                                 <connections>
@@ -113,7 +104,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-0c-CuH">
-                                <rect key="frame" x="186" y="336" width="67" height="30"/>
+                                <rect key="frame" x="186" y="326" width="67" height="30"/>
                                 <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="KN550BT"/>
                                 <connections>
@@ -121,15 +112,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpX-WD-bbe">
-                                <rect key="frame" x="261" y="336" width="49" height="30"/>
+                                <rect key="frame" x="261" y="321" width="49" height="30"/>
                                 <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="HTS"/>
                                 <connections>
                                     <action selector="startScanHTSBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="npA-Ds-BpB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose the devices to connect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ji-gg-Yoc">
-                                <rect key="frame" x="10" y="368" width="243" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ji-gg-Yoc">
+                                <rect key="frame" x="10" y="368" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -175,6 +166,98 @@
                                     <action selector="startConnectHTSBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="bEP-Ob-4c4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p4-d5-XLT">
+                                <rect key="frame" x="10" y="239" width="158" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD926 Get OfflineData">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KD926GetOfflinData:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="U9F-Sa-A5D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-qq-1xd">
+                                <rect key="frame" x="84" y="289" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD723"/>
+                                <connections>
+                                    <action selector="startScanKD723Botton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="Huh-v3-PfV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ok-QX-5Qw">
+                                <rect key="frame" x="84" y="364" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD723"/>
+                                <connections>
+                                    <action selector="startConnectKD723Botton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="skC-wp-cxG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mct-aL-heM">
+                                <rect key="frame" x="183" y="190" width="127" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD723 Get Energy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KD723GetEnergy:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="T77-ov-BAz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5f-gC-nW2">
+                                <rect key="frame" x="11" y="190" width="157" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="KD723 Get OfflineData">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="KD723GetOfflinData:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="qk0-kF-WdD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-G0-1Tg">
+                                <rect key="frame" x="149" y="364" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ABPM"/>
+                                <connections>
+                                    <action selector="startConnectABPMBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="viT-Mm-L5K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxc-6c-j5j">
+                                <rect key="frame" x="105" y="139" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ABPM Memory">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ABPMGetOfflinData:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="mc5-e1-KO1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-3Q-bLl">
+                                <rect key="frame" x="215" y="139" width="94" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ABPM Energy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ABPMGetEnergy:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="Xdx-4R-PxV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hg-HX-hzD">
+                                <rect key="frame" x="10" y="139" width="84" height="30"/>
+                                <color key="backgroundColor" red="0.2953891005" green="1" blue="0.79235013080000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ABPM Set">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ABPMSetTimeInterval:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="sOp-Sm-ZX7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oki-pl-VQm">
+                                <rect key="frame" x="149" y="289" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.30351423830000002" green="1" blue="0.29125626230000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ABPM"/>
+                                <connections>
+                                    <action selector="startScanABPMBotton:" destination="TI0-Wo-5FJ" eventType="touchUpInside" id="DYc-VL-2b4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -182,6 +265,11 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="abpmEnergyBtn" destination="law-3Q-bLl" id="16j-z1-cmR"/>
+                        <outlet property="abpmOfflineDataBtn" destination="vxc-6c-j5j" id="inA-Ie-URd"/>
+                        <outlet property="abpmSetTimeIntervalBtn" destination="0Hg-HX-hzD" id="pIK-Q5-ZoP"/>
+                        <outlet property="kd723EnergyBtn" destination="mct-aL-heM" id="Iph-g8-thO"/>
+                        <outlet property="kd723OfflineDataBtn" destination="m5f-gC-nW2" id="uLZ-Ar-AmY"/>
                         <outlet property="kd926EnergyBtn" destination="CnS-f6-gZS" id="C76-xj-cga"/>
                         <outlet property="kd926OfflineDataBtn" destination="9p4-d5-XLT" id="IcD-Oh-KrK"/>
                         <outlet property="startScanBP3LBotton" destination="PgO-Hd-4z6" id="9ba-I8-87E"/>
@@ -453,7 +541,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lem-nL-uYf">
-                                <rect key="frame" x="103" y="257" width="93" height="30"/>
+                                <rect key="frame" x="93" y="221" width="93" height="30"/>
                                 <state key="normal" title="BG5-Memory">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -461,6 +549,54 @@
                                     <action selector="getBG5Memory:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="ilk-xD-m3x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R2-4f-jye">
+                                <rect key="frame" x="85" y="259" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="SCAN"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BG5L:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-TY-zbM">
+                                <rect key="frame" x="13" y="263" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7L-Mt-tHd">
+                                <rect key="frame" x="198" y="259" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="CONNECT"/>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbf-jP-EoL">
+                                <rect key="frame" x="85" y="306" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Memory"/>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fry-jY-5hV">
+                                <rect key="frame" x="198" y="306" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Energy"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-IA-gMx">
+                                <rect key="frame" x="85" y="391" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Initiate"/>
+                                <connections>
+                                    <action selector="InitiateAudioLayer:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="MOJ-ii-Hgy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-xV-4RP">
+                                <rect key="frame" x="198" y="391" width="91" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Destroy"/>
+                                <connections>
+                                    <action selector="DestroyAudioLayer:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="fl4-kj-DX2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BG1 audio layer Initialization:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUB-JL-bKQ">
+                                <rect key="frame" x="13" y="355" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -494,13 +630,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lur-62-mqS">
-                                <rect key="frame" x="40" y="348" width="240" height="77"/>
+                                <rect key="frame" x="19" y="415" width="240" height="77"/>
                                 <color key="backgroundColor" white="0.70723083939999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-N5-0VN">
-                                <rect key="frame" x="148" y="131" width="95" height="30"/>
+                                <rect key="frame" x="164" y="87" width="95" height="30"/>
                                 <state key="normal" title="AM3_Clock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -509,7 +645,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-rL-IbF">
-                                <rect key="frame" x="32" y="104" width="106" height="30"/>
+                                <rect key="frame" x="14" y="87" width="106" height="30"/>
                                 <state key="normal" title="AM3_Reminder">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -537,7 +673,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-NG-OPw">
-                                <rect key="frame" x="22" y="131" width="106" height="30"/>
+                                <rect key="frame" x="0.0" y="125" width="106" height="30"/>
                                 <state key="normal" title="AM3_Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -564,27 +700,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxj-Hz-rle">
-                                <rect key="frame" x="35" y="169" width="65" height="21"/>
+                                <rect key="frame" x="27" y="181" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZg-yx-NT5">
-                                <rect key="frame" x="86" y="49" width="151" height="30"/>
-                                <state key="normal" title="AM3/3S/4ScanDevice"/>
+                                <rect key="frame" x="11" y="49" width="137" height="30"/>
+                                <state key="normal" title="AM3/3SScanDevice"/>
                                 <connections>
                                     <action selector="scanDevice:" destination="pBl-fP-NR7" eventType="touchUpInside" id="wga-Gr-x7E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-hJ-wOk">
-                                <rect key="frame" x="86" y="87" width="136" height="30"/>
-                                <state key="normal" title="AM3/3S/4StopScan"/>
+                                <rect key="frame" x="166" y="49" width="122" height="30"/>
+                                <state key="normal" title="AM3/3SStopScan"/>
                                 <connections>
                                     <action selector="stopScan:" destination="pBl-fP-NR7" eventType="touchUpInside" id="twj-ce-090"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdO-va-sxK">
+                                <rect key="frame" x="189" y="200" width="33" height="30"/>
+                                <state key="normal" title="AM4"/>
+                                <connections>
+                                    <action selector="pushAM4:" destination="pBl-fP-NR7" eventType="touchUpInside" id="Fwo-MF-vP0"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-TE-nT5">
-                                <rect key="frame" x="31" y="227" width="97" height="30"/>
+                                <rect key="frame" x="23" y="210" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -597,6 +740,7 @@
                     <tabBarItem key="tabBarItem" title="AM" id="BLW-ob-HwM">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
                     </tabBarItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="randomTextField" destination="hmi-TE-nT5" id="lOg-Ue-TIY"/>
                         <outlet property="tipTextView" destination="Lur-62-mqS" id="o9x-xp-yqt"/>
@@ -604,7 +748,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIk-X0-IbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="-1464"/>
+            <point key="canvasLocation" x="-456" y="-1532"/>
         </scene>
     </scenes>
 </document>

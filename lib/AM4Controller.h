@@ -27,7 +27,6 @@
 -(NSArray *)getAllCurrentAM4Instace;
 
 
-
 /**
  * Restart search AM4
  */

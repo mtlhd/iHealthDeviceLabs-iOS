@@ -69,7 +69,7 @@
 #pragma mark - Hypogenous query
 
 /**
- * Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.
+ * Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.
  * @param Function  A block to return the function and states that the device supports.
  * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in BP7S.
  */

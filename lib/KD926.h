@@ -65,7 +65,7 @@
 
 #pragma mark - Hypogenous query
 /**
- * Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.
+ * Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.
  * @param Function  A block to return the function and states that the device supports.
  * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in KD926.
  */
@@ -97,6 +97,7 @@
  *  --PS:
  *  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
  *  @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.
+ * @param  groupNumber: the group number to upload in multiple groups memery situation.
  * @param  TotalCount: item quantity of total data
  * @param  Progress: upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
  * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.
@@ -114,6 +115,7 @@
 /**
  * Upload offline data total Count.
  * @param  TotalCount: item quantity of total data
+ * @param  groupNumber: the group number to upload in multiple groups memery situation.
  * @param error  A block to return the error
  */
 
@@ -121,8 +123,10 @@
 
 /**
  * upload offline data finished.
+ * After receiving all the requested data call this method,you must call this method to notify the device uploading offline data has been completed.
  */
 -(void)commandBatchUploadFinish;
+
 /**
  * Disconnect current device.
  */

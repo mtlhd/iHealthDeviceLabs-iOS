@@ -1,72 +1,61 @@
 //
-//  KN550BT.h
-//  testShareCommunication
+//  ABPM.h
+//  MedicaApp
 //
-//  Created by my on 8/10/13.
-//  Copyright (c) 2013年 my. All rights reserved.
+//  Created by zhiwei jing on 13-12-5.
+//  Copyright (c) 2013年 apple. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "BPMacroFile.h"
-#import <UIKit/UIKit.h>
+
+typedef enum {
+    ABPM_API_Free,
+    ABPM_API_Function,
+    ABPM_API_Energy,
+    ABPM_API_Batch,
+    ABPM_API_AskTime,
+    ABPM_API_SetTime
+}ABPM_API;
 
 
-@interface KN550BT : NSObject{
+@interface ABPM : NSObject{
+    ABPM_API ABPM_API_Status;
+    
+    BlockDeviceFounction _blockFounction;
+    BlockError _blockError;
     
     BlockEnergyValue _blockEnergyValue;
-    BlockError _blockError;
-    BlockDeviceFounction _blockFounction;
-    BlockBlueSet _blockBlueSet;
-    BlockAngle _blockAngle;
-  
-    BlockXioaboWithHeart _blockXiaoboArr;
-    BlockXioaboNoHeart _blockXiaoboArrNoHeart;
-    BlockPressure _blockPressureArr;
-    BlockMesureResult _blockMesureResult;
-    
     BlockBachCount _blockBachCount;
     BlockBachProgress _blockBachProgress;
     BlockBachArray _blockBachArray;
-    BlockStopSuccess _blockStopSuccess;
+    BlockBachFinished _blockBachFinished;
+    
+    BlockAskMeasureTime _blockAskMeasureTime;
+    BlockSetMeasureTime _blockSetMeasureTime;
     
     BlockUserAuthentication _blockUserAnthen;
-    
-    UIAlertView * Erroralert;
-    
-    BOOL isCompleteZero;
-    int totalBatchCount;
-    BOOL isResived;
-    int uploadCountSum;
-    NSString *thirdUserID;
-    Boolean bp5Flag;
     
     NSString *clientSDKUserName;
     NSString *clientSDKID;
     NSString *clientSDKSecret;
     
-    //功能标志位
-    BOOL upAirMeasureFlg;    //上气、下气测量标志位
-    BOOL armMeasureFlg;    //腕式、臂式
-    BOOL haveAngleSensorFlg;       //是否带角度
-    BOOL haveOfflineFlg;     //是否有离线数据
-    BOOL haveHSDFlg;         //是否有HSD
-    BOOL mutableUploadFlg;   //记忆组别
-    BOOL haveAngleSetFlg;   //是否带手腕角度设置
-    BOOL selfUpdateFlg;      //是否自升级
-    
-    NSMutableArray *totalHistoryArray;
- }
+    int totalBatchCount;
+    int uploadCountSum;
+    NSString *thirdUserID;
+    BOOL uploadOfflineNumFlg;
+}
 
 @property (strong, nonatomic) NSString *currentUUID;
-//‘serialNumber’ is for separating different device when multiple device have been connected.
 @property (strong, nonatomic) NSString *serialNumber;
-@property (strong, nonatomic) NSTimer *startMeasureTimer;
+@property (retain, nonatomic) NSString *firmwareVersion;
+@property (retain, nonatomic) NSString *protocol;
+@property (retain, nonatomic) NSString *deviceName;
 
-#pragma mark - Hypogenous query
 /**
-  * Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.
+ * Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.
  * @param Function  A block to return the function and states that the device supports.
- * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in KN550BT.
+ * @param error  A block to refer ‘error’ in ‘Establish measurement connection’ in KD926.
  */
 -(void)commandFounction:(BlockDeviceFounction)founction errorBlock:(BlockError)error;
 
@@ -77,6 +66,14 @@
  */
 -(void)commandEnergy:(BlockEnergyValue)energyValue errorBlock:(BlockError)error;
 
+/**
+ * Upload offline data total Count.
+ * @param  TotalCount: item quantity of total data
+ * @param  groupNumber: the group number to upload in multiple groups memery situation.
+ * @param error  A block to return the error
+ */
+
+-(void)commandTransferMemorytotalCount:(BlockBachCount)totalCount withGroupNumber:(NSNumber *)groupNumber errorBlock:(BlockError)error;
 
 /**
  * Upload offline data.
@@ -96,9 +93,10 @@
  *  --PS:
  *  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
  *  @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.
+ * @param  groupNumber: the group number to upload in multiple groups memery situation.
  * @param  TotalCount: item quantity of total data
  * @param  Progress: upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
- * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, time, sys, dia, heartRate, irregular
+ * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.
  * @param error   error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.
@@ -108,14 +106,14 @@
  *   5.  BPDidDisconnect:   device is disconnected.
  *   6.  BPAskToStopMeasure:   measurement has been stopped.
  */
--(void)commandTransferMemoryDataWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock totalCount:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray errorBlock:(BlockError)error;
+-(void)commandTransferMemoryDataWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock  totalCount:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray finish:(BlockBachFinished)batchFinished errorBlock:(BlockError)error;
 
 
-/**
- * Disconnect current device
- */
--(void)commandDisconnectDevice;
+//查询测量时间段
+-(void)commandAskAutoMeasureTime:(BlockAskMeasureTime)measureTimeDic errorBlock:(BlockError)error;
 
+//设置测量时间段
+-(void)commandSetAutoMeasureTimeWithSleepTimeSection:(NSArray *)sleepTimeArray napTimeSection:(NSArray *)napTimeArray totalTime:(NSNumber *)totalHour result:(BlockSetMeasureTime)setResult errorBlock:(BlockError)error;
 
 
 

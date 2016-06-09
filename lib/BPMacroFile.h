@@ -58,6 +58,10 @@ typedef void(^BlockMesureResult)(NSDictionary *dic);
 typedef void(^BlockBachCount)(NSNumber *num);
 typedef void(^BlockBachProgress)(NSNumber *pregress);
 typedef void(^BlockBachArray)(NSArray *array);
+typedef void(^BlockBachFinished)(BOOL finishFlag);
+
+typedef void(^BlockAskMeasureTime)(NSDictionary *measureTimeDic);
+typedef void(^BlockSetMeasureTime)(NSDictionary *setResult);
 
 typedef void(^BlockStopSuccess)();
 
@@ -93,6 +97,16 @@ typedef void(^BlockDelPortResult)(BOOL result);
 #define KD926ConnectFailed   @"KD926ConnectFailed"
 #define KD926ConnectNoti @"KD926ConnectNoti"
 #define KD926DisConnectNoti @"KD926DisConnectNoti"
+
+#define KD723Discover        @"KD723Discover"
+#define KD723ConnectFailed   @"KD723ConnectFailed"
+#define KD723ConnectNoti @"KD723ConnectNoti"
+#define KD723DisConnectNoti @"KD723DisConnectNoti"
+
+#define ABPMDiscover        @"ABPMDiscover"
+#define ABPMConnectFailed   @"ABPMConnectFailed"
+#define ABPMConnectNoti @"ABPMConnectNoti"
+#define ABPMDisConnectNoti @"ABPMDisConnectNoti"
 
 #define BPDeviceID @"ID"
 #define BPSDKRightApi  @"OpenApiBP"

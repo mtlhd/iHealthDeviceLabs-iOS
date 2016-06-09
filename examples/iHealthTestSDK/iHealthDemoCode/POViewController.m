@@ -85,7 +85,7 @@
     if(po3Array.count>0)
     {
         PO3 *po3Instance = [po3Array objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
@@ -119,7 +119,7 @@
     
     PO3Controller *po3Controller = [PO3Controller shareIHPO3Controller];
     NSArray *po3Array = [po3Controller getAllCurrentPO3Instace];
-    User *myUser = [[User alloc]init];
+    HealthUser *myUser = [[HealthUser alloc]init];
     
     PO3 *po3Instance;
     if(po3Array.count>0)

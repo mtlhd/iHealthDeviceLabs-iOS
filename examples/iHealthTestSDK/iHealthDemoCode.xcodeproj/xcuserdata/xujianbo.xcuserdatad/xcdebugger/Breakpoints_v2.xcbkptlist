@@ -113,38 +113,6 @@
             endingLineNumber = "413"
             landmarkName = "-commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__120-[BP7S commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:]_block_invoke"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xujianbo/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/BPModel/BP7S.m"
-                  timestampString = "484052178.222417"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "414"
-                  endingLineNumber = "414"
-                  offsetFromSymbolStart = "30">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__120-[BP7S commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:]_block_invoke_2"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xujianbo/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/BPModel/BP7S.m"
-                  timestampString = "484052178.222572"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "416"
-                  endingLineNumber = "416"
-                  offsetFromSymbolStart = "8">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

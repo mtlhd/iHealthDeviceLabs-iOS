@@ -19,6 +19,8 @@ typedef enum {
     HealthDeviceType_BP7S,
     HealthDeviceType_KN550BT,
     HealthDeviceType_KD926,
+    HealthDeviceType_KD723,
+    HealthDeviceType_ABPM,
     //PO
     HealthDeviceType_PO3,
     //HS

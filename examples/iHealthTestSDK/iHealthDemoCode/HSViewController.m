@@ -62,7 +62,7 @@
     
     if(hsArray.count>0){
         HS3 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -96,7 +96,7 @@
     
     if(hsArray.count>0){
         HS3 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -118,7 +118,7 @@
     
     if(hsArray.count>0){
         HS3 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -169,7 +169,7 @@
     
     if(hsArray.count>0){
         HS4 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -194,7 +194,7 @@
     
     if(hsArray.count>0){
         HS4 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -227,7 +227,7 @@
     
     if(hsArray.count>0){
         HS5 *hsInstance = [hsArray objectAtIndex:0];
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -324,7 +324,7 @@
     
 }
 
--(void)commandStartMeasure:(HS5 *)hsInstance withUser:(User *)tempUser{
+-(void)commandStartMeasure:(HS5 *)hsInstance withUser:(HealthUser *)tempUser{
     //measure
     [hsInstance commandCreateMeasureWithUser:tempUser unStableWeight:^(NSNumber *unStableWeight){
         NSLog(@"unStableWeight:%@",unStableWeight);
@@ -396,7 +396,7 @@
     
     iHealthHS6*hs6=[iHealthHS6 shareIHHS6Controller];
     
-    User*user=[[User alloc] init];;
+    HealthUser*user=[[HealthUser alloc] init];;
     
     user.clientSecret=SDKSecret;
     
@@ -420,7 +420,7 @@
     
     iHealthHS6*hs6=[iHealthHS6 shareIHHS6Controller];
     
-    User*user=[[User alloc] init];;
+    HealthUser*user=[[HealthUser alloc] init];;
     
     user.clientSecret=SDKSecret;
     
@@ -449,7 +449,7 @@
     
     iHealthHS6*hs6=[iHealthHS6 shareIHHS6Controller];
     
-    User*user=[[User alloc] init];;
+    HealthUser*user=[[HealthUser alloc] init];;
     
     user.clientSecret=SDKSecret;
     

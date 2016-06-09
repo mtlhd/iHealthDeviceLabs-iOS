@@ -27,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _tipTextView.editable=NO;
+    
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBG1:) name:BG1ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBG1:) name:BG1DisConnectNoti object:nil];
@@ -36,7 +38,7 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBG5:) name:BG5ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBG5:) name:BG5DisConnectNoti object:nil];
-    [AudioBG1Communication audioCommunicationObject];
+    [[BG1Controller shareBG1Controller]initBGAudioModule];
     [BG5Controller shareIHBg5Controller];
     [BG3Controller shareIHBg3Controller];
 }
@@ -48,54 +50,64 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+- (IBAction)InitiateAudioLayer:(id)sender {
+    [[BG1Controller shareBG1Controller]initBGAudioModule];
 }
-*/
+- (IBAction)DestroyAudioLayer:(id)sender {
+    [[BG1Controller shareBG1Controller]stopBGAudioModule];
+}
+
 -(void)DeviceConnectForBG1:(NSNotification *)tempNoti{
-    AudioBG1Communication *bgInstance = [AudioBG1Communication audioCommunicationObject];
+    BG1 *bgInstance = [[BG1Controller shareBG1Controller]getCurrentBG1Instance];
     if(bgInstance != nil){
-        [bgInstance commandCreateConnectWithUserID:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
-            if(result== UserAuthen_CombinedSuccess || result== UserAuthen_LoginSuccess || result== UserAuthen_RegisterSuccess || result== UserAuthen_TrySuccess){
-                NSLog(@"verify success");
-            }
-            else{
-                NSLog(@"Verify failed");
-            }
-        } DisposeDiscoverBGBlock:^(BOOL result) {
-            NSLog(@"DisposeDiscoverBGBlock:%d",result);
+        [bgInstance commandConnectBGwithDeviceModel:@0x00FF1304 DisposeDiscoverBlock:^(BOOL result) {
+            NSLog(@"DisposeDiscoverBG1Block:%d",result);
+            _tipTextView.text = [NSString stringWithFormat:@"DisposeDiscoverBG1Block:%d",result];
         } DisposeBGIDPSBlock:^(NSDictionary *idpsDic) {
             NSLog(@"idpsDic:%@",idpsDic);
+            _tipTextView.text = [NSString stringWithFormat:@"idpsDic:%@",idpsDic];
         } DisposeConnectBGBlock:^(BOOL result) {
-            NSLog(@"DisposeConnectBGBlock:%d",result);
             if(result==true){
-                [bgInstance commandCreateBGtestWithCode:CodeStr DisposeBGSendCodeBlock:^(BOOL sendOk) {
+                [bgInstance commandCreateBGtestWithUser:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
+                    NSLog(@"Authentication Result:%d",result);
+                    _tipTextView.text = [NSString stringWithFormat:@"Authentication Result:%d",result];
+                }WithCode:CodeStr DisposeBGSendCodeBlock:^(BOOL sendOk) {
                     NSLog(@"DisposeBGSendCodeBlock:%d",sendOk);
+                    _tipTextView.text = [NSString stringWithFormat:@"DisposeBGSendCodeBlock:%d",sendOk];
                 } DisposeBGStripInBlock:^(BOOL stripIn) {
                     NSLog(@"stripIn:%d",stripIn);
+                    _tipTextView.text = [NSString stringWithFormat:@"stripIn:%d",stripIn];
                 } DisposeBGBloodBlock:^(BOOL blood) {
                     NSLog(@"blood:%d",blood);
+                    _tipTextView.text = [NSString stringWithFormat:@"blood:%d",blood];
                 } DisposeBGResultBlock:^(NSDictionary *result) {
                     NSLog(@"result:%@",result);
+                    _tipTextView.text = [NSString stringWithFormat:@"result:%@",result];
                 }DisposeBGStripOutBlock:^(BOOL stripOut) {
                     NSLog(@"stripOut:%d",stripOut);
+                    _tipTextView.text = [NSString stringWithFormat:@"stripOut:%d",stripOut];
                 } DisposeBGErrorBlock:^(NSNumber *errorID) {
                     NSLog(@"errorID:%@",errorID);
+                    _tipTextView.text = [NSString stringWithFormat:@"errorID:%@",errorID];
                 }];
             }
         } DisposeBGErrorBlock:^(NSNumber *errorID) {
-            NSLog(@"errorID:%@",errorID);
+            
         }];
     }
 }
 
 -(void)DeviceDisConnectForBG1:(NSNotification *)tempNoti{
-    
+    _tipTextView.text = [NSString stringWithFormat:@"DeviceDisConnectForBG1:%@",tempNoti];
 }
 
 -(void)DeviceConnectForBG3:(NSNotification *)tempNoti{

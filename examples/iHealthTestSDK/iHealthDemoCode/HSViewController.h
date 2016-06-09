@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@class User;
+@class HealthUser;
 
 @interface HSViewController : UIViewController{
     
-    User *currentUser;
+    HealthUser *currentUser;
 }
 
 - (IBAction)commandTestHS3Pressed:(id)sender;

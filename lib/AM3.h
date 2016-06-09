@@ -34,7 +34,7 @@ typedef void (^DisposeAM3UserInfo)(NSDictionary *userInfo);//
 
 
 
-@class User;
+@class HealthUser;
 
 @interface AM3 : NSObject{
     

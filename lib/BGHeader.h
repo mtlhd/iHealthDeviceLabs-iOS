@@ -10,7 +10,8 @@
 #define BGDemoCode_BGHeader_h
 
 #import "BGMacroFile.h"
-#import "AudioBG1Communication.h"
+#import "BG1.h"
+#import "BG1Controller.h"
 #import "BG3.h"
 #import "BG3Controller.h"
 #import "BG5.h"

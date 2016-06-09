@@ -31,10 +31,16 @@
 #import "KD926.h"
 #import "KD926Controller.h"
 
+#import "KD723.h"
+#import "KD723Controller.h"
+
 #import "BPMacroFile.h"
 #import "HealthUser.h"
 
 #import "ABI.h"
 #import "ABIController.h"
+
+#import "ABPM.h"
+#import "ABPMController.h"
 
 #endif
