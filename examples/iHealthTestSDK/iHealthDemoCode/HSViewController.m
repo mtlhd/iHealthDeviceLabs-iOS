@@ -428,6 +428,17 @@
     
     user.userID=YourUserName;
     
+    user.sex=UserSex_Female;
+    
+    user.height=@170;
+    
+    user.weight=@50;
+    
+    user.isAthlete=UserIsAthelete_No;
+    
+    user.birthday=[NSDate date];
+
+    
     [hs6 cloudCommandUserBinedQRDeviceWithUser:user deviceID:@"www" BlockHS6UserAuthentication:^(UserAuthenResult result) {
         
         NSLog(@"UserAuthenResult :%u",result);
