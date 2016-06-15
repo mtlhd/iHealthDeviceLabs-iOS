@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BG5 Class Reference</title>
+	<title>BG5L Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -72,7 +72,11 @@
 		
 		<option value="//api/name/commandDeleteMemorryData:">- commandDeleteMemorryData:</option>
 		
+		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
+		
 		<option value="//api/name/commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandQueryBattery:DisposeErrorBlock:">- commandQueryBattery:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">- commandReadBGCodeDic:DisposeBGErrorBlock:</option>
 		
@@ -95,7 +99,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BG5 Class Reference</h1>
+					<h1 class="title">BG5L Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -104,7 +108,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BG5.h</td>
+	<td>BG5L.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -161,7 +165,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -259,7 +263,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -327,7 +331,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -385,7 +389,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -448,7 +452,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -536,7 +540,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -614,7 +618,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -697,7 +701,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			
@@ -755,7 +759,116 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandQueryBattery:DisposeErrorBlock:" title="commandQueryBattery:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandQueryBattery:DisposeErrorBlock:">&ndash;&nbsp;commandQueryBattery:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query battery remaining energy</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandQueryBattery:(DisposeBGBatteryBlock)<em>disposeBatteryBlock</em> DisposeErrorBlock:(DisposeBGErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBatteryBlock</code></th>
+						<td><p>A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>A block to return the error in ‘Establish measurement connection’.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query battery remaining energy</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDisconnectDevice" title="commandDisconnectDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDevice">&ndash;&nbsp;commandDisconnectDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disconnect current device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Disconnect current device</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
 			
 			

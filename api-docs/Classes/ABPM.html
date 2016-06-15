@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BP7S Class Reference</title>
+	<title>ABPM Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -52,17 +52,13 @@
 
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/serialNumber">serialNumber</option>
-		
-	</optgroup>
-	
 
 	
 
 	
 	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandAskAutoMeasureTime:errorBlock:">- commandAskAutoMeasureTime:errorBlock:</option>
 		
 		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
 		
@@ -70,11 +66,11 @@
 		
 		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
 		
-		<option value="//api/name/commandSetAngle:errorBlock:">- commandSetAngle:errorBlock:</option>
+		<option value="//api/name/commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:">- commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:</option>
 		
-		<option value="//api/name/commandSetUnit:errorBlock:">- commandSetUnit:errorBlock:</option>
+		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:</option>
 		
-		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</option>
+		<option value="//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:">- commandTransferMemorytotalCount:withGroupNumber:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -91,7 +87,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BP7S Class Reference</h1>
+					<h1 class="title">ABPM Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -100,7 +96,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BP7S.h</td>
+	<td>ABPM.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -118,52 +114,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/serialNumber" title="serialNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serialNumber</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/commandFounction:errorBlock:" title="commandFounction:errorBlock:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/commandFounction:errorBlock:">&ndash;&nbsp;commandFounction:errorBlock:</a></code>
 </h3>
@@ -190,7 +140,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in BP7S.</p></td>
+						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in <a href="../Classes/KD926.html">KD926</a>.</p></td>
 					</tr>
 				
 					<tr>
@@ -220,7 +170,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			
@@ -283,15 +233,83 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</a></code>
+	<a name="//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:" title="commandTransferMemorytotalCount:withGroupNumber:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:">&ndash;&nbsp;commandTransferMemorytotalCount:withGroupNumber:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorytotalCount:(BlockBachCount)<em>totalCount</em> withGroupNumber:(NSNumber *)<em>groupNumber</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupNumber:</code></th>
+						<td><p>the group number to upload in multiple groups memery situation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:finish:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -306,7 +324,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> finish:(BlockBachFinished)<em>batchFinished</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -354,8 +372,18 @@ Specification:
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>groupNumber:</code></th>
+						<td><p>the group number to upload in multiple groups memery situation.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
 						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>batchFinished:</code></th>
+						<td><p>the block return when the offline data upload completed.</p></td>
 					</tr>
 				
 					<tr>
@@ -395,15 +423,15 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetUnit:errorBlock:" title="commandSetUnit:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetUnit:errorBlock:">&ndash;&nbsp;commandSetUnit:errorBlock:</a></code>
+	<a name="//api/name/commandAskAutoMeasureTime:errorBlock:" title="commandAskAutoMeasureTime:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAskAutoMeasureTime:errorBlock:">&ndash;&nbsp;commandAskAutoMeasureTime:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -413,12 +441,12 @@ Specification:
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set units for the Device</p>
+				<p>Query the automatic cycle measurement setup of the device</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetUnit:(NSString *)<em>UnitName</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAskAutoMeasureTime:(BlockAskMeasureTime)<em>measureTimeDic</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -427,13 +455,13 @@ Specification:
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>UnitName</code></th>
-						<td><p>The unit name string that BP7S show result should use,such as @&ldquo;mmHg&rdquo; or @&ldquo;kPa&rdquo;.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in set Unit communication.</p></td>
+						<th scope="row" class="argument-name"><code>measureTimeDic:</code></th>
+						<td><p>the dictionary contains the automatic cycle measurement setup of the current ABPM device. the object of the key @&ldquo;sleeparray&rdquo; is an array contains the measuring time interval after sleep and sleep,the members order is：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.the object of the key @&ldquo;naparray&rdquo; is an array contains the measuring time interval after nap and nap,the members order is similar to the sleep array.the object of the key @&ldquo;measuretotaltime&rdquo; is the total measure time of this measurement process that the user set.</p></td>
 					</tr>
 				
 				</table>
@@ -447,7 +475,7 @@ Specification:
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set units for the Device</p>
+				<p>Query the automatic cycle measurement setup of the device</p>
 			</div>
 			
 
@@ -458,15 +486,15 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetAngle:errorBlock:" title="commandSetAngle:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetAngle:errorBlock:">&ndash;&nbsp;commandSetAngle:errorBlock:</a></code>
+	<a name="//api/name/commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:" title="commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:">&ndash;&nbsp;commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -476,12 +504,12 @@ Specification:
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set the effective angle range for left hand measurement and right hand measurement to the Device</p>
+				<p>Set the automatic cycle measurement interval and returns the information of the energy level of the blood pressure meter</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetAngle:(NSDictionary *)<em>angleInfo</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandSetAutoMeasureTimeWithSleepTimeSection:(NSArray *)<em>sleepTimeArray</em> napTimeSection:(NSArray *)<em>napTimeArray</em> totalTime:(NSNumber *)<em>totalHour</em> result:(BlockSetMeasureTime)<em>setResult</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -490,13 +518,28 @@ Specification:
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>angleInfo</code></th>
-						<td><p>A dictionary set the max and mini effective angles for left hand measurement and right hand measurement,the angle values type is NSNumber， with the four keys are: @&ldquo;highAngleForLeft&rdquo;,@&ldquo;lowAngleForLeft&rdquo;,@&ldquo;highAngleForRight&rdquo;,@&ldquo;lowAngleForRight&rdquo;.</p></td>
+						<th scope="row" class="argument-name"><code>sleepTimeArray</code></th>
+						<td><p>is an array to set the measuring time interval after sleep and sleep,the members order need to be：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>napTimeArray</code></th>
+						<td><p>is an array to the measuring time interval after nap and nap,the members order need to be: the hour of after nap time,the minute of after nap time,the measure time interval of after nap time,the hour of start nap time,the minute of start nap time,the measure time interval in nap.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalHour</code></th>
+						<td><p>Set the automatic cycle measure total time.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>setResult</code></th>
+						<td><p>A block to return the  battery level and the measure time of the remaining energy could support,the corresponding keys are @&ldquo;batterylevel&rdquo; and @&ldquo;measurecount&rdquo;.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in set angles communication.</p></td>
+						<td><p>A block to return the error.</p></td>
 					</tr>
 				
 				</table>
@@ -510,7 +553,7 @@ Specification:
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set the effective angle range for left hand measurement and right hand measurement to the Device</p>
+				<p>Set the automatic cycle measurement interval and returns the information of the energy level of the blood pressure meter</p>
 			</div>
 			
 
@@ -521,7 +564,7 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			
@@ -567,7 +610,7 @@ Specification:
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BP7S.h</code></p>
+				<p><code class="declared-in-ref">ABPM.h</code></p>
 			</div>
 			
 			

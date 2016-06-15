@@ -10,7 +10,7 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
 ### Support iHealth Device for iOS
 
     BP: 
-    iHealth Bp3    iHealth Bp5   iHealth Bp7   iHealth Bp7S   iHealth Bp3l   iHealth KD926 iHealth KN550BT iHealth Abi 
+    iHealth Bp3    iHealth Bp5   iHealth Bp7   iHealth Bp7S   iHealth Bp3l   iHealth KD926 iHealth KN550BT iHealth      Abi   ABPM   KD723
     
     HS: 
     iHealth Hs3    iHealth Hs4   iHealth Hs4s(Same with Hs4)   iHealth Hs5  
@@ -32,7 +32,7 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
 
 
     BP: 
-    BPHeader.h、 BPMacroFile.h、 BP3.h、 BP3Controller.h, BP5.h、BP5Controller.h、 BP7.h、 BP7Controller.h、BP3L.h、 BP3LController.h、 ABI.h, ABIController.h、BP7S.h、BP7SController.h、KD926.h、KD926Controller.h、KN550BT.h、KN550BTController.h  
+    BPHeader.h、 BPMacroFile.h、 BP3.h、 BP3Controller.h, BP5.h、BP5Controller.h、 BP7.h、 BP7Controller.h、BP3L.h、 BP3LController.h、 ABI.h, ABIController.h、BP7S.h、BP7SController.h、KD926.h、KD926Controller.h、KD723.h、KD723Controller.h、ABPM.h、ABPMController.h、KN550BT.h、KN550BTController.h  
     
     
 	HS: 
@@ -44,8 +44,8 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
 	PO: 
 	POHeader.h、POMacroFile.h、PO3.h、PO3Controller.h、
 	
-	BG: 
-	BGHeader.h、BGMacroFile.h、BG5.h、BG5Controller.h、AudioBG1Communication.h
+    BG: 
+    BGHeader.h、BGMacroFile.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h
 	
 	Common: 
 	User.h、ConnectDeviceController.h、ScanDeviceController.h、HSHeader.h
@@ -196,12 +196,14 @@ getAllCurrentBP3LInstace]; ```
 
  14. Operation procedure for BG1.
 
-	a) Initialization for BG1 (connected BG via sound
-jack)
+   a) Initialization for BG1 (connected BG via sound
+      jack)
 
-	```AudioBG1Communication *audioBG1Communication=[AudioBG1Communication audioCommunicationObject];```
+       ```[[BG1Controller shareBG1Controller]initBGAudioModule];```
+   b) Access control class instance after receive `BG1ConnectNoti`: 
+    ```BG1 *bgInstance = [[BG1Controller shareBG1Controller] getCurrentBG1Instance];```
 
-	b) Using ‘audioBG1Communication’ to call the communication module of the device
+   c) Using ‘bgInstance’ to call the connection and BG test module of the device. BG test function must be called after the block of connection return.
 
  15. Operation procedure for BG5.
 

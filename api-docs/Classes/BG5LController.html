@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AM4Controller Class Reference</title>
+	<title>BG5LController Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,7 +56,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/shareIHAM4Controller">+ shareIHAM4Controller</option>
+		<option value="//api/name/shareIHBg5lController">+ shareIHBg5lController</option>
 		
 	</optgroup>
 	
@@ -64,11 +64,11 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/getAllCurrentAM4Instace">- getAllCurrentAM4Instace</option>
+		<option value="//api/name/getAllCurrentBG5LInstace">- getAllCurrentBG5LInstace</option>
 		
-		<option value="//api/name/startSearchAM4">- startSearchAM4</option>
+		<option value="//api/name/startSearchBP5L">- startSearchBP5L</option>
 		
-		<option value="//api/name/stopSearchAM4">- stopSearchAM4</option>
+		<option value="//api/name/stopSearchBP5L">- stopSearchBP5L</option>
 		
 	</optgroup>
 	
@@ -85,7 +85,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AM4Controller Class Reference</h1>
+					<h1 class="title">BG5LController Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -94,7 +94,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AM4Controller.h</td>
+	<td>BG5LController.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,8 +112,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/shareIHAM4Controller" title="shareIHAM4Controller"></a>
-	<h3 class="method-title"><code><a href="#//api/name/shareIHAM4Controller">+&nbsp;shareIHAM4Controller</a></code>
+	<a name="//api/name/shareIHBg5lController" title="shareIHBg5lController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shareIHBg5lController">+&nbsp;shareIHBg5lController</a></code>
 </h3>
 
 	<div class="method-info">
@@ -123,12 +123,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initialize <a href="../Classes/AM4.html">AM4</a> controller class</p>
+				<p>Initialization for <a href="../Classes/BG5L.html">BG5L</a> (wireless BG via Bluetooth)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (AM4Controller *)shareIHAM4Controller</code></div>
+			<div class="method-subsection method-declaration"><code>+ (BG5LController *)shareIHBg5lController</code></div>
 
 		    
 			
@@ -140,7 +140,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initialize <a href="../Classes/AM4.html">AM4</a> controller class</p>
+				<p>Initialization for <a href="../Classes/BG5L.html">BG5L</a> (wireless BG via Bluetooth)</p>
 			</div>
 			
 
@@ -151,15 +151,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4Controller.h</code></p>
+				<p><code class="declared-in-ref">BG5LController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getAllCurrentAM4Instace" title="getAllCurrentAM4Instace"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getAllCurrentAM4Instace">&ndash;&nbsp;getAllCurrentAM4Instace</a></code>
+	<a name="//api/name/getAllCurrentBG5LInstace" title="getAllCurrentBG5LInstace"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAllCurrentBG5LInstace">&ndash;&nbsp;getAllCurrentBG5LInstace</a></code>
 </h3>
 
 	<div class="method-info">
@@ -169,12 +169,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Access control class instance after receiving AM4ConnectNoti, then use instance to call <a href="../Classes/AM4.html">AM4</a> related communication methods</p>
+				<p>Get all <a href="../Classes/BG5L.html">BG5L</a> Instance
+The methold needs to be called when the <a href="../Classes/BG5L.html">BG5L</a> has been triggered. When the app detected the glucose meter, the notification with the name of DeviceAuthenSuccess will be sent. After the device disconnected, the notification with the name of  DeviceAuthenSuccess will be received.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)getAllCurrentAM4Instace</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSArray *)getAllCurrentBG5LInstace</code></div>
 
 		    
 			
@@ -186,7 +187,8 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Access control class instance after receiving AM4ConnectNoti, then use instance to call <a href="../Classes/AM4.html">AM4</a> related communication methods</p>
+				<p>Get all <a href="../Classes/BG5L.html">BG5L</a> Instance
+The methold needs to be called when the <a href="../Classes/BG5L.html">BG5L</a> has been triggered. When the app detected the glucose meter, the notification with the name of DeviceAuthenSuccess will be sent. After the device disconnected, the notification with the name of  DeviceAuthenSuccess will be received.</p>
 			</div>
 			
 
@@ -197,15 +199,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4Controller.h</code></p>
+				<p><code class="declared-in-ref">BG5LController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/startSearchAM4" title="startSearchAM4"></a>
-	<h3 class="method-title"><code><a href="#//api/name/startSearchAM4">&ndash;&nbsp;startSearchAM4</a></code>
+	<a name="//api/name/startSearchBP5L" title="startSearchBP5L"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startSearchBP5L">&ndash;&nbsp;startSearchBP5L</a></code>
 </h3>
 
 	<div class="method-info">
@@ -215,12 +217,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Restart search <a href="../Classes/AM4.html">AM4</a></p>
+				<p>Restart search BP5L</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)startSearchAM4</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)startSearchBP5L</code></div>
 
 		    
 			
@@ -232,7 +234,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Restart search <a href="../Classes/AM4.html">AM4</a></p>
+				<p>Restart search BP5L</p>
 			</div>
 			
 
@@ -243,15 +245,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4Controller.h</code></p>
+				<p><code class="declared-in-ref">BG5LController.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stopSearchAM4" title="stopSearchAM4"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopSearchAM4">&ndash;&nbsp;stopSearchAM4</a></code>
+	<a name="//api/name/stopSearchBP5L" title="stopSearchBP5L"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopSearchBP5L">&ndash;&nbsp;stopSearchBP5L</a></code>
 </h3>
 
 	<div class="method-info">
@@ -261,12 +263,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Stop search <a href="../Classes/AM4.html">AM4</a></p>
+				<p>Stop search BP5L</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopSearchAM4</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)stopSearchBP5L</code></div>
 
 		    
 			
@@ -278,7 +280,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Stop search <a href="../Classes/AM4.html">AM4</a></p>
+				<p>Stop search BP5L</p>
 			</div>
 			
 
@@ -289,7 +291,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4Controller.h</code></p>
+				<p><code class="declared-in-ref">BG5LController.h</code></p>
 			</div>
 			
 			

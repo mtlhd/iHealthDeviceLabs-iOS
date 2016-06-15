@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">objcdoc </a>
+				<a href="../index.html">ynote </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">zyl910</a>
+				<a href="../index.html">youdao</a>
 			</p>
 			
 		</div>
@@ -58,11 +58,17 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/commandBatchUploadFinish">- commandBatchUploadFinish</option>
+		
+		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
+		
 		<option value="//api/name/commandEnergy:errorBlock:">- commandEnergy:errorBlock:</option>
 		
 		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
 		
-		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</option>
+		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:">- commandTransferMemorytotalCount:withGroupNumber:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -117,7 +123,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.</p>
+				<p>Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.</p>
 			</div>
 			
 		    
@@ -151,7 +157,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Synchronize time and judge if the device supports BT auto-connection, offline detection, and if the function on or off, corresponding KEY as haveBlue, haveOffline, blueOpen, offlineOpen. ‘True’ means yes or on, ‘False’ means no or off.</p>
+				<p>Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.</p>
 			</div>
 			
 
@@ -232,8 +238,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</a></code>
+	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:withGroupNumber:totalCount:pregress:dataArray:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -248,7 +254,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> withGroupNumber:(NSNumber *)<em>groupNumber</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -296,13 +302,18 @@ Specification:
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>groupNumber:</code></th>
+						<td><p>the group number to upload in multiple groups memery situation.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
 						<td><p>item quantity of total data</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@jiuan.com for more information.</p></td>
+						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
 					</tr>
 				
 					<tr>
@@ -343,6 +354,168 @@ Specification:
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:" title="commandTransferMemorytotalCount:withGroupNumber:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorytotalCount:withGroupNumber:errorBlock:">&ndash;&nbsp;commandTransferMemorytotalCount:withGroupNumber:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorytotalCount:(BlockBachCount)<em>totalCount</em> withGroupNumber:(NSNumber *)<em>groupNumber</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>groupNumber:</code></th>
+						<td><p>the group number to upload in multiple groups memery situation.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">KD926.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandBatchUploadFinish" title="commandBatchUploadFinish"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBatchUploadFinish">&ndash;&nbsp;commandBatchUploadFinish</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>upload offline data finished.
+After receiving all the requested data call this method,you must call this method to notify the device uploading offline data has been completed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandBatchUploadFinish</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>upload offline data finished.
+After receiving all the requested data call this method,you must call this method to notify the device uploading offline data has been completed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">KD926.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDisconnectDevice" title="commandDisconnectDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDevice">&ndash;&nbsp;commandDisconnectDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disconnect current device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Disconnect current device.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">KD926.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -358,7 +531,7 @@ Specification:
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 zyl910. All rights reserved. Updated: 2016-05-12</p>
+						<p class="copyright">Copyright &copy; 2016 youdao. All rights reserved. Updated: 2016-06-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
