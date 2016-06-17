@@ -26,7 +26,7 @@ typedef enum {
 #define NoNeedCode  @"000000"
 
 @interface BG1 : NSObject<AVAudioPlayerDelegate>{
-    
+
     DisposeAuthenticationBlock _disposeAuthenticationBlock;
     DisposeBGErrorBlock _disposeBGErrorBlock;
     DisposeConnectBGBlock _disposeConnectBGBlock;
@@ -53,8 +53,10 @@ typedef enum {
     
 }
 
-
-//The authentication will be started by calling this method after the BG meter got connected.
+/**
+ * Initialization for BG1 Instance.
+ */
++ (BG1 *)shareBG1CommunicationObject;
 /**
  * The authentication will be started by calling this method after the BG meter got connected.
  * @param disposeDiscoverBGBlock This block returns means blood glucose meter plugged in.

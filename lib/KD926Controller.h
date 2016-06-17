@@ -20,4 +20,15 @@ NSMutableArray *KD926DeviceArray;
  * Get all KD926 instance,Access control class instance after receiving KD926ConnectNoti, then use instance to call KD926 related communication methods.
  */
 -(NSArray *)getAllCurrentKD926Instace;
+
+/**
+ * Restart search KD926
+ */
+-(void)startSearchKD926;
+
+/**
+ * Stop search KD926
+ */
+-(void)stopSearchKD926;
+
 @end

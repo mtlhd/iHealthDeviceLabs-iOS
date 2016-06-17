@@ -86,7 +86,8 @@ typedef void (^DisposeDiscoverBGBlock)(BOOL result);
 typedef void (^DisposeConnectBGBlock)(BOOL result);
 
 typedef void (^DisposeAuthenticationBlock)(UserAuthenResult result);//the result of userID verification
-
+//电池电量
+typedef void (^DisposeBGBatteryBlock)(NSNumber* energy);
 
 #define BGSDKRightApi  @"OpenApiBG"
 
@@ -94,8 +95,12 @@ typedef void (^DisposeAuthenticationBlock)(UserAuthenResult result);//the result
 #define BG3DisConnectNoti @"BG3DisConnectNoti"
 #define BG5ConnectNoti @"BG5ConnectNoti"
 #define BG5DisConnectNoti @"BG5DisConnectNoti"
+#define BG5LConnectNoti @"BG5LConnectNoti"
+#define BG5LDisConnectNoti @"BG5LDisConnectNoti"
 #define BG1ConnectNoti @"BG1ConnectNoti"
 #define BG1DisConnectNoti @"BG1DisConnectNoti"
 
+#define BG5LDiscover        @"BG5LDiscover"
+#define BG5LConnectFailed   @"BG5LConnectFailed"
 
 #endif

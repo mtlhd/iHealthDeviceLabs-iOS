@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AMMacroFile.h"
 
-@class User;
 @interface AM4 : NSObject
 @property (strong, nonatomic) NSMutableString *am4RandomString;
 @property (strong, nonatomic) NSString *currentUUID;

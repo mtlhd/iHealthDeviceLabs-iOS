@@ -69,11 +69,10 @@ typedef enum {
 /**
  * Upload offline data total Count.
  * @param  TotalCount: item quantity of total data
- * @param  groupNumber: the group number to upload in multiple groups memery situation.
  * @param error  A block to return the error
  */
 
--(void)commandTransferMemorytotalCount:(BlockBachCount)totalCount withGroupNumber:(NSNumber *)groupNumber errorBlock:(BlockError)error;
+-(void)commandTransferMemorytotalCount:(BlockBachCount)totalCount errorBlock:(BlockError)error;
 
 /**
  * Upload offline data.
@@ -97,6 +96,7 @@ typedef enum {
  * @param  TotalCount: item quantity of total data
  * @param  Progress: upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.
  * @param  UploadDataArray:	offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.
+ * @param batchFinished: the block return when the offline data upload completed.
  * @param error   error codes.
  * Specification:
  *   1.  BPNormalError:  device error, error message displayed automatically.
@@ -109,12 +109,26 @@ typedef enum {
 -(void)commandTransferMemoryDataWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock  totalCount:(BlockBachCount)totalCount pregress:(BlockBachProgress)progress dataArray:(BlockBachArray)uploadDataArray finish:(BlockBachFinished)batchFinished errorBlock:(BlockError)error;
 
 
-//查询测量时间段
+/**
+ * Query the automatic cycle measurement setup of the device
+ * @param  measureTimeDic: the dictionary contains the automatic cycle measurement setup of the current ABPM device. the object of the key @"sleeparray" is an array contains the measuring time interval after sleep and sleep,the members order is：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.the object of the key @"naparray" is an array contains the measuring time interval after nap and nap,the members order is similar to the sleep array.the object of the key @"measuretotaltime" is the total measure time of this measurement process that the user set.
+ * @param error  A block to return the error
+ */
 -(void)commandAskAutoMeasureTime:(BlockAskMeasureTime)measureTimeDic errorBlock:(BlockError)error;
 
-//设置测量时间段
+/**
+ * Set the automatic cycle measurement interval and returns the information of the energy level of the blood pressure meter
+ * @param sleepTimeArray is an array to set the measuring time interval after sleep and sleep,the members order need to be：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.
+ * @param napTimeArray is an array to the measuring time interval after nap and nap,the members order need to be: the hour of after nap time,the minute of after nap time,the measure time interval of after nap time,the hour of start nap time,the minute of start nap time,the measure time interval in nap.
+ * @param totalHour Set the automatic cycle measure total time.
+ * @param setResult A block to return the  battery level and the measure time of the remaining energy could support,the corresponding keys are @"batterylevel" and @"measurecount".
+ * @param error  A block to return the error.
+ */
 -(void)commandSetAutoMeasureTimeWithSleepTimeSection:(NSArray *)sleepTimeArray napTimeSection:(NSArray *)napTimeArray totalTime:(NSNumber *)totalHour result:(BlockSetMeasureTime)setResult errorBlock:(BlockError)error;
 
-
+/**
+ * Disconnect current device
+ */
+-(void)commandDisconnectDevice;
 
 @end

@@ -36,6 +36,7 @@ typedef enum{
     DisposeBGStartModel _disposeBGStartModel;
     DisposeBGTestModelBlock _disposeBGTestModelBlock;
     DisposeAuthenticationBlock _disposeAuthenticationBlock;
+    DisposeBGBatteryBlock _disposeBG5BatteryBlock;
     
     NSString *thirdUserID;
     
@@ -139,5 +140,12 @@ typedef enum{
  * @param encodeString  The code String gets by scanning the QR code.
  */
 -(NSDictionary *)codeStripStrAnalysis:(NSString *)encodeString;
+
+///**
+// * Query battery remaining energy
+// * @param disposeBatteryBlock  A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.
+// * @param disposeErrorBlock  A block to return the error in ‘Establish measurement connection’.
+// */
+//-(void)commandQueryBattery:(DisposeBGBatteryBlock)disposeBatteryBlock DisposeErrorBlock:(DisposeBGErrorBlock)disposeErrorBlock;
 
 @end

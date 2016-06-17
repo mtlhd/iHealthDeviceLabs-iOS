@@ -96,7 +96,6 @@ typedef void (^DisposePicture)(AM3SPicture picture);
 typedef void (^DisposePictureSetting)(BOOL resetSucSetting);
 
 
-@class HealthUser;
 
 @interface AM3S : NSObject{
     

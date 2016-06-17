@@ -38,5 +38,4 @@
 -(BG1 *)getCurrentBG1Instance;
 
 
-
 @end

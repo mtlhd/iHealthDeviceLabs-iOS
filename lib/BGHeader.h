@@ -16,5 +16,7 @@
 #import "BG3Controller.h"
 #import "BG5.h"
 #import "BG5Controller.h"
+#import "BG5L.h"
+#import "BG5LController.h"
 
 #endif

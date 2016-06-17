@@ -12,12 +12,25 @@
     
     NSMutableArray *abpmArray;
 }
-
+/**
+ * Initialize ABPM controller class.
+ */
 +(ABPMController *)shareABPMController;
 
-//获取当前所有ABPM实例
+/**
+ * Get all ABPM instance,Access control class instance after receiving ABPMConnectNoti, then use instance to call ABPM related communication methods.
+ */
 -(NSArray *)getAllCurrentABPMInstace;
 
+/**
+ * Restart search ABPM
+ */
+-(void)startSearchABPM;
+
+/**
+ * Stop search ABPM
+ */
+-(void)stopSearchABPM;
 
 
 @end

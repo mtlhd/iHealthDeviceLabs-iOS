@@ -67,7 +67,7 @@ typedef void (^BlockHS6UserAuthentication)(UserAuthenResult result);
 //When using the SDK for the first time, measuring method needs to be called to finish user verification.
 /*
  Import parameter:
- tempUser: Properties included: clientID，clientSecret，userID，height.
+ tempUser: Properties included: clientID，clientSecret，userID，height，weight，isAthlete，sex.
  deviceID: device Mac
  clientID & clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.
  Return parameters:
