@@ -8,6 +8,9 @@
 
 #import "BGViewController.h"
 #import "BGHeader.h"
+#import "HealthHeader.h"
+#import "ConnectDeviceController.h"
+#import "ScanDeviceController.h"
 
 @interface BGViewController ()
 
@@ -27,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _tipTextView.editable=NO;
+    discoverBG5LDevices=[[NSMutableArray alloc]init];
     
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBG1:) name:BG1ConnectNoti object:nil];
@@ -38,9 +43,18 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBG5:) name:BG5ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBG5:) name:BG5DisConnectNoti object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBG5L:) name:BG5LConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBG5L:) name:BG5LDisConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBG5LDiscover:) name:BG5LDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBG5LConnectFailed:) name:BG5LConnectFailed object:nil];
+    
     [[BG1Controller shareBG1Controller]initBGAudioModule];
-    [BG5Controller shareIHBg5Controller];
     [BG3Controller shareIHBg3Controller];
+    [BG5Controller shareIHBg5Controller];
+    [BG5LController shareIHBg5lController];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,9 +73,11 @@
  // Pass the selected object to the new view controller.
  }
  */
+
 - (IBAction)InitiateAudioLayer:(id)sender {
     [[BG1Controller shareBG1Controller]initBGAudioModule];
 }
+
 - (IBAction)DestroyAudioLayer:(id)sender {
     [[BG1Controller shareBG1Controller]stopBGAudioModule];
 }
@@ -69,7 +85,7 @@
 -(void)DeviceConnectForBG1:(NSNotification *)tempNoti{
     BG1 *bgInstance = [[BG1Controller shareBG1Controller]getCurrentBG1Instance];
     if(bgInstance != nil){
-        [bgInstance commandConnectBGwithDeviceModel:@0 DisposeDiscoverBlock:^(BOOL result) {
+        [bgInstance commandConnectBGwithDeviceModel:@0x00FF1304 DisposeDiscoverBlock:^(BOOL result) {
             NSLog(@"DisposeDiscoverBG1Block:%d",result);
             _tipTextView.text = [NSString stringWithFormat:@"DisposeDiscoverBG1Block:%d",result];
         } DisposeBGIDPSBlock:^(NSDictionary *idpsDic) {
@@ -107,7 +123,7 @@
 }
 
 -(void)DeviceDisConnectForBG1:(NSNotification *)tempNoti{
-    _tipTextView.text = [NSString stringWithFormat:@"DeviceDisConnectForBG1:%@",tempNoti];
+    
 }
 
 -(void)DeviceConnectForBG3:(NSNotification *)tempNoti{
@@ -181,7 +197,6 @@
 -(void)DeviceDisConnectForBG5:(NSNotification *)tempNoti{
     
 }
-
 -(void)commandSendCode:(BG5 *)bgInstance{
     NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
     NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
@@ -252,5 +267,163 @@
         }];
     }
 }
+#pragma BG5L  低功耗BG5
+- (IBAction)startScanBG5LBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BG5L];
+}
+-(void)deviceBG5LDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverBG5LDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBG5LDevices:%@",_tipTextView.text,discoverBG5LDevices];
+    
+}
+- (IBAction)startConnectBG5LBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverBG5LDevices count]>0 ) {
+        NSString *serialNub=[discoverBG5LDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BG5L andSerialNub:serialNub];
+    }
+}
+-(void)deviceBG5LConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BG5L];
+}
+
+-(void)DeviceConnectForBG5L:(NSNotification *)tempNoti{
+    BG5LController *bgController = [BG5LController shareIHBg5lController];
+    NSArray *bgArray = [bgController getAllCurrentBG5LInstace];
+    
+    if(bgArray.count>0){
+        BG5L *bgInstance = [bgArray objectAtIndex:0];
+        
+        NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
+        NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
+        
+        
+        [bgInstance commandInitBGSetUnit:BGUnit_mmolPL BGUserID:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
+            if(result== UserAuthen_CombinedSuccess || result== UserAuthen_LoginSuccess || result== UserAuthen_RegisterSuccess || result== UserAuthen_TrySuccess){
+                NSLog(@"verify success");
+            }
+            else{
+                NSLog(@"Verify failed");
+            }
+        } DisposeBGBottleID:^(NSNumber *bottleID) {
+            //same code
+            if (bottleID.integerValue == yourBottle.integerValue) {
+                //read code
+                [bgInstance commandReadBGCodeDic:^(NSDictionary *codeDic) {
+                    NSLog(@"codeDic:%@",codeDic);
+                    [self commandBG5LSendCode:bgInstance];
+                } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                    NSLog(@"errorID:%@",errorID);
+                }];
+            }
+            //different code
+            else{
+                NSLog(@"codeDic:%@",codeDic);
+                [self commandBG5LSendCode:bgInstance];
+            }
+        } DisposeBGErrorBlock:^(NSNumber *errorID) {
+            NSLog(@"errorID:%@",errorID);
+        }];
+    }
+}
+
+-(void)DeviceDisConnectForBG5L:(NSNotification *)tempNoti{
+    
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BG5L];
+}
+-(void)commandBG5LSendCode:(BG5L *)bgInstance{
+    NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
+    NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
+    NSDate *yourValidDate = [codeDic valueForKey:@"DueDate"];
+    NSNumber *yourRemainNub = [codeDic valueForKey:@"StripNum"];
+    
+    //send code
+    [bgInstance commandSendBGCodeString:CodeStr bottleID:yourBottle validDate:yourValidDate remainNum:yourRemainNub DisposeBGSendCodeBlock:^(BOOL sendOk) {
+        NSLog(@"send code success");
+    } DisposeBGStartModel:^(BGOpenMode model) {
+        NSLog(@"BGOpenMode:%d",model);
+        //strip open mode
+        if (model==BGOpenMode_Hand) {
+            //start measure mode 0
+            [bgInstance commandCreateBGtestModel:BGMeasureMode_Blood DisposeBGStripInBlock:^(BOOL stripIn) {
+                NSLog(@"stripIn");
+            } DisposeBGBloodBlock:^(BOOL blood) {
+                NSLog(@"blood");
+            } DisposeBGResultBlock:^(NSDictionary *result) {
+                NSLog(@"result:%@",result);
+            } DisposeBGTestModelBlock:^(BGMeasureMode model) {
+                //0
+                //1 blood mode
+                NSLog(@"BGMeasureMode:%d",model);
+            } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                NSLog(@"errorID:%@",errorID);
+            }];
+        }
+        else{
+            //start measure mode 1
+            [bgInstance commandCreateBGtestStripInBlock:^(BOOL stripIn) {
+                NSLog(@"stripIn");
+            } DisposeBGBloodBlock:^(BOOL blood) {
+                NSLog(@"blood");
+            } DisposeBGResultBlock:^(NSDictionary *result) {
+                NSLog(@"result:%@",result);
+            } DisposeBGTestModelBlock:^(BGMeasureMode model) {
+                //0
+                //1 blood mode
+                NSLog(@"BGMeasureMode:%d",model);
+            } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                NSLog(@"errorID:%@",errorID);
+            }];
+        }
+        
+    } DisposeBGErrorBlock:^(NSNumber *errorID) {
+        NSLog(@"errorID:%@",errorID);
+    }];
+    
+}
+
+
+- (IBAction)getBG5LMemory:(id)sender {
+    BG5LController *bgController = [BG5LController shareIHBg5lController];
+    NSArray *bgArray = [bgController getAllCurrentBG5LInstace];
+    
+    if(bgArray.count>0){
+        BG5L *bgInstance = [bgArray objectAtIndex:0];
+        [bgInstance commandTransferMemorryData:^(NSNumber *dataCount) {
+            NSLog(@"dataCount:%@",dataCount);
+        } DisposeBGHistoryData:^(NSDictionary *historyDataDic) {
+            NSLog(@"historyDataDic:%@",historyDataDic);
+            [bgInstance commandDeleteMemorryData:^(BOOL deleteOk) {
+                NSLog(@"deleteOk:%d",deleteOk);
+            }];
+        } DisposeBGErrorBlock:^(NSNumber *errorID) {
+            NSLog(@"errorID:%@",errorID);
+        }];
+    }
+}
+
+- (IBAction)GetBG5LEnergy:(id)sender {
+    BG5LController *controller = [BG5LController shareIHBg5lController];
+    NSArray *bg5lDeviceArray = [controller getAllCurrentBG5LInstace];
+    if(bg5lDeviceArray.count){
+        BG5L *bgInstance = [bg5lDeviceArray objectAtIndex:0];
+        
+        [bgInstance commandQueryBattery:^(NSNumber *energy) {
+            
+            _tipTextView.text = [NSString stringWithFormat:@"BG5L energyValue:%@",energy];
+        } DisposeErrorBlock:^(NSNumber *errorID) {
+            
+        }];
+        
+    }
+}
+
 
 @end

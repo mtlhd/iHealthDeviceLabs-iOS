@@ -553,6 +553,9 @@
                                 <rect key="frame" x="85" y="259" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SCAN"/>
+                                <connections>
+                                    <action selector="startScanBG5LBotton:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="dWQ-nV-Iaz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BG5L:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-TY-zbM">
                                 <rect key="frame" x="13" y="263" width="58" height="21"/>
@@ -564,16 +567,25 @@
                                 <rect key="frame" x="198" y="259" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="CONNECT"/>
+                                <connections>
+                                    <action selector="startConnectBG5LBotton:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="nyU-bK-cMO"/>
+                                </connections>
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbf-jP-EoL">
                                 <rect key="frame" x="85" y="306" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Memory"/>
+                                <connections>
+                                    <action selector="getBG5LMemory:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="8ID-SK-3zy"/>
+                                </connections>
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fry-jY-5hV">
                                 <rect key="frame" x="198" y="306" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Energy"/>
+                                <connections>
+                                    <action selector="GetBG5LEnergy:" destination="kf0-xi-7Zg" eventType="touchUpInside" id="aGF-SJ-P4I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-IA-gMx">
                                 <rect key="frame" x="85" y="391" width="91" height="30"/>

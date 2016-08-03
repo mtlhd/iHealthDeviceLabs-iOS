@@ -33,6 +33,83 @@
             endingLineNumber = "297"
             landmarkName = "-DeviceConnectForAM3S:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AMViewController DeviceConnectForAM3S:]"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.855683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke_2"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.855946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.284"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.85617"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.285"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.856395"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke.287"
+                  moduleName = "iHealthDemoCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.856616"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -54,76 +131,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[AMViewController DeviceConnectForAM3S:]"
+                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke_2.296"
                   moduleName = "iHealthDemoCode"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/AMViewController.m"
-                  timestampString = "484128265.888054"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.859493"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "816">
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke.304"
+                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke_3"
                   moduleName = "iHealthDemoCode"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/AMViewController.m"
-                  timestampString = "484128265.888313"
+                  urlString = "file:///Users/apple/Desktop/iHealthDeviceLabs-iOS/examples/iHealthTestSDK/iHealthDemoCode/AMViewController.m"
+                  timestampString = "491883188.859761"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.305"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/AMViewController.m"
-                  timestampString = "484128265.888537"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.306"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/AMViewController.m"
-                  timestampString = "484128265.888768"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[AMViewController DeviceConnectForAM3S:]_block_invoke.308"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/AMViewController.m"
-                  timestampString = "484128265.889001"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "309"
-                  endingLineNumber = "309"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "22">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -253,22 +285,6 @@
             startingLineNumber = "141"
             endingLineNumber = "141"
             landmarkName = "-commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BPViewController.m"
-            timestampString = "484128242.496966"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-HTSBatteryLevelShow:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -478,38 +494,6 @@
             endingLineNumber = "378"
             landmarkName = "-cloudSDKUserIsExistResult:queueNub:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HTS cloudSDKUserIsExistResult:queueNub:]"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/HTSModel/HTS.m"
-                  timestampString = "484128265.905223"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "382"
-                  endingLineNumber = "382"
-                  offsetFromSymbolStart = "648">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__42-[HTS cloudSDKUserIsExistResult:queueNub:]_block_invoke"
-                  moduleName = "iHealthDemoCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/iHealthSDK/iHealthSDK(add%20HS6)/iHealthDemoCode/iHealthDemoCode/HTSModel/HTS.m"
-                  timestampString = "484128265.905356"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "382"
-                  endingLineNumber = "382"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -582,22 +566,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iHealthDemoCode/BPViewController.m"
-            timestampString = "484128242.496966"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-HTSBatteryLeve:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iHealthDemoCode/HSModel/HS3.m"
             timestampString = "484126939.242833"
             startingColumnNumber = "9223372036854775807"
@@ -637,6 +605,22 @@
             startingLineNumber = "222"
             endingLineNumber = "222"
             landmarkName = "-cloudSDKUserIsExistResult:queueNub:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iHealthDemoCode/BGViewController.m"
+            timestampString = "486889821.550123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-DeviceConnectForBG5:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

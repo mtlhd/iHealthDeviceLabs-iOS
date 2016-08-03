@@ -391,6 +391,7 @@
 }
 */
 
+#pragma mark HS6
 
 - (IBAction)unbind:(UIButton *)sender{
     
@@ -420,7 +421,7 @@
     
     iHealthHS6*hs6=[iHealthHS6 shareIHHS6Controller];
     
-    HealthUser*user=[[HealthUser alloc] init];;
+    HealthUser*user=[[HealthUser alloc] init];
     
     user.clientSecret=SDKSecret;
     
@@ -437,7 +438,6 @@
     user.isAthlete=UserIsAthelete_No;
     
     user.birthday=[NSDate date];
-
     
     [hs6 cloudCommandUserBinedQRDeviceWithUser:user deviceID:@"www" BlockHS6UserAuthentication:^(UserAuthenResult result) {
         

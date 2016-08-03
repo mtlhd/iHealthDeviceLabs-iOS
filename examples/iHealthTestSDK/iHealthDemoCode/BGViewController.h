@@ -11,6 +11,9 @@
 #define CodeStr @"024C565F4C5614322D1200A02F3485B6F314378BACD619011F72003608A9"
 
 @interface BGViewController : UIViewController
+{
+    NSMutableArray *discoverBG5LDevices;
+}
 
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;
 

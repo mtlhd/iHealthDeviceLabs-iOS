@@ -704,7 +704,7 @@
                     
                 }
                 
-            } withGroupNumber:[NSNumber numberWithInteger:0x02] errorBlock:^(BPDeviceError error) {
+            } errorBlock:^(BPDeviceError error) {
                 
             }];
             
