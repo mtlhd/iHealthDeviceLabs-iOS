@@ -146,6 +146,6 @@ typedef enum{
 // * @param disposeBatteryBlock  A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.
 // * @param disposeErrorBlock  A block to return the error in ‘Establish measurement connection’.
 // */
-//-(void)commandQueryBattery:(DisposeBGBatteryBlock)disposeBatteryBlock DisposeErrorBlock:(DisposeBGErrorBlock)disposeErrorBlock;
+-(void)commandQueryBattery:(DisposeBGBatteryBlock)disposeBatteryBlock DisposeErrorBlock:(DisposeBGErrorBlock)disposeErrorBlock;
 
 @end
