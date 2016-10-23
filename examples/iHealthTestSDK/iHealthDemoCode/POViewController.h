@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SDKUpdateDevice.h"
 @interface POViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;

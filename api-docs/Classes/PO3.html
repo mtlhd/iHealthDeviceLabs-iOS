@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">iHealth </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">iHealth</a>
 			</p>
 			
 		</div>
@@ -60,13 +60,13 @@
 		
 		<option value="//api/name/commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:">- commandCreatePO3User:Authentication:DisposeResultBlock:DisposeErrorBlock:</option>
 		
-		<option value="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:">- commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:</option>
+		<option value="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:">- commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:</option>
 		
-		<option value="//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:">- commandEndPO3CurrentConnect:DisposeErrorBlock:</option>
+		<option value="//api/name/commandPO3Disconnect:withErrorBlock:">- commandPO3Disconnect:withErrorBlock:</option>
 		
-		<option value="//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:">- commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:</option>
+		<option value="//api/name/commandPO3GetDeviceBattery:withErrorBlock:">- commandPO3GetDeviceBattery:withErrorBlock:</option>
 		
-		<option value="//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:">- commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandResetPO3DeviceDisposeResultBlock:withErrorBlock:">- commandResetPO3DeviceDisposeResultBlock:withErrorBlock:</option>
 		
 		<option value="//api/name/commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:">- commandStartPO3MeasureData:Measure:FinishPO3MeasureData:DisposeErrorBlock:</option>
 		
@@ -138,7 +138,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>TempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information</p></td>
+						<td><p>TempUser,includes properties:clientID,clientSecret,userID。 userID,either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information</p></td>
 					</tr>
 				
 					<tr>
@@ -270,8 +270,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:" title="commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:">&ndash;&nbsp;commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:DisposeProgress:FinishTransmission:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:" title="commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:">&ndash;&nbsp;commandDisposePO3DataCount:TransferMemorryData:Memory:DisposePO3WaveHistoryData:FinishTransmission:DisposeErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -286,7 +286,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandDisposePO3DataCount:(DisposePO3DataCount)<em>disposePO3DataCount</em> TransferMemorryData:(StartPO3Transmission)<em>startTransmission</em> Memory:(DisposePO3HistoryData)<em>disposePO3HistoryData</em> DisposePO3WaveHistoryData:(DisposePO3WaveHistoryData)<em>disposePO3WaveHistoryData</em> DisposeProgress:(DisposePO3ProgressData)<em>progress</em> FinishTransmission:(FinishPO3Transmission)<em>finishTransmission</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandDisposePO3DataCount:(DisposePO3DataCount)<em>disposePO3DataCount</em> TransferMemorryData:(StartPO3Transmission)<em>startTransmission</em> Memory:(DisposePO3HistoryData)<em>disposePO3HistoryData</em> DisposePO3WaveHistoryData:(DisposePO3WaveHistoryData)<em>disposePO3WaveHistoryData</em> FinishTransmission:(FinishPO3Transmission)<em>finishTransmission</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
 			
@@ -300,6 +300,11 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>startTransmission</code></th>
+						<td><p>data transmission. Yes for success, no for fail.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>disposePO3HistoryData</code></th>
 						<td><p>date, spo2, bpm, and wave.</p></td>
 					</tr>
@@ -310,11 +315,6 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>progress</code></th>
-						<td><p>Data transmission progress from 0-1.0</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>finishTransmission</code></th>
 						<td><p>End transmission of data, yes for success, no for fail.</p></td>
 					</tr>
@@ -322,11 +322,6 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
 						<td><p>Communication error codes, see section 5.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>startTransmission:Start</code></th>
-						<td><p>data transmission. Yes for success, no for fail.</p></td>
 					</tr>
 				
 				</table>
@@ -358,8 +353,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:" title="commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandResetPO3DeviceDisposeResultBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandResetPO3DeviceDisposeResultBlock:withErrorBlock:" title="commandResetPO3DeviceDisposeResultBlock:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandResetPO3DeviceDisposeResultBlock:withErrorBlock:">&ndash;&nbsp;commandResetPO3DeviceDisposeResultBlock:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -374,7 +369,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandResetPO3DeviceDisposeResultBlock:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandResetPO3DeviceDisposeResultBlock:(DisposePO3ResetDeviceBlock)<em>resetDeviceBlock</em> withErrorBlock:(DisposePO3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -383,9 +378,14 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>Yes = success, no = fail.
-@param disposeErrorBlock</p></td>
+						<th scope="row" class="argument-name"><code>resetDeviceBlock</code></th>
+						<td><p>yes = success, no = fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see section 5.
+@Notice  Notice: Firmware version 2.0.0 and above does not support this function</p></td>
 					</tr>
 				
 				</table>
@@ -417,8 +417,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:" title="commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:">&ndash;&nbsp;commandQueryBatteryInfo:DisposeErrorBlock:DisposeBattery:</a></code>
+	<a name="//api/name/commandPO3GetDeviceBattery:withErrorBlock:" title="commandPO3GetDeviceBattery:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandPO3GetDeviceBattery:withErrorBlock:">&ndash;&nbsp;commandPO3GetDeviceBattery:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -433,7 +433,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandQueryBatteryInfo:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em> DisposeBattery:(DisposePO3Battery)<em>disposeBattery</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandPO3GetDeviceBattery:(DisposePO3BatteryBlock)<em>batteryBlock</em> withErrorBlock:(DisposePO3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -442,20 +442,15 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>Yes = success, no = fail.</p></td>
+						<th scope="row" class="argument-name"><code>batteryBlock</code></th>
+						<td><p>Battery，from 0～100</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
 						<td><p>Communication error codes, see section 5.</p></td>
 					</tr>
 				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBattery</code></th>
-						<td><p>Battery %.</p></td>
-					</tr>
-				
 				</table>
 			</div>
 			
@@ -485,8 +480,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:" title="commandEndPO3CurrentConnect:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandEndPO3CurrentConnect:DisposeErrorBlock:">&ndash;&nbsp;commandEndPO3CurrentConnect:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandPO3Disconnect:withErrorBlock:" title="commandPO3Disconnect:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandPO3Disconnect:withErrorBlock:">&ndash;&nbsp;commandPO3Disconnect:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -501,7 +496,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandEndPO3CurrentConnect:(DisposePO3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposePO3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandPO3Disconnect:(DisposePO3DisconnectBlock)<em>disconnectBlock</em> withErrorBlock:(DisposePO3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -510,12 +505,12 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>Yes = success, no = fail.</p></td>
+						<th scope="row" class="argument-name"><code>disconnectBlock</code></th>
+						<td><p>yes = success, no = fail.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
 						<td><p>Communication error codes, see section.</p></td>
 					</tr>
 				
@@ -562,7 +557,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 youdao. All rights reserved. Updated: 2016-06-17</p>
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

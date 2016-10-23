@@ -125,6 +125,7 @@
 #pragma mark 下发code
 -(Boolean)solveEncodeContent:(NSString *)encodeString validDate:(NSString*)date remainNum:(NSNumber*)num;
 -(Boolean)solveEncodeContent:(NSString *)encodeString dataOwner:(NSString *)dataOwnerID;
+-(void)solveEncodeforOneCodeWithDataOwner:(NSString *)dataOwnerID;
 -(void)commandBG1Connented;
 -(void)commandBG1DisConnented;
 

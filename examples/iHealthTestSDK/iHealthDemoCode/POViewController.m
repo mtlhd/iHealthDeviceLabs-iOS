@@ -9,7 +9,6 @@
 #import "POViewController.h"
 #import "POHeader.h"
 #import "ScanDeviceController.h"
-
 @interface POViewController ()
 {
     NSMutableArray *discoverDevices;
@@ -37,6 +36,9 @@
     discoverDevices=[[NSMutableArray alloc]init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(devicePO3Discover:) name:PO3Discover object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(devicePO3ConnectFailed:) name:PO3ConnectFailed object:nil];
+    
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_PO3];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,16 +51,7 @@
 {
     
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(void)DeviceConnectForPO3:(NSNotification*)info
 {
     PO3Controller *po3Controller = [PO3Controller shareIHPO3Controller];
@@ -76,12 +69,11 @@
         } else if(ID!=nil&& [ID isEqualToString:connectID]){
             [discoverDevices removeObject:discoverDevice];
             break;
-
         }
     }
     
     NSLog(@"discoverDevices=%@",discoverDevices);
-
+    
     if(po3Array.count>0)
     {
         PO3 *po3Instance = [po3Array objectAtIndex:0];
@@ -92,7 +84,31 @@
         myUser.userID = YourUserName;
         
         NSLog(@"connected success=====================");
+        
+        NSArray *versionArray = [po3Instance.firmwareVersion componentsSeparatedByString:@"."];
+        
+        if ([versionArray count]==3)
+        {
+            int version1 = [[versionArray objectAtIndex:0] intValue];
+            int version2 = [[versionArray objectAtIndex:1] intValue];
+            int version3 = [[versionArray objectAtIndex:2] intValue];
+            int versionSum = version1*100+version2*10+version3;
+            
+            if (versionSum>=200) {
+                
+//                [[SDKUpdateDevice shareSDKUpdateDeviceInstance] commandGetUpdateVersionWithDeviceUUID:po3Instance.currentUUID DisposeUpdateVersionResult:^(NSDictionary *updateVersionDic) {
+//                    
+//                } DisposeErrorBlock:^(UpdateDeviceError errorID) {
+//                    
+//                }];
+                
+            }
+            
+        }
+        
     }
+    
+    
 }
 
 -(void)devicePO3ConnectFailed:(NSNotification*)info {
@@ -105,11 +121,11 @@
         if (serialNub!=nil&& [serialNub isEqualToString:connectSeriaNub]) {
             [discoverDevices removeObject:discoverDevice];
             break;
-
+            
         } else if(ID!=nil&& [ID isEqualToString:connectID]){
             [discoverDevices removeObject:discoverDevice];
             break;
-
+            
         }
     }
     
@@ -134,26 +150,26 @@
     
     switch (sender.tag)
     {
-         case 6:
+        case 6:
             NSLog(@"start scan");
             [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_PO3];
-          
+            
             break;
         case 7:
             NSLog(@"start connect");
             if ([discoverDevices count]>0 ) {
                 NSString *serialNub=[[discoverDevices objectAtIndex:0]objectForKey:@"SerialNumber"];
                 NSString *ID=[[discoverDevices objectAtIndex:0]objectForKey:@"ID"];
-             
+                
                 if (serialNub!=nil) {
                     [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:serialNub];
-
+                    
                 } else {
                     [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:ID];
-
+                    
                 }
             }
-
+            
             break;
             
         case 0:
@@ -193,9 +209,6 @@
             } DisposePO3WaveHistoryData:^(NSDictionary *waveHistoryDataDic) {
                 NSLog(@"waveHistoryDataDic---%@",waveHistoryDataDic);
                 
-            } DisposeProgress:^(NSNumber *progress) {
-                NSLog(@"progress---%@",progress);
-                
             } FinishTransmission:^(BOOL finishData) {
                 NSLog(@"finishData---%d",finishData);
                 
@@ -210,15 +223,12 @@
         {
             NSLog(@"battery");
             
-            [po3Instance commandQueryBatteryInfo:^(BOOL resetSuc) {
-                NSLog(@"resetSuc---%d",resetSuc);
-                
-            } DisposeErrorBlock:^(PO3ErrorID errorID) {
-                NSLog(@"errorID---%d",errorID);
-                
-            } DisposeBattery:^(NSNumber *battery) {
+            [po3Instance commandPO3GetDeviceBattery:^(NSNumber *battery) {
                 NSLog(@"battery---%d",battery.intValue);
-                
+
+            } withErrorBlock:^(PO3ErrorID errorID) {
+                NSLog(@"errorID---%d",errorID);
+
             }];
         }
             break;
@@ -227,10 +237,10 @@
             NSLog(@"factory");
             [po3Instance commandResetPO3DeviceDisposeResultBlock:^(BOOL resetSuc) {
                 NSLog(@"resetSuc---%d",resetSuc);
-                
-            } DisposeErrorBlock:^(PO3ErrorID errorID) {
+
+            } withErrorBlock:^(PO3ErrorID errorID) {
                 NSLog(@"errorID---%d",errorID);
-                
+
             }];
         }
             break;
@@ -253,12 +263,12 @@
         {
             NSLog(@"disconnect");
             
-            [po3Instance commandEndPO3CurrentConnect:^(BOOL resetSuc) {
+            [po3Instance commandPO3Disconnect:^(BOOL resetSuc) {
                 NSLog(@"resetSuc---%d",resetSuc);
-                
-            } DisposeErrorBlock:^(PO3ErrorID errorID) {
+
+            } withErrorBlock:^(PO3ErrorID errorID) {
                 NSLog(@"errorID---%d",errorID);
-                
+
             }];
         }
             break;
@@ -271,7 +281,7 @@
     
 }
 -(void)devicePO3Discover:(NSNotification*)info {
-
+    
     NSLog(@"Disover:%@",[info userInfo]);
     for (NSDictionary *discoverDevice in discoverDevices) {
         if ([[info userInfo] isEqualToDictionary:discoverDevice]) {
@@ -279,8 +289,19 @@
         }
     }
     [discoverDevices addObject:[info userInfo]];
-
-  
+    
+    
+    NSString *serialNub=[[discoverDevices objectAtIndex:0]objectForKey:@"SerialNumber"];
+    NSString *ID=[[discoverDevices objectAtIndex:0]objectForKey:@"ID"];
+    
+    if (serialNub!=nil) {
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:serialNub];
+        
+    } else {
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_PO3 andSerialNub:ID];
+        
+    }
+    
     
 }
 

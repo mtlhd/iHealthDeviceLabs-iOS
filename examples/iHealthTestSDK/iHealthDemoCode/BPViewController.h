@@ -18,13 +18,15 @@
     NSMutableArray *discoverKD723Devices;
     NSMutableArray *discoverABPMDevices;
     NSMutableArray *discoverHTSDevices;
+    NSMutableArray *discoverContinuaBPDevices;
     
 }
 
 @property (strong, nonatomic) NSString *currentKD926UUIDStr;
 @property (strong, nonatomic) NSString *currentKD723UUIDStr;
 @property (strong, nonatomic) NSString *currentABPMUUIDStr;
-
+@property (strong, nonatomic) IBOutlet UIButton *ContinuaBPOutlet;
+@property (strong, nonatomic) NSString *currentBPContinuaUUIDStr;
 @property (weak, nonatomic) IBOutlet UITextView *tipTextView;
 @property (strong, nonatomic) IBOutlet UIButton *kd926OfflineDataBtn;
 @property (strong, nonatomic) IBOutlet UIButton *kd926EnergyBtn;

@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">iHealth </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">iHealth</a>
 			</p>
 			
 		</div>
@@ -58,29 +58,47 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:">- commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">- commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</option>
 		
-		<option value="//api/name/commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:">- commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:">- commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:</option>
 		
-		<option value="//api/name/commandDisconnectDisposeBlock:DisposeErrorBlock:">- commandDisconnectDisposeBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3Disconnect:withErrorBlock:">- commandAM3Disconnect:withErrorBlock:</option>
 		
-		<option value="//api/name/commandQueryAlarmInfo:DisposeErrorBlock:">- commandQueryAlarmInfo:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:">- commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:</option>
 		
-		<option value="//api/name/commandQueryReminder:DisposeErrorBlock:">- commandQueryReminder:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">- commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</option>
 		
-		<option value="//api/name/commandResetDeviceDisposeResultBlock:DisposeErrorBlock:">- commandResetDeviceDisposeResultBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetReminderInfo:withErrorBlock:">- commandAM3GetReminderInfo:withErrorBlock:</option>
 		
-		<option value="//api/name/commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:">- commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetTimeFormat:withErrorBlock:">- commandAM3GetTimeFormat:withErrorBlock:</option>
 		
-		<option value="//api/name/commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:">- commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetTotoalAlarmInfo:withErrorBlock:">- commandAM3GetTotoalAlarmInfo:withErrorBlock:</option>
 		
-		<option value="//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:">- commandSetState:DisposeBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3GetUserInfo:withErrorBlock:">- commandAM3GetUserInfo:withErrorBlock:</option>
 		
-		<option value="//api/name/commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:">- commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:</option>
+		<option value="//api/name/commandAM3ResetDevice:withErrorBlock:">- commandAM3ResetDevice:withErrorBlock:</option>
 		
-		<option value="//api/name/commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:">- commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:">- commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:</option>
 		
-		<option value="//api/name/commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:">- commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:</option>
+		<option value="//api/name/commandAM3SetBMR:withFinishResult:withErrorBlock:">- commandAM3SetBMR:withFinishResult:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:">- commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SetStateModel:withFinishResult:withErrorBlock:">- commandAM3SetStateModel:withFinishResult:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SetTimeFormat:withErrorBlock:">- commandAM3SetTimeFormat:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SetUserID:withFinishResult:withErrorBlock:">- commandAM3SetUserID:withFinishResult:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:">- commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:">- commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3StartSyncCurrentActiveData:withErrorBlock:">- commandAM3StartSyncCurrentActiveData:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:">- commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SyncTime:withErrorBlock:">- commandAM3SyncTime:withErrorBlock:</option>
 		
 	</optgroup>
 	
@@ -124,8 +142,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:" title="commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:">&ndash;&nbsp;commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:" title="commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">&ndash;&nbsp;commandAM3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -140,7 +158,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> currentUserSerialNub:(CurrentSerialNub)<em>serialNub</em> amUser:(DisposeAM3AskUserID)<em>disposeAskUserID</em> binedAMSerialNub:(DisposeBinedAMSerialNub)<em>binedSerialnub</em> currentSerialNub:(DisposeCurrentSerialNub)<em>currentSerialNub</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3CreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> withAuthenticationResult:(BlockUserAuthentication)<em>authenticationResultBlock</em> withCurrentUserID:(CurrentSerialNub)<em>currentUserIDBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -150,11 +168,11 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:lvjincan@ihealthlabs.com.cn.com for more information</p></td>
+						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:heguangming@ihealthlabs.com.cn for more information</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
+						<th scope="row" class="argument-name"><code>authenticationResultBlock</code></th>
 						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
 The interpretation for the verification:
 1. UserAuthen_RegisterSuccess, New-user registration succeeded.
@@ -171,27 +189,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>serialNub</code></th>
+						<th scope="row" class="argument-name"><code>currentUserIDBlock</code></th>
 						<td><p>Uniquely identifies the user, the SDK requires this to be stored. This ID will be sent to the AM3 and will allow the AM3 to pair with only this user.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeAskUserID</code></th>
-						<td><p>The user ID that is stored on the AM3, 0 indicates that there is no user inf</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>binedSerialnub</code></th>
-						<td><p>The user&rsquo;s AM3&rsquo;s MAC Address</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>currentSerialNub</code></th>
-						<td><p>The connected user&rsquo;s MAC Address</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
 						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
@@ -224,8 +227,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:" title="commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:">&ndash;&nbsp;commandsetAM3UserID:DisposeBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:" title="commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">&ndash;&nbsp;commandAM3GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -235,12 +238,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Pair/bond users,For use when the AM3 returns a user ID of 0,Note: Bonding a user account and AM3 requires an active internet connection.</p>
+				<p>Get device userID and user bined sevice MAC Address</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandsetAM3UserID:(NSNumber *)<em>userID</em> DisposeBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetDeviceUserID:(DisposeAM3GetDeviceUserIDBlock)<em>getDeviceUserIDBlock</em> withFromCloudGetUserBinedDeviceMAC:(DisposeAM3GetUserBinedDeviceMACBlock)<em>userBinedDeviceMACBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -249,17 +252,17 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>UserID</p></td>
+						<th scope="row" class="argument-name"><code>getDeviceUserIDBlock</code></th>
+						<td><p>The connected user&rsquo;s MAC Address</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>YES: Account bonding successfu. NO: Failed.</p></td>
+						<th scope="row" class="argument-name"><code>userBinedDeviceMACBlock</code></th>
+						<td><p>The user&rsquo;s AM3 MAC Address</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
 						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
@@ -274,7 +277,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Pair/bond users,For use when the AM3 returns a user ID of 0,Note: Bonding a user account and AM3 requires an active internet connection.</p>
+				<p>Get device userID and user bined sevice MAC Address</p>
 			</div>
 			
 
@@ -292,8 +295,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:" title="commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:">&ndash;&nbsp;commandSyncUserInfoWithUser:andGoal:DisposeStateInfo:DisposeBattery:DisposeBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SyncTime:withErrorBlock:" title="commandAM3SyncTime:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SyncTime:withErrorBlock:">&ndash;&nbsp;commandAM3SyncTime:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -303,95 +306,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query AM3 initialization,Must be called the first time to ensure that the AM3 has correct user information, goals, time, battery checks, etc.</p>
+				<p>Sync time</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSyncUserInfoWithUser:(HealthUser *)<em>tempUser</em> andGoal:(NSNumber *)<em>goalNumber</em> DisposeStateInfo:(DisposeAM3StateInfo)<em>disposeStateInfo</em> DisposeBattery:(DisposeAM3Battery)<em>disposeBattery</em> DisposeBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>User information, needs to include the following：birthday、height、weight、bmr、sex、lengthUnit.birthday，NSDate.height，(cm).weight，(kg). bmr，user basal metabolic rate.sex，UserSex_Female or UserSex_Male.lengthUnit，total distance，LengthUnit_Mile is imperial units，LengthUnit_Kilometer for metric units.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>goalNumber</code></th>
-						<td><p>User goal number of steps. Default is 10,000.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeStateInfo</code></th>
-						<td><p>AM status，State_wrist  (AM3 being worn on the wrist)，State_waist (AM3 worn with belt clip).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBattery</code></th>
-						<td><p>AM battery percentage, from 0～100.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>Initilization complete. True: Success, False: Failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query AM3 initialization,Must be called the first time to ensure that the AM3 has correct user information, goals, time, battery checks, etc.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM3.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandResetDeviceDisposeResultBlock:DisposeErrorBlock:" title="commandResetDeviceDisposeResultBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandResetDeviceDisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandResetDeviceDisposeResultBlock:DisposeErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Query Restore factory settings.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandResetDeviceDisposeResultBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SyncTime:(DisposeAM3SyncTimeBlock)<em>syncTimeBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -400,13 +320,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<th scope="row" class="argument-name"><code>syncTimeBlock</code></th>
 						<td><p>True: Success， False: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -420,7 +340,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query Restore factory settings.</p>
+				<p>Sync time</p>
 			</div>
 			
 
@@ -438,8 +358,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandQueryAlarmInfo:DisposeErrorBlock:" title="commandQueryAlarmInfo:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandQueryAlarmInfo:DisposeErrorBlock:">&ndash;&nbsp;commandQueryAlarmInfo:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SetTimeFormat:withErrorBlock:" title="commandAM3SetTimeFormat:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetTimeFormat:withErrorBlock:">&ndash;&nbsp;commandAM3SetTimeFormat:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -449,12 +369,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query AM3 Alarm.</p>
+				<p>Set time format and nation</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandQueryAlarmInfo:(DisposeAM3TotoalAlarmData)<em>disposeTotoalAlarmData</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetTimeFormat:(DisposeAM3TimeFormatSettingBlock)<em>setTimeFormatBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -463,13 +383,14 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeTotoalAlarmData</code></th>
-						<td><p>Alarm array contains up to 3 alarms, each one needs the following parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)AlarmId：1, 2, 3. Time：HH:mm.IsRepeat：Repeat alarm， True: Repeat， False: Don&rsquo;t repeat.Switch：Alarm on/off. True: On, False: Off.Sun、Mon、Tue、Wed、Thu、Fri、Sat：True.</p></td>
+						<th scope="row" class="argument-name"><code>setTimeFormatBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.
+@Notice  Notice: Firmware version 1.1.9 and above supports this function</p></td>
 					</tr>
 				
 				</table>
@@ -483,7 +404,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query AM3 Alarm.</p>
+				<p>Set time format and nation</p>
 			</div>
 			
 
@@ -501,8 +422,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:" title="commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SetUserID:withFinishResult:withErrorBlock:" title="commandAM3SetUserID:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetUserID:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SetUserID:withFinishResult:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -512,12 +433,435 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query Set Alarm.</p>
+				<p>Binding AM3 to user,Account binding requires an active internet connection.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetAlarmWithAlarmDictionary:(NSDictionary *)<em>alarmDic</em> DisposeResultBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetUserID:(NSNumber *)<em>userID</em> withFinishResult:(DisposeAM3SetDeviceUserIDBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userID</code></th>
+						<td><p>userID, ranging from 1 – 2147483647.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Binding AM3 to user,Account binding requires an active internet connection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:" title="commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:">&ndash;&nbsp;commandAM3SetUserInfo:withUnit:withActiveGoal:withSetUserInfoFinishResult:withSetBMR:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>AM3 initialization,Must be called the first time to ensure that the AM3 has correct user information, goals, time, battery checks, etc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetUserInfo:(HealthUser *)<em>user</em> withUnit:(AM3StateUnit)<em>unit</em> withActiveGoal:(NSNumber *)<em>activeGoalNumber</em> withSetUserInfoFinishResult:(DisposeAM3SetUserInfoBlock)<em>setUserInfoFinishBlock</em> withSetBMR:(DisposeAM3SetBMRBlock)<em>setBMRFinishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>user</code></th>
+						<td><p>User information, needs to include the following：age(int)、height(cm,1-255)、weight(kg,1-255)、bmr(user basal metabolic)、sex(UserSex_Female or UserSex_Male)、activityLevel (activityLevel=1, Sedentary,spend most of day sitting.activityLevel=2, Active,spend a good part of day doing some physical activity.activityLevel=3, Very Active,spend most of day doing heavy physical activity.)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unit</code></th>
+						<td><p>AM3StateUnit_mile or AM3StateUnit_km</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>activeGoalNumber</code></th>
+						<td><p>User goal number of steps,ranging from 4 – 65535. Default is 10,000</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>setUserInfoFinishBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>setBMRFinishResultBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>AM3 initialization,Must be called the first time to ensure that the AM3 has correct user information, goals, time, battery checks, etc.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:" title="commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:">&ndash;&nbsp;commandAM3StartSyncActiveData:withActiveHistoryData:withActiveFinishTransmission:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload AM3 data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3StartSyncActiveData:(DisposeAM3ActiveStartTransmission)<em>activeTransmissionBlock</em> withActiveHistoryData:(DisposeAM3ActiveHistoryData)<em>activeHistoryDataBlock</em> withActiveFinishTransmission:(DisposeAM3ActiveFinishTransmission)<em>activeFinishTransmissionBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>activeTransmissionBlock</code></th>
+						<td><p>activeTransmission: Start uploading motion data, including parameters：Start date，yyyy-MM-dd(ActiveHistoryDateYear,ActiveHistoryDateMonth,ActiveHistoryDateDay)，ActiveStepSize：Length of each step，ActiveHistoryTotoalNum：Number of records.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>activeHistoryDataBlock</code></th>
+						<td><p>active data，including the following parameters：AMDate、AMCalorie、AMstepNum、AMstepSize、dataID、Start. AMDate：Workout time,AMCalorie: Current time total calories,AMStepNum：Total number of steps,dataID：data ID,Start：represents the beginning of a movement.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>activeFinishTransmissionBlock</code></th>
+						<td><p>Upload complete.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Upload AM3 data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:" title="commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:">&ndash;&nbsp;commandAM3StartSyncSleepData:withSleepHistoryData:withSleepFinishTransmission:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload AM3 data,Data type: 5 minutes of sleep data,</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3StartSyncSleepData:(DisposeAM3SleepStartTransmission)<em>sleepTransmissionBlock</em> withSleepHistoryData:(DisposeAM3SleepHistoryData)<em>sleepHistoryDataBlock</em> withSleepFinishTransmission:(DisposeAM3SleepFinishTransmission)<em>sleepFinishTransmissionBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sleepTransmissionBlock</code></th>
+						<td><p>sleepTransmission:Start uploading sleep data,, including parameters：SleepHistoryDate、AM3SleepHistoryTotoalNum.SleepHistoryDate：Sleep start time，yyyy-MM-dd HH:mm:ss(SleepHistoryDateYear,SleepHistoryDateMonth,SleepHistoryDateDay,SleepHistoryDateHour,SleepHistoryDateMinute,SleepHistoryDateSeconds).SleepHistoryTotoalNum: Number of records</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sleepHistoryDataBlock</code></th>
+						<td><p>Sleep data, including the following parameters:：AMDate、SleepData、dataID.AMDate：Sleep time, SleepData: Sleep grade, 0: awake, 1: light sleep, 2: deep sleep ,dataID: data ID.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sleepFinishTransmissionBlock</code></th>
+						<td><p>Upload complete.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Upload AM3 data,Data type: 5 minutes of sleep data,</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3StartSyncCurrentActiveData:withErrorBlock:" title="commandAM3StartSyncCurrentActiveData:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3StartSyncCurrentActiveData:withErrorBlock:">&ndash;&nbsp;commandAM3StartSyncCurrentActiveData:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload AM3 data,Data type: Sync current active data</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3StartSyncCurrentActiveData:(DisposeAM3GetCurrentActiveInfo)<em>currentActiveInfoBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentActiveInfoBlock</code></th>
+						<td><p>Total calories and steps for today, including parameters：Step、Calories、TotalCalories.Step：Number of steps taken today.Calories：Number of calories burned today.TotalCalories：Sum calories burned and bmr today.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Upload AM3 data,Data type: Sync current active data</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3GetTotoalAlarmInfo:withErrorBlock:" title="commandAM3GetTotoalAlarmInfo:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetTotoalAlarmInfo:withErrorBlock:">&ndash;&nbsp;commandAM3GetTotoalAlarmInfo:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get totoal alarm infomation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetTotoalAlarmInfo:(DisposeAM3TotoalAlarmData)<em>totoalAlarmInfoBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totoalAlarmInfoBlock</code></th>
+						<td><p>Alarm array contains up to 3 alarms, each one needs the following parameters：AlarmId、Time、Week.AlarmId：1, 2, 3.Time：HH:mm.Week(Sun、Mon、Tue、Wed、Thu、Fri、Sat)True: On, False: Off</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get totoal alarm infomation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:" title="commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SetAlarmDictionary:withFinishResult:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set alarm.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetAlarmDictionary:(NSDictionary *)<em>alarmDic</em> withFinishResult:(DisposeAM3SetAlarmBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -527,17 +871,17 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>alarmDic</code></th>
-						<td><p>Alarm information, include parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat.</p></td>
+						<td><p>Alarm information, include parameters：AlarmId、Time、IsRepeat、Switch、（Sun、Mon、Tue、Wed、Thu、Fri、Sat)</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
 						<td><p>True: Alarm set successfully，False: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -551,7 +895,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query Set Alarm.</p>
+				<p>Set alarm.</p>
 			</div>
 			
 
@@ -569,8 +913,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:" title="commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:" title="commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3DeleteAlarmID:withFinishResult:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -580,12 +924,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query Delete alarm.</p>
+				<p>Delete alarm.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandDeleteAlarmViaID:(NSNumber *)<em>alarmID</em> DisposeResultBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3DeleteAlarmID:(NSNumber *)<em>alarmID</em> withFinishResult:(DisposeAM3DeleteAlarmBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -599,13 +943,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>True: Delete successful，False: Failed.</p></td>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
+						<td><p>True: Delete successful，False: Failed</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -619,7 +963,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query Delete alarm.</p>
+				<p>Delete alarm.</p>
 			</div>
 			
 
@@ -637,8 +981,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandQueryReminder:DisposeErrorBlock:" title="commandQueryReminder:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandQueryReminder:DisposeErrorBlock:">&ndash;&nbsp;commandQueryReminder:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3GetReminderInfo:withErrorBlock:" title="commandAM3GetReminderInfo:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetReminderInfo:withErrorBlock:">&ndash;&nbsp;commandAM3GetReminderInfo:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -648,12 +992,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Query reminder.</p>
+				<p>Get reminder.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandQueryReminder:(RemindAM3Info)<em>remindInfo</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetReminderInfo:(DisposeAM3RemindInfoBlock)<em>remindInfoBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -662,13 +1006,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>remindInfo</code></th>
-						<td><p>Array containing following parameters：Time、Switch.Time：format HH:mm, time between reminders (HH*60+mm) minutes.Switch：Reminder on/off，True: On， False: Off.</p></td>
+						<th scope="row" class="argument-name"><code>remindInfoBlock</code></th>
+						<td><p>Array containing following parameters：ReminderID、Time、Switch.ReminderID：Reminder ID.Time：format HH:mm, time between reminders (HH*60+mm) minutes.Switch：Reminder on/off，True: On， False: Off.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -682,7 +1026,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query reminder.</p>
+				<p>Get reminder.</p>
 			</div>
 			
 
@@ -700,8 +1044,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:" title="commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:">&ndash;&nbsp;commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:" title="commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SetReminderDictionary:withFinishResult:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -716,7 +1060,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetReminderwithReminderDictionary:(NSDictionary *)<em>reminderDic</em> DisposeResultBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetReminderDictionary:(NSDictionary *)<em>reminderDic</em> withFinishResult:(DisposeAM3SetReminderBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -726,17 +1070,17 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>reminderDic</code></th>
-						<td><p>Array containing collowing parameters：Time、Switch.</p></td>
+						<td><p>Array containing collowing parameters：Time、Switch。</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>True: Success，False: Failed.</p></td>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
+						<td><p>YES: Successfully set, NO: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -768,8 +1112,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:" title="commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:">&ndash;&nbsp;commandSyncAllAMData:DisposeProgress:historyData:FinishTransmission:startsleepdata:DisposeSleepProgress:sleephistoryData:FinishSleepTransmission:CurrentActiveInfo:DisposeErrorBlock:AM3IsOnTransmission:SleepIsOnTransmission:</a></code>
+	<a name="//api/name/commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:" title="commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:">&ndash;&nbsp;commandAM3GetDeviceStateInfo:withBattery:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -779,12 +1123,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload AM3 data,Data type: 5 minutes of motion data, 5 minutes of sleep data, total number of steps for the day, and total calories. Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories. If calculations for every 5 minutes of motion data is required, you will need to calculate the difference between two records.</p>
+				<p>Get device state infomation</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSyncAllAMData:(StartAM3Transmission)<em>startAM3Transmission</em> DisposeProgress:(DisposeAM3ProgressData)<em>disposeAM3ProgressData</em> historyData:(AM3HistoryData)<em>AM3historyData</em> FinishTransmission:(FinishAM3Transmission)<em>finishAM3Transmission</em> startsleepdata:(StartSleepTransmission)<em>startSleepTransmission</em> DisposeSleepProgress:(DisposeSleepProgressData)<em>disposeSleepProgressData</em> sleephistoryData:(SleepHistoryData)<em>sleepHistoryData</em> FinishSleepTransmission:(FinishSleepTransmission)<em>finishSleepTransmission</em> CurrentActiveInfo:(DisposeAM3QueryCurrentActiveInfo)<em>disposeQueryCurrentActiveInfo</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em> AM3IsOnTransmission:(AM3IsOnTransmission)<em>am3isOnTransmission</em> SleepIsOnTransmission:(SleepIsOnTransmission)<em>sleepisOnTransmission</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetDeviceStateInfo:(DisposeAM3StateInfoBlock)<em>deviceStateInfoBlock</em> withBattery:(DisposeAM3BatteryBlock)<em>batteryBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -793,63 +1137,18 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>startAM3Transmission</code></th>
-						<td><p>Start uploading motion data, including parameters：StartActiveHistoryDate、StepSize、StartActiveHistoryTotoalNum.StartActiveHistoryDate：Start date，yyyy-MM-dd.StepSize：Length of each step, cm.StartActiveHistoryTotoalNum：Number of records.</p></td>
+						<th scope="row" class="argument-name"><code>deviceStateInfoBlock</code></th>
+						<td><p>AM status，State_wrist  (AM3 being worn on the wrist)，State_waist (AM3 worn with belt clip).</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeAM3ProgressData</code></th>
-						<td><p>AM data upload percentage, 0.0～1.0.</p></td>
+						<th scope="row" class="argument-name"><code>batteryBlock</code></th>
+						<td><p>AM3 battery percentage, from 0～100.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>AM3historyData</code></th>
-						<td><p>Workout data，including the following parameters：AMDate、AMCalorie、AMStepNum.AMDate：Workout time， NSDate.AMCalorie: Current.time total calories.AMStepNum：Total number of steps.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>finishAM3Transmission</code></th>
-						<td><p>Upload complete.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>startSleepTransmission</code></th>
-						<td><p>Start uploading sleep data, including parameters：SleepActiveHistoryDate、StartActiveHistoryTotoalNum.SleepActiveHistoryDate：Sleep start time，yyyy-MM-dd HH:mm:ss.StartActiveHistoryTotoalNum: Number of records.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeSleepProgressData</code></th>
-						<td><p>AM sleep data upload percent 0.0～1.0.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>sleepHistoryData</code></th>
-						<td><p>Sleep data, including the following parameters:AMDate、SleepData.AMDate：Sleep time, NSDate.SleepData: Sleep grade, 0: awake, 1: light sleep, 2: deep sleep.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>finishSleepTransmission</code></th>
-						<td><p>Upload complete.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeQueryCurrentActiveInfo</code></th>
-						<td><p>Total calories and steps for today, including parameters：Step、Calories、TotalCalories.Step：Number of steps taken today.Calories：Number of calories burned today.TotalCalories：Sum calories burned and bmr today.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>See AM3 error descriptions</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>am3isOnTransmission</code></th>
-						<td><p>Invalidate.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>sleepisOnTransmission</code></th>
-						<td><p>Invalidate.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -863,7 +1162,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM3 data,Data type: 5 minutes of motion data, 5 minutes of sleep data, total number of steps for the day, and total calories. Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories. If calculations for every 5 minutes of motion data is required, you will need to calculate the difference between two records.</p>
+				<p>Get device state infomation</p>
 			</div>
 			
 
@@ -881,8 +1180,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:" title="commandSetState:DisposeBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetState:DisposeBlock:DisposeErrorBlock:">&ndash;&nbsp;commandSetState:DisposeBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3ResetDevice:withErrorBlock:" title="commandAM3ResetDevice:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3ResetDevice:withErrorBlock:">&ndash;&nbsp;commandAM3ResetDevice:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -892,12 +1191,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set AM3 status</p>
+				<p>Restore factory settings.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetState:(ActiveState)<em>activeState</em> DisposeBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3ResetDevice:(DisposeAM3ResetDeviceBlock)<em>resetDeviceBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -906,18 +1205,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>activeState</code></th>
-						<td><p>activeState：Sleep_State: sleep mode，Active_State: active，Fly_State: airplane mode， Drive_State: driving mode.</p></td>
+						<th scope="row" class="argument-name"><code>resetDeviceBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>True: Set successfully，False: Failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -931,7 +1225,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set AM3 status</p>
+				<p>Restore factory settings.</p>
 			</div>
 			
 
@@ -949,8 +1243,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandDisconnectDisposeBlock:DisposeErrorBlock:" title="commandDisconnectDisposeBlock:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDisposeBlock:DisposeErrorBlock:">&ndash;&nbsp;commandDisconnectDisposeBlock:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3Disconnect:withErrorBlock:" title="commandAM3Disconnect:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3Disconnect:withErrorBlock:">&ndash;&nbsp;commandAM3Disconnect:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -960,12 +1254,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Disconnect AM3 connection</p>
+				<p>Disconnect AM3 connection.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDisposeBlock:(DisposeAM3Block)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3ErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3Disconnect:(DisposeAM3DisconnectBlock)<em>disconnectBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -974,13 +1268,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<th scope="row" class="argument-name"><code>disconnectBlock</code></th>
 						<td><p>True: Success，False: Failed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3 error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -994,7 +1288,269 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect AM3 connection</p>
+				<p>Disconnect AM3 connection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3GetTimeFormat:withErrorBlock:" title="commandAM3GetTimeFormat:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetTimeFormat:withErrorBlock:">&ndash;&nbsp;commandAM3GetTimeFormat:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get time format</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetTimeFormat:(DisposeAM3TimeFormatBlock)<em>timeFormat</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timeFormat</code></th>
+						<td><p>(AM3TimeFormat_hh,AM3TimeFormat_HH)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.
+@Notice  Notice: Firmware version 1.1.9 and above supports this function</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get time format</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3GetUserInfo:withErrorBlock:" title="commandAM3GetUserInfo:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3GetUserInfo:withErrorBlock:">&ndash;&nbsp;commandAM3GetUserInfo:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get user infomation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3GetUserInfo:(DisposeAM3UserInfoBlock)<em>userInfoBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfoBlock</code></th>
+						<td><p>including parameters:Age,Step,Height,Gender,Weight,Unit,goal(TotalStep1、TotalStep2、TotalStep3)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get user infomation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SetStateModel:withFinishResult:withErrorBlock:" title="commandAM3SetStateModel:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetStateModel:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SetStateModel:withFinishResult:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set state model</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetStateModel:(AM3StateModel)<em>state</em> withFinishResult:(DisposeAM3SetStateModelBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>state</code></th>
+						<td><p>including AM3SetStateModel_sleep,AM3SetStateModel_active,AM3SetStateModel_fly,AM3SetStateModel_drive</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
+						<td><p>True: Delete successful，False: Failed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.
+@Notice  Notice: Firmware version 1.1.1 and above supports AM3SetStateModel_drive</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set state model</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SetBMR:withFinishResult:withErrorBlock:" title="commandAM3SetBMR:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SetBMR:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SetBMR:withFinishResult:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set BMR
+@param bmr</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SetBMR:(NSNumber *)<em>bmr</em> withFinishResult:(DisposeAM3SetBMRBlock)<em>finishResultBlock</em> withErrorBlock:(DisposeAM3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
+						<td><p>True: Delete successful，False: Failed</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see AM3 error descriptions.
+@Notice  Notice: Firmware version 1.0.2 and above supports this function</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set BMR
+@param bmr</p>
 			</div>
 			
 
@@ -1026,7 +1582,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 youdao. All rights reserved. Updated: 2016-06-17</p>
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

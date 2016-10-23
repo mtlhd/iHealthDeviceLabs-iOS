@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>iHealthHS6 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealth </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:">- commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">iHealthHS6 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>iHealthHS6.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:" title="commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:">&ndash;&nbsp;commandHS6GetOpenAPITokenWithUser:withSuccessBlock:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get AccessToken of HS6 user,and this method is a time consuming operation that cannot be called
+in the main thread.
+After get AccessToken, you can call openApi(<a href="http://developer.ihealthlabs.com">http://developer.ihealthlabs.com</a>) to pull data form iHealth cloud.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandHS6GetOpenAPITokenWithUser:(HealthUser *)<em>tempUser</em> withSuccessBlock:(DisposeHS6GetOpenAPISuccessBlock)<em>getOpenAPIBlock</em> withErrorBlock:(DisposeHS6GetOpenAPIErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientID</code></th>
+						<td><p>the identification of the SDK</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>clientSecret</code></th>
+						<td><p>the identification of the SDK</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>username</code></th>
+						<td><p>the identification of the user</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>boolean whether has permission of using the method,false you need to get the
+permission firstly.
+The result of get token is returnned by
+{@link iHealthDeviceHs6Callback#onNotify(String, String, String, String)} and its'
+action is {@link #ACTION_HS6_GET_TOKEN}.</p>
+
+<p>eg. {APIName=&ldquo;OpenApiActivity OpenApiBG OpenApiBP OpenApiFood OpenApiSleep OpenApiSpO2 OpenApiSport
+OpenApiUserInfo OpenApiWeight&rdquo;,
+AccessToken=&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ7cYuUSO0EkaiFTST<em>GcjZvvTKxfEOmhQTfLXTXYAOA
+wCoXlEs0DRqJaHZU5JS30ssyLNlqADPV9dlvWZitQmIfXjF6CSZM2SuRCD</em>bbbrqtwBsn<em>sC24OEoQCRpDau6wQ&rdquo;,
+ClassParamentKey =     {
+&ldquo;client_id&rdquo; = 2a8387e3f4e94407a3a767a72dfd52ea;
+&ldquo;client_para&rdquo; = 99;
+&ldquo;client_secret&rdquo; = fd5e845c47944a818bc511fb7edb0a77;
+hash = d86bf92a851bf9211851d8e6827eea55;
+username = &ldquo;he@12.com&rdquo;;
+};
+&ldquo;Expires&rdquo;:3672000,
+&ldquo;RefreshToken&rdquo;:&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ2TcvTQNInn85XdPIJRIe-9zB-eaY5utBVKmtLjJdEEmBlx5le5mT6oF7WBwVkwx</em>CUpSsdgUcyE3mG3FJnSHlajogaUSUgvMgmgUaVEMYzv4pcbCUltGNAMqJt5wwvBZA&rdquo;,
+&ldquo;RefreshTokenExpires&rdquo;:31536000,
+&ldquo;UUID&rdquo;:&ldquo;&rdquo;,
+&ldquo;UserID&rdquo;:&ldquo;51027f3e09a14a55917e687c628a0f13&rdquo;,
+&ldquo;UserNameKey&rdquo;
+&ldquo;UserOpenID&rdquo;
+&ldquo;UserRegion&rdquo;:&ldquo;https:\/\/api.ihealthlabs.com.cn:8443&rdquo;,
+&ldquo;client_para&rdquo;:&ldquo;random_str&rdquo;}</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get AccessToken of HS6 user,and this method is a time consuming operation that cannot be called
+in the main thread.
+After get AccessToken, you can call openApi(<a href="http://developer.ihealthlabs.com">http://developer.ihealthlabs.com</a>) to pull data form iHealth cloud.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">iHealthHS6.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

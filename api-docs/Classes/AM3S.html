@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">iHealth </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">iHealth</a>
 			</p>
 			
 		</div>
@@ -58,6 +58,12 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/commandAM3SQueryPicture:disposeErrorBlock:">- commandAM3SQueryPicture:disposeErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SSetPicture:resultBlock:disposeErrorBlock:">- commandAM3SSetPicture:resultBlock:disposeErrorBlock:</option>
+		
+		<option value="//api/name/commandAM3SSetRandomNumber:withErrorBlock:">- commandAM3SSetRandomNumber:withErrorBlock:</option>
+		
 		<option value="//api/name/commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:">- commandCreateUserManageConnectWithUser:Authentication:currentUserSerialNub:amUser:binedAMSerialNub:currentSerialNub:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:">- commandDeleteAlarmViaID:DisposeResultBlock:DisposeErrorBlock:</option>
@@ -68,13 +74,15 @@
 		
 		<option value="//api/name/commandQueryReminder:DisposeErrorBlock:">- commandQueryReminder:DisposeErrorBlock:</option>
 		
+		<option value="//api/name/commandQueryTimeFormat:disposeErrorBlock:">- commandQueryTimeFormat:disposeErrorBlock:</option>
+		
+		<option value="//api/name/commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:">- commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:</option>
+		
 		<option value="//api/name/commandResetDeviceDisposeResultBlock:DisposeErrorBlock:">- commandResetDeviceDisposeResultBlock:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandSetAM3SUserID:withRandom:DisposeBlock:DisposeErrorBlock:">- commandSetAM3SUserID:withRandom:DisposeBlock:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:">- commandSetAlarmWithAlarmDictionary:DisposeResultBlock:DisposeErrorBlock:</option>
-		
-		<option value="//api/name/commandSetRandomString:DisposeErrorBlock:">- commandSetRandomString:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:">- commandSetReminderwithReminderDictionary:DisposeResultBlock:DisposeErrorBlock:</option>
 		
@@ -152,7 +160,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:lvjincan@ihealthlabs.com.cn.com for more information</p></td>
+						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:heguangming@ihealthlabs.com.cn for more information</p></td>
 					</tr>
 				
 					<tr>
@@ -226,8 +234,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSetRandomString:DisposeErrorBlock:" title="commandSetRandomString:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSetRandomString:DisposeErrorBlock:">&ndash;&nbsp;commandSetRandomString:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SSetRandomNumber:withErrorBlock:" title="commandAM3SSetRandomNumber:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SSetRandomNumber:withErrorBlock:">&ndash;&nbsp;commandAM3SSetRandomNumber:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -237,12 +245,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sending a random number,This API sends a random number to the <a href="../Classes/AM3.html">AM3</a>. Only when the random number matches the number displayed on the AM3s screen can the device be bound to the device.</p>
+				<p>Sending a random number,This API sends a random number to the AM3S. Only when the random number matches the number displayed on the AM3S screen can the device be bound to the device.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSetRandomString:(DisposeRandomNumberSetting)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SSetRandomNumber:(DisposeRandomNumberSetting)<em>setRandomNumberBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -251,13 +259,13 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
-						<td><p>True: Sent successfully，False: Failed。Random number is six digits, ranging from 0 – 999999. AM3s will receive the random number and display on screen. The user will have to enter it into the app.</p></td>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>see AM3S error descriptions.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>see AM3S error descriptions.</p></td>
+						<th scope="row" class="argument-name"><code>disposeBlock</code></th>
+						<td><p>True: Sent successfully，False: Failed。Random number is six digits, ranging from 0 – 999999. AM3S will receive the random number and display on screen. The user will have to enter it into the app.</p></td>
 					</tr>
 				
 				</table>
@@ -271,7 +279,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sending a random number,This API sends a random number to the <a href="../Classes/AM3.html">AM3</a>. Only when the random number matches the number displayed on the AM3s screen can the device be bound to the device.</p>
+				<p>Sending a random number,This API sends a random number to the AM3S. Only when the random number matches the number displayed on the AM3S screen can the device be bound to the device.</p>
 			</div>
 			
 
@@ -300,7 +308,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Restore Binding AM3s to user,Account binding requires an active internet connection</p>
+				<p>Restore Binding AM3S to user,Account binding requires an active internet connection</p>
 			</div>
 			
 		    
@@ -320,7 +328,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempRandom</code></th>
-						<td><p>the 6 random numbers displayed on the AM3s。</p></td>
+						<td><p>the 6 random numbers displayed on the AM3S。</p></td>
 					</tr>
 				
 					<tr>
@@ -344,7 +352,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Restore Binding AM3s to user,Account binding requires an active internet connection</p>
+				<p>Restore Binding AM3S to user,Account binding requires an active internet connection</p>
 			</div>
 			
 
@@ -373,7 +381,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Restore AM3S initialization,Must be called the first time to ensure that the <a href="../Classes/AM3.html">AM3</a> has correct user information, goals, time, battery checks, etc.</p>
+				<p>Restore AM3S initialization,Must be called the first time to ensure that the AM3S has correct user information, goals, time, battery checks, etc.</p>
 			</div>
 			
 		    
@@ -398,7 +406,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeStateInfo</code></th>
-						<td><p>AM status，State_wrist  (<a href="../Classes/AM3.html">AM3</a> being worn on the wrist)，State_waist (AM3S worn with belt clip).</p></td>
+						<td><p>AM status，State_wrist  (AM3S being worn on the wrist)，State_waist (AM3S worn with belt clip).</p></td>
 					</tr>
 				
 					<tr>
@@ -427,7 +435,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Restore AM3S initialization,Must be called the first time to ensure that the <a href="../Classes/AM3.html">AM3</a> has correct user information, goals, time, battery checks, etc.</p>
+				<p>Restore AM3S initialization,Must be called the first time to ensure that the AM3S has correct user information, goals, time, battery checks, etc.</p>
 			</div>
 			
 
@@ -884,7 +892,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>startSleepTransmission</code></th>
-						<td><p>Start uploading sleep data, including parameters：SleepActiveHistoryDate、StartActiveHistoryTotoalNum.SleepActiveHistoryDate：Sleep start time，yyyy-MM-dd HH:mm:ss.StartActiveHistoryTotoalNum: Number of records.disposeSleepProgressData:  AM sleep data upload percent 0.0～1.0.sleepHistoryData：Sleep data, including the following parameters:：AMDate、SleepData。</p></td>
+						<td><p>Start uploading sleep data, including parameters：SleepActiveHistoryDate、AM3SSleepHistoryTotoalNum.SleepActiveHistoryDate：Sleep start time，yyyy-MM-dd HH:mm:ss.StartActiveHistoryTotoalNum: Number of records.disposeSleepProgressData:  AM sleep data upload percent 0.0～1.0.sleepHistoryData：Sleep data, including the following parameters:：AMDate、SleepData。</p></td>
 					</tr>
 				
 					<tr>
@@ -962,7 +970,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload AM3s report data.</p>
+				<p>Upload AM3S report data.</p>
 			</div>
 			
 		    
@@ -982,7 +990,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeMeasureData</code></th>
-						<td><p>Report data, including parameters:ReportStage_Swimming、ReportStage_Work_out、ReportStage_Sleep_summary、ReportStage_Activeminute. Currently only supports ReportStage_Work_out、ReportStage_Sleep_summar.Workout contains properties：ReportState、Work_outMeasureDate、Work_outTimeNumber、Work_outStepNumber、Work_outLengthNumber、Work_outCalories.ReportState：ReportStage_Work_out.Work_outMeasureDate：Start time.Work_outTimeNumber：Length of workout (mins).Work_outStepNumber：Workout number of steps.Work_outLengthNumber：Workout distance (km).Work_outCalories：Workout calories burned.Sleep contains properties：ReportState、Sleep_summaryMeasureDate、Sleep_summarySleepTime、Sleep_summarysleepEfficiency、Sleep_summarysleepAddMinute.ReportState：ReportStage_Sleep_summary.Sleep_summaryMeasureDate：Sleep start time.Sleep_summarySleepTime: Sleep duration (mins).Sleep_summarysleepEfficiency：Sleep efficiency percentage, range is 0-100.Sleep_summarysleepAddMinute：Correct sleep duration length. Change the length of time from before falling asleep to add onto the time awake.</p></td>
+						<td><p>Report data, including parameters:、ReportStage_Work_out(1)、ReportStage_Sleep_summary(2).ReportStage_Work_out:Report Stage active,including parameters:Work_outCalories(Workout calories burned)、Work_outLengthNumber(Workout distance)、Work_outMeasureDate(Start time)、Work_outStepNumber(Workout number of steps)、Work_outTimeNumber(Length of workout)、dataID(data ID);ReportStage_Sleep_summary:Report Stage sleep,including parameters:Sleep_summaryMeasureDate（Sleep start time）、Sleep_summarySleepTime（Sleep duration）、Sleep_summarysleepAddMinute（Correct sleep duration length）、Sleep_summarysleepEfficiency（Sleep efficiency percentage, range is 0-100）</p></td>
 					</tr>
 				
 					<tr>
@@ -1006,7 +1014,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM3s report data.</p>
+				<p>Upload AM3S report data.</p>
 			</div>
 			
 
@@ -1086,6 +1094,263 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SQueryPicture:disposeErrorBlock:" title="commandAM3SQueryPicture:disposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SQueryPicture:disposeErrorBlock:">&ndash;&nbsp;commandAM3SQueryPicture:disposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query AM3S Picture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SQueryPicture:(DisposePicture)<em>disposePicture</em> disposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposePicture</code></th>
+						<td><p>Picture_one,Picture_two</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>see AM3S error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query AM3S Picture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3S.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandAM3SSetPicture:resultBlock:disposeErrorBlock:" title="commandAM3SSetPicture:resultBlock:disposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SSetPicture:resultBlock:disposeErrorBlock:">&ndash;&nbsp;commandAM3SSetPicture:resultBlock:disposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query AM3S Set Picture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SSetPicture:(AM3SPicture)<em>pictures</em> resultBlock:(DisposePictureSetting)<em>disposeSetPicture</em> disposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeSetPicture</code></th>
+						<td><p>True: Success，False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>see AM3S error descriptions.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>AM3SPicture</code></th>
+						<td><p>Picture_one,Picture_two</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query AM3S Set Picture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3S.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandQueryTimeFormat:disposeErrorBlock:" title="commandQueryTimeFormat:disposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandQueryTimeFormat:disposeErrorBlock:">&ndash;&nbsp;commandQueryTimeFormat:disposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query AM3S TimeFormat.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandQueryTimeFormat:(DisposeTimeFormat)<em>disposeTimeFormat</em> disposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeTimeFormat</code></th>
+						<td><p>AM3STimeFormat_hh,AM3STimeFormat_HH,AM3STimeFormat_NoEuropeAndhh,AM3STimeFormat_EuropeAndhh,AM3STimeFormat_NoEuropeAndHH,AM3STimeFormat_EuropeAndHH,</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>see AM3S error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query AM3S TimeFormat.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3S.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:" title="commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:">&ndash;&nbsp;commandQueryUserInfo:DisposeErrorBlock:DisposeUserInfo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get user infomation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandQueryUserInfo:(DisposeAM3SBlock)<em>disposeBlock</em> DisposeErrorBlock:(DisposeAM3SErrorBlock)<em>disposeErrorBlock</em> DisposeUserInfo:(DisposeAM3SUserInfo)<em>disposeUserInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>see AM3S error descriptions.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfoBlock</code></th>
+						<td><p>including parameters:age,steplength,height,gender,weight,unit,goal</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get user infomation</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3S.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1101,7 +1366,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 youdao. All rights reserved. Updated: 2016-06-17</p>
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

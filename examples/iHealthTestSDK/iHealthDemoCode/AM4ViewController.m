@@ -107,8 +107,8 @@
             NSLog(@"serialNub:%ld",(long)serialNub);
             
             userIDNumber = [NSNumber numberWithInt:serialNub];
-            
-            userIDNumber = @123456;
+//            userIDNumber = [NSNumber numberWithInt:12344780];
+
             
             [am4Instance commandAM4SyncTime:^(BOOL resetSuc) {
                 
@@ -128,8 +128,6 @@
                     } withFromCloudGetUserBinedDeviceMAC:^(NSString *deviceMAC) {
                         
                         NSLog(@"FromCloudGetUserBinedDeviceMAC:%@",deviceMAC);
-                        
-                    
                         
                         if (userIDNumber.intValue == myUser.userID.intValue)
                         {
@@ -185,7 +183,7 @@
 
 - (void)commandAM4SetUserInfo
 {
-    myUser.birthday = [NSDate dateWithTimeIntervalSince1970:0];
+    myUser.age = @12;
     myUser.sex = UserSex_Male;
     myUser.height = @165;
     myUser.weight = @55;
@@ -194,7 +192,7 @@
     myUser.activityLevel = @1;
     
     
-    [am4Instance commandAM4SetUserInfo:myUser withUnit:AM4KmUnit_mile withActiveGoal:@30 withSwimmingGoal:@33 withSetUserInfoFinishResult:^(BOOL resetSuc) {
+    [am4Instance commandAM4SetUserInfo:myUser withUnit:AM4KmUnit_mile withActiveGoal:@10000 withSwimmingGoal:@30 withSetUserInfoFinishResult:^(BOOL resetSuc) {
         NSLog(@"FinishResultok");
 
     } withSetBMR:^(BOOL resetSuc) {
@@ -235,13 +233,8 @@
         [am4Instance commandAM4SetUserID:userIDNumber withFinishResult:^(BOOL resetSuc) {
             
             NSLog(@"SetUserIDok");
-            
-        } withSetCloudBinedDevice:^(BOOL resetSuc) {
-            
-            NSLog(@"CloudBinedDeviceok");
-            
             [self commandAM4SetUserInfo];
-            
+
             
         } withErrorBlock:^(AM4ErrorID errorID) {
             
@@ -310,19 +303,16 @@
 
 - (IBAction)SyncStageData:(id)sender {
     
-//    [am4Instance commandAM4StartSyncStageDataCount:^(NSNumber *sportCount) {
-//        NSLog(@"StartSyncStageData --%@",sportCount);
-//
-//    } withStageData:^(NSArray *measureDataArray) {
-//        NSLog(@"historyData --%@",measureDataArray);
-//
-//    } withStageDataFinishTransmission:^(BOOL resetSuc) {
-//        NSLog(@"ok");
-//
-//    } withErrorBlock:^(AM4ErrorID errorID) {
-//        NSLog(@"AMErrorID:%d",errorID);
-//
-//    }];
+    [am4Instance commandAM4StartSyncStageData:^(NSArray *measureDataArray) {
+        NSLog(@"historyData --%@",measureDataArray);
+
+    } withStageDataFinishTransmission:^(BOOL resetSuc) {
+        NSLog(@"ok");
+
+    } withErrorBlock:^(AM4ErrorID errorID) {
+        NSLog(@"AMErrorID:%d",errorID);
+
+    }];
     
 }
 
@@ -342,9 +332,6 @@
 - (IBAction)commandAM4ResetDevice:(id)sender {
     [am4Instance commandAM4ResetDevice:^(BOOL resetSuc) {
         NSLog(@"ResetDevice Ok");
-
-    } withFromCloudDisBinedDevice:^(BOOL resetSuc) {
-        NSLog(@"DisBinedDevice Ok");
 
     } withErrorBlock:^(AM4ErrorID errorID) {
         NSLog(@"AMErrorID:%d",errorID);
@@ -384,7 +371,7 @@
 
 - (IBAction)commandAM4SetAlarmDictionary:(id)sender {
     
-    NSDictionary *tempClockDic = [NSDictionary dictionaryWithObjectsAndKeys:@2,@"AlarmId",@1,@"Sun",@"16:45",@"Time",@1,@"IsRepeat",@1,@"Switch",nil];
+    NSDictionary *tempClockDic = [NSDictionary dictionaryWithObjectsAndKeys:@2,@"AlarmId",@1,@"Sun",[NSDate date],@"Time",@1,@"IsRepeat",@1,@"Switch",nil];
 
     
     [am4Instance commandAM4SetAlarmDictionary:tempClockDic withFinishResult:^(BOOL resetSuc) {
@@ -458,23 +445,29 @@
 
 - (IBAction)commandAM4GetUserInfo:(id)sender {
     
-    [am4Instance commandAM4GetUserInfo:^(NSDictionary *userInfo) {
-        
-        NSLog(@"commandAM4GetUserInfo %@",userInfo);
-
+    [am4Instance commandAM4SetBMR:@11 withFinishResult:^(BOOL resetSuc) {
         
     } withErrorBlock:^(AM4ErrorID errorID) {
         
-        NSLog(@"AMErrorID:%d",errorID);
-
     }];
+    
+//    [am4Instance commandAM4GetUserInfo:^(NSDictionary *userInfo) {
+//        
+//        NSLog(@"commandAM4GetUserInfo %@",userInfo);
+//
+//        
+//    } withErrorBlock:^(AM4ErrorID errorID) {
+//        
+//        NSLog(@"AMErrorID:%d",errorID);
+//
+//    }];
 }
 
 - (IBAction)commandAM4GetSwimmingInfo:(id)sender {
     
     [am4Instance commandAM4GetSwimmingInfo:^(BOOL swimmingIsOpen, NSNumber *swimmingLaneLength, NSNumber *NOSwimmingTime, AM4SwimmingUnit unit) {
         
-        NSLog(@"commandAM4GetSwimmingInfo %hhd -%@-%@-%u",swimmingIsOpen,swimmingLaneLength,NOSwimmingTime,unit);
+        NSLog(@"commandAM4GetSwimmingInfo %d-%@-%@-%u",swimmingIsOpen,swimmingLaneLength,NOSwimmingTime,unit);
 
     } withErrorBlock:^(AM4ErrorID errorID) {
         

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SDKUpdateDevice Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealth </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shareSDKUpdateDeviceInstance">+ shareSDKUpdateDeviceInstance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:">- commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandGetUpdateModuleState:DisposeErrorBlock:">- commandGetUpdateModuleState:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:">- commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">- commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SDKUpdateDevice Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SDKUpdateDevice.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/shareSDKUpdateDeviceInstance" title="shareSDKUpdateDeviceInstance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shareSDKUpdateDeviceInstance">+&nbsp;shareSDKUpdateDeviceInstance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialize SDKUpdateDevice controller class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SDKUpdateDevice *)shareSDKUpdateDeviceInstance</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialize SDKUpdateDevice controller class</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:" title="commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:">&ndash;&nbsp;commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get device Version and cloudDeviceVersion.
+Import Parameters: UUIDString:device UUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandGetUpdateVersionWithDeviceUUID:(NSString *)<em>uuidString</em> DisposeUpdateVersionResult:(DisposeUpdateVersionResult)<em>updateVersionDic</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeUpdateVersionResult</code></th>
+						<td><p>include:DeviceType、DeviceVersion、DeviceStatus(1：YES，0：NO)、CloudDeviceVersion、KeepUpdateFlag（flag，0：firstUpdate，1：go on update）、UpdateProtocolVersion(100:Equipment upgrades returned directly after the success or failure 101:Upgrade is complete only on behalf of the firmware successfully transferred, reconnect the device after the upgrade success or failure).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeErrorBlock</code></th>
+						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get device Version and cloudDeviceVersion.
+Import Parameters: UUIDString:device UUID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandGetUpdateModuleState:DisposeErrorBlock:" title="commandGetUpdateModuleState:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandGetUpdateModuleState:DisposeErrorBlock:">&ndash;&nbsp;commandGetUpdateModuleState:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get Update Module State.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandGetUpdateModuleState:(UpdateModuleState)<em>updateModuleState</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>UpdateModuleState</code></th>
+						<td><p>(0:free,1:uploading)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeErrorBlock</code></th>
+						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get Update Module State.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:" title="commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:">&ndash;&nbsp;commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop Update.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandEndUpdateWithDeviceUUID:(NSString *)<em>uuidString</em> DisposeEndUpdateResult:(DisposeEndUpdateResult)<em>endUpdateResult</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeEndUpdateResult</code></th>
+						<td><p>（bool 1：sucess，0：fail）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeErrorBlock</code></th>
+						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Stop Update.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:" title="commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">&ndash;&nbsp;commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Update Device.
+Import Parameters: UUIDString:device UUID.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandStartUpdateWithDeviceUUID:(NSString *)<em>uuidString</em> DownloadFirmwareStart:(DisposeDownloadFirmwareStart)<em>disposeDownloadFirmwareStart</em> DisposeDownloadFirmwareFinish:(DisposeDownloadFirmwareFinish)<em>disposeDownloadFirmwareFinish</em> DisposeUpdateProgress:(DisposeUpdateProgress)<em>disposeUpdateProgress</em> DisposeUpdateResult:(DisposeUpdateResult)<em>disposeUpdateResult</em> TransferSuccess:(TransferSuccess)<em>transferSuccess</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeDownloadFirmwareFinish:</code></th>
+						<td><p>finish update firmware from cloud.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeUpdateProgress:</code></th>
+						<td><p>Update Device progress（0-100）.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeUpdateResult:</code></th>
+						<td><p>Update Device result（bool 1：sucess，0：fail）Applicable to the protocol of 100.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>TransferSuccess:</code></th>
+						<td><p><a href="../Blocks/TransferSuccess.html">TransferSuccess</a> Applicable to the protocol of 101.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeErrorBlock</code></th>
+						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeDownloadFirmwareStart:</code></th>
+						<td><p>start update firmware from cloud.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Update Device.
+Import Parameters: UUIDString:device UUID.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

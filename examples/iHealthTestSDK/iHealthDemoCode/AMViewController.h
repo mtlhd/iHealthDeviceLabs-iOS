@@ -9,28 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AMHeader.h"
 
-@interface AMViewController : UIViewController{
-    AM3 *tempAM3Instance;
-    AM3S *tempAM3SInstance;
-    NSInteger tempCloudUserSerialNub;
-}
+@interface AMViewController : UIViewController
 - (IBAction)pushAM4:(UIButton *)sender;
+- (IBAction)pushAM3:(UIButton *)sender;
+- (IBAction)pushAM3S:(UIButton *)sender;
 
-@property (weak, nonatomic) IBOutlet UITextView *tipTextView;
+- (IBAction)pushAM3S_V2:(UIButton *)sender;
 
-@property (weak, nonatomic) IBOutlet UITextField *randomTextField;
-
-- (IBAction)AM3_ClockQuery:(id)sender;
-- (IBAction)AM3_ReminderQuery:(id)sender;
-- (IBAction)AM3_Reset:(id)sender;
-
-- (IBAction)AM3S_BinedUser:(id)sender;
-- (IBAction)AM3S_ClockQuery:(id)sender;
-- (IBAction)AM3S_ReminderQuery:(id)sender;
-- (IBAction)AM3S_Reset:(id)sender;
-- (IBAction)touchBackgroundPressed:(id)sender;
-- (IBAction)scanDevice:(UIButton *)sender;
-
-- (IBAction)stopScan:(UIButton *)sender;
 
 @end

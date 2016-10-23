@@ -8,7 +8,6 @@
 
 #import "BPViewController.h"
 #import "BPHeader.h"
-#import "HTSHeader.h"
 #import "HealthHeader.h"
 #import "ConnectDeviceController.h"
 #import "ScanDeviceController.h"
@@ -47,6 +46,7 @@
     self.abpmSetTimeIntervalBtn.hidden=YES;
     self.abpmOfflineDataBtn.hidden= YES;
     self.abpmEnergyBtn.hidden=YES;
+    self.ContinuaBPOutlet.hidden=YES;
     
     discoverBP3LDevices=[[NSMutableArray alloc]init];
     discoverBP7SDevices=[[NSMutableArray alloc]init];
@@ -55,6 +55,7 @@
     discoverKN550BTDevices=[[NSMutableArray alloc]init];
     discoverABPMDevices=[[NSMutableArray alloc]init];
     discoverHTSDevices=[[NSMutableArray alloc]init];
+    discoverContinuaBPDevices=[[NSMutableArray alloc]init];
     
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBP3:) name:BP3ConnectNoti object:nil];
@@ -66,20 +67,45 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBP7:) name:BP7ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBP7:) name:BP7DisConnectNoti object:nil];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LDiscover:) name:BP3LDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LConnectFailed:) name:BP3LConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBP3L:) name:BP3LConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBP3L:) name:BP3LDisConnectNoti object:nil];
-    
+    //BP7S
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SDiscover:) name:BP7SDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SConnectFailed:) name:BP7SConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForBP7S:) name:BP7SConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForBP7S:) name:BP7SDisConnectNoti object:nil];
+    
+    //KN-550BT
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTDiscover:) name:KN550BTDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTConnectFailed:) name:KN550BTConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForKN550BT:) name:KN550BTConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForKN550BT:) name:KN550BTDisConnectNoti object:nil];
+    
+    //KD-926
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926Discover:) name:KD926Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926ConnectFailed:) name:KD926ConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForKD926:) name:KD926ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForKD926:) name:KD926DisConnectNoti object:nil];
     
+    //KD-723
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD723Discover:) name:KD723Discover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD723ConnectFailed:) name:KD723ConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForKD723:) name:KD723ConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForKD723:) name:KD723DisConnectNoti object:nil];
+    
+    // ABPM
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceABPMDiscover:) name:ABPMDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceABPMConnectFailed:) name:ABPMConnectFailed object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForABPM:) name:ABPMConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForABPM:) name:ABPMDisConnectNoti object:nil];
+    
+    // ContinuaBP
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceContinuaBPDiscover:) name:ContinuaBPDiscover object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceContinuaBPConnectFailed:) name:ContinuaBPConnectFailed object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForContinuaBP:) name:ContinuaBPConnectNoti object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForContinuaBP:) name:ContinuaBPDisConnectNoti object:nil];
     
     //ABI Noti(Contains Arm and Leg)
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForABI:) name:ABIConnectNoti object:nil];
@@ -88,30 +114,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceConnectForArm:) name:ArmConnectNoti object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DeviceDisConnectForArm:) name:ArmDisConnectNoti object:nil];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LDiscover:) name:BP3LDiscover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP3LConnectFailed:) name:BP3LConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SDiscover:) name:BP7SDiscover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceBP7SConnectFailed:) name:BP7SConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926Discover:) name:KD926Discover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD926ConnectFailed:) name:KD926ConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD723Discover:) name:KD723Discover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKD723ConnectFailed:) name:KD723ConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceABPMDiscover:) name:ABPMDiscover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceABPMConnectFailed:) name:ABPMConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTDiscover:) name:KN550BTDiscover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceKN550BTConnectFailed:) name:KN550BTConnectFailed object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceHTSDiscover:) name:HTSDiscover object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceHTSConnectFailed:) name:HTSConnectFailed object:nil];
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSResultShow:) name:@"HTSResultShow" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLevelShow:) name:@"batteryLevelShow" object:nil];
-    
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(HTSBatteryLeve:) name:@"DeviceOpenSession" object:nil];
     
     [BP3Controller shareBP3Controller];
-    
-    [HTSController shareIHHTSController];
     
     [BP5Controller shareBP5Controller];
     [BP7Controller shareBP7Controller];
@@ -133,64 +137,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)HTSBatteryLeve:(NSNotification*)notic{
-    
-    NSArray*attay=[[HTSController shareIHHTSController] getAllCurrentHTSInstace];
-    
-    if (attay.count>0) {
-        
-        HTS*hts=[attay objectAtIndex:0];
-        
-        HealthUser*user=[[HealthUser alloc] init];;
-        
-        user.clientSecret=@"2407103b306943fcb33ef2863ae84988";
-        
-        user.clientID=@"e8776dc12c3d4a6796a722971b1cc0b4";
-        
-        user.userID=@"w@w.w";
-        //HTS 获取温度数据
-        [hts commandTestHTSWithUser:user Authentication:^(UserAuthenResult result) {
-            
-            
-        } DisposeHTSResult:^(NSDictionary *resetDic) {
-            _tipTextView.text=[NSString stringWithFormat:@"HTS Result:%@",resetDic];
-            
-        } DisposeErrorBlock:^(HTSDeviceError errorID) {
-            
-        }];
-        //HTS要电量
-        [hts commandGetBattary:^(NSNumber *battary) {
-            _tipTextView.text=[NSString stringWithFormat:@"%@\nHTS Battery:%@",_tipTextView.text,battary];
-        } DisposeErrorBlock:^(HTSDeviceError errorID) {
-            
-        }];
-        
-    }
-    
-}
-
--(void)HTSResultShow:(NSNotification *)notify
-{
-    NSDictionary *tempDic = notify.object;
-    
-    NSString *cTemperatureStr=[tempDic objectForKey:@"cTemperature"];
-    NSString *fTemperatureStr=[tempDic objectForKey:@"fTemperature"];
-    NSString *timeTextStr=[tempDic objectForKey:@"timeStamp"];
-    NSString *typeTextStr=[tempDic objectForKey: @"measurePosition"];
-    
-    _tipTextView.text=[NSString stringWithFormat:@"Temperature: %@  %@\nTime: %@\nPosition: %@ \n%@",cTemperatureStr,fTemperatureStr,timeTextStr,typeTextStr,_tipTextView.text];
-    
-}
-
--(void)HTSBatteryLevelShow:(NSNotification *)notify
-{
-    NSDictionary *tempDic = notify.object;
-    
-    NSString *batteryLevelStr=[tempDic objectForKey:@"batteryLevelShow"];
-    
-    _tipTextView.text=[NSString stringWithFormat:@"Battery Level: %@\n %@",batteryLevelStr,_tipTextView.text];
-    
-}
 
 /*
  #pragma mark - Navigation
@@ -240,6 +186,34 @@
 
 
 #pragma mark - BP3L
+- (IBAction)startScanBP3LBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP3L];
+}
+- (IBAction)startConnectBP3LBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverBP3LDevices count]>0 ) {
+        NSString *serialNub=[discoverBP3LDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP3L andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceBP3LDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverBP3LDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP3LDevices:%@",_tipTextView.text,discoverBP3LDevices];
+    
+}
+
+-(void)deviceBP3LConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP3L];
+}
+
 -(void)DeviceConnectForBP3L:(NSNotification *)tempNoti{
     BP3LController *controller = [BP3LController shareBP3LController];
     NSArray *bpDeviceArray = [controller getAllCurrentBP3LInstace];
@@ -354,6 +328,36 @@
 }
 
 #pragma mark - BP7S
+- (IBAction)startScanBP7SBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP7S];
+}
+- (IBAction)startConnectBP7SBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverBP7SDevices count]>0 ) {
+        NSString *serialNub=[discoverBP7SDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP7S andSerialNub:serialNub];
+    }
+}
+-(void)deviceBP7SDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    [discoverBP7SDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP7SDevices:%@",_tipTextView.text,discoverBP7SDevices];
+    
+}
+
+-(void)deviceBP7SConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+
 -(void)DeviceConnectForBP7S:(NSNotification *)tempNoti{
     BP7SController *controller = [BP7SController shareBP7SController];
     NSArray *bpDeviceArray = [controller getAllCurrentBP7SInstace];
@@ -397,6 +401,37 @@
 }
 
 #pragma mark - KN550BT
+- (IBAction)startScanKN550BTBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KN550BT];
+}
+
+- (IBAction)startConnectKN550BTBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverKN550BTDevices count]>0 ) {
+        NSString *serialNub=[discoverKN550BTDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KN550BT andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceKN550BTDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverKN550BTDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKN550BTDevices:%@",_tipTextView.text,discoverKN550BTDevices];
+}
+
+-(void)deviceKN550BTConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+}
+
 -(void)DeviceConnectForKN550BT:(NSNotification *)tempNoti{
     KN550BTController *controller = [KN550BTController shareKN550BTController];
     NSArray *bpDeviceArray = [controller getAllCurrentKN550BTInstace];
@@ -440,6 +475,38 @@
 }
 
 #pragma mark - KD926
+- (IBAction)startScanKD926Botton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD926];
+}
+- (IBAction)startConnectKD926Botton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverKD926Devices count]>0 ) {
+        NSString *serialNub=[discoverKD926Devices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KD926 andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceKD926Discover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverKD926Devices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKD926Devices:%@",_tipTextView.text,discoverKD926Devices];
+    
+}
+
+-(void)deviceKD926ConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD926];
+}
+
 -(void)DeviceConnectForKD926:(NSNotification *)tempNoti{
     
     NSDictionary *infoDic = [tempNoti userInfo];
@@ -534,6 +601,38 @@
     }
 }
 #pragma mark - KD723
+- (IBAction)startScanKD723Botton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD723];
+}
+- (IBAction)startConnectKD723Botton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverKD723Devices count]>0 ) {
+        NSString *serialNub=[discoverKD723Devices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KD723 andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceKD723Discover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverKD723Devices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKD723Devices:%@",_tipTextView.text,discoverKD723Devices];
+    
+}
+
+-(void)deviceKD723ConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD723];
+}
+
 -(void)DeviceConnectForKD723:(NSNotification *)tempNoti{
     
     NSDictionary *infoDic = [tempNoti userInfo];
@@ -635,10 +734,43 @@
 }
 
 #pragma mark - ABPM
+- (IBAction)startScanABPMBotton:(id)sender {
+    NSLog(@"开始扫描");
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_ABPM];
+}
+- (IBAction)startConnectABPMBotton:(id)sender {
+    
+    NSLog(@"开始连接");
+    if ([discoverABPMDevices count]>0 ) {
+        NSString *serialNub=[discoverABPMDevices objectAtIndex:0];
+        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_ABPM andSerialNub:serialNub];
+    }
+}
+
+-(void)deviceABPMDiscover:(NSNotification*)info {
+    
+    NSLog(@"Disover:%@",[info userInfo]);
+    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
+    if(serialNub==nil)
+    {
+        serialNub = [[info userInfo]valueForKey:@"ID"];
+    }
+    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
+    [discoverABPMDevices addObject:serialNub];
+    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverABPMDevices:%@",_tipTextView.text,discoverABPMDevices];
+    
+}
+-(void)deviceABPMConnectFailed:(NSNotification*)info {
+    NSLog(@"连接失败:%@",[info userInfo]);
+    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_ABPM];
+}
+
 -(void)DeviceConnectForABPM:(NSNotification *)tempNoti{
     
     NSDictionary *infoDic = [tempNoti userInfo];
     self.currentABPMUUIDStr = [infoDic objectForKey:@"ID"];
+    
+    
     
     self.abpmSetTimeIntervalBtn.hidden=NO;
     self.abpmEnergyBtn.hidden=NO;
@@ -748,6 +880,8 @@
         }];
     }
 }
+
+
 
 #pragma mark - ABI
 -(void)DeviceConnectForABI:(NSNotification *)tempNoti{
@@ -869,202 +1003,8 @@
         }];
     }
 }
-- (IBAction)startScanBP3LBotton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP3L];
-}
-- (IBAction)startConnectBP3LBotton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverBP3LDevices count]>0 ) {
-        NSString *serialNub=[discoverBP3LDevices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP3L andSerialNub:serialNub];
-    }
-}
-- (IBAction)startScanBP7SBotton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP7S];
-}
-- (IBAction)startConnectBP7SBotton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverBP7SDevices count]>0 ) {
-        NSString *serialNub=[discoverBP7SDevices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_BP7S andSerialNub:serialNub];
-    }
-}
-- (IBAction)startScanKD926Botton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD926];
-}
-- (IBAction)startConnectKD926Botton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverKD926Devices count]>0 ) {
-        NSString *serialNub=[discoverKD926Devices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KD926 andSerialNub:serialNub];
-    }
-}
-
-- (IBAction)startScanKD723Botton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD723];
-}
-- (IBAction)startConnectKD723Botton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverKD723Devices count]>0 ) {
-        NSString *serialNub=[discoverKD723Devices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KD723 andSerialNub:serialNub];
-    }
-}
-- (IBAction)startScanABPMBotton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_ABPM];
-}
-- (IBAction)startConnectABPMBotton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverABPMDevices count]>0 ) {
-        NSString *serialNub=[discoverABPMDevices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_ABPM andSerialNub:serialNub];
-    }
-}
-
-- (IBAction)startScanKN550BTBotton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KN550BT];
-}
-- (IBAction)startConnectKN550BTBotton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverKN550BTDevices count]>0 ) {
-        NSString *serialNub=[discoverKN550BTDevices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_KN550BT andSerialNub:serialNub];
-    }
-}
-- (IBAction)startScanHTSBotton:(id)sender {
-    NSLog(@"开始扫描");
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_HTS];
-}
-- (IBAction)startConnectHTSBotton:(id)sender {
-    
-    NSLog(@"开始连接");
-    if ([discoverHTSDevices count]>0 ) {
-        NSString *serialNub=[discoverHTSDevices objectAtIndex:0];
-        [[ConnectDeviceController commandGetInstance]commandContectDeviceWithDeviceType:HealthDeviceType_HTS andSerialNub:serialNub];
-    }
-}
-
--(void)deviceBP3LDiscover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverBP3LDevices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP3LDevices:%@",_tipTextView.text,discoverBP3LDevices];
-    
-}
--(void)deviceBP7SDiscover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    if(serialNub==nil)
-    {
-        serialNub = [[info userInfo]valueForKey:@"ID"];
-    }
-    [discoverBP7SDevices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverBP7SDevices:%@",_tipTextView.text,discoverBP7SDevices];
-    
-}
--(void)deviceKN550BTDiscover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    if(serialNub==nil)
-    {
-        serialNub = [[info userInfo]valueForKey:@"ID"];
-    }
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverKN550BTDevices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKN550BTDevices:%@",_tipTextView.text,discoverKN550BTDevices];
-}
--(void)deviceKD926Discover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    if(serialNub==nil)
-    {
-        serialNub = [[info userInfo]valueForKey:@"ID"];
-    }
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverKD926Devices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKD926Devices:%@",_tipTextView.text,discoverKD926Devices];
-    
-}
--(void)deviceKD723Discover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    if(serialNub==nil)
-    {
-        serialNub = [[info userInfo]valueForKey:@"ID"];
-    }
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverKD723Devices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverKD723Devices:%@",_tipTextView.text,discoverKD723Devices];
-    
-}
--(void)deviceABPMDiscover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    if(serialNub==nil)
-    {
-        serialNub = [[info userInfo]valueForKey:@"ID"];
-    }
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverABPMDevices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverABPMDevices:%@",_tipTextView.text,discoverABPMDevices];
-    
-}
--(void)deviceHTSDiscover:(NSNotification*)info {
-    
-    NSLog(@"Disover:%@",[info userInfo]);
-    NSString *serialNub = [[info userInfo]valueForKey:@"SerialNumber"];
-    self.tipTextView.text=[NSString stringWithFormat:@"扫描到设备：%@",serialNub];
-    [discoverHTSDevices addObject:serialNub];
-    _tipTextView.text = [NSString stringWithFormat:@"%@\ndiscoverHTSDevices:%@",_tipTextView.text,discoverHTSDevices];
-}
 
 
--(void)deviceBP3LConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_BP3L];
-}
--(void)deviceBP7SConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-}
--(void)deviceKN550BTConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-}
--(void)deviceKD926ConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD926];
-}
--(void)deviceKD723ConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_KD723];
-}
--(void)deviceABPMConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-    [[ScanDeviceController commandGetInstance]commandScanDeviceType:HealthDeviceType_ABPM];
-}
-
--(void)deviceHTSConnectFailed:(NSNotification*)info {
-    NSLog(@"连接失败:%@",[info userInfo]);
-}
 
 
 @end

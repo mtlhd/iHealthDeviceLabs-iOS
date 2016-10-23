@@ -66,6 +66,7 @@ typedef void (^DisposeBG1ErrorBlock)(NSNumber* errorID);
 #pragma mark  发送CODE
 -(Boolean)solveEncodeContent:(NSString *)encodeString validDate:(NSString*)date remainNum:(NSNumber*)num;
 -(Boolean)solveEncodeContent:(NSString *)encodeString dataOwner:(NSString *)dataOwnerID;
+-(void)solveEncodeforOneCodeWithDataOwner:(NSString *)dataOwnerID;
 
 -(void)SendBG1SimpleCode: (NSString *)to;
 -(void)SendBG1FullCode: (NSString *)to;

@@ -45,7 +45,7 @@
     [HS5Controller shareIHHs5Controller];
     
     
-    [[ScanDeviceController commandGetInstance] commandScanDeviceType:HealthDeviceType_HS4];
+//    [[ScanDeviceController commandGetInstance] commandScanDeviceType:HealthDeviceType_HS4];
     
 }
 
@@ -310,7 +310,29 @@
                     } Disposehs5ErrorBlock:^(HS5DeviceError errorID) {
                         NSLog(@"HS5DeviceError:%d",errorID);
                     }];
+                }else{
+                    
+                    
+                    myUser.birthday = [NSDate dateWithTimeIntervalSince1970:0];
+                    myUser.sex = UserSex_Male;
+                    myUser.isAthlete = UserIsAthelete_Yes;
+                    myUser.height = @180;
+                    myUser.serialNub=@74794;
+                    //create user
+                    [hsInstance commandCreateUser:myUser position:0  DisposeHS5Result:^(BOOL resetSuc) {
+                        NSLog(@"DisposeHS5Result:%d",resetSuc);
+                        
+                        //measure
+                        [self commandStartMeasure:hsInstance withUser:myUser];
+                        
+                    } Disposehs5ErrorBlock:^(HS5DeviceError errorID) {
+                        NSLog(@"HS5DeviceError:%d",errorID);
+                    }];
+                    
+                    
+                    
                 }
+
                 
             }
             

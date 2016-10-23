@@ -93,6 +93,33 @@
             _tipTextView.text = [NSString stringWithFormat:@"idpsDic:%@",idpsDic];
         } DisposeConnectBGBlock:^(BOOL result) {
             if(result==true){
+                 NSString *oneCodeFlgStr=@"c2h45b8f77c4775e24fa221a7e93d79e74e75f";
+                [bgInstance commandCreateBGtestWithUser:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
+                    NSLog(@"Authentication Result:%d",result);
+                    _tipTextView.text = [NSString stringWithFormat:@"Authentication Result:%d",result];
+                }WithCode:oneCodeFlgStr DisposeBGSendCodeBlock:^(BOOL sendOk) {
+                    NSLog(@"DisposeBGSendCodeBlock:%d",sendOk);
+                    _tipTextView.text = [NSString stringWithFormat:@"DisposeBGSendCodeBlock:%d",sendOk];
+                } DisposeBGStripInBlock:^(BOOL stripIn) {
+                    NSLog(@"stripIn:%d",stripIn);
+                    _tipTextView.text = [NSString stringWithFormat:@"stripIn:%d",stripIn];
+                } DisposeBGBloodBlock:^(BOOL blood) {
+                    NSLog(@"blood:%d",blood);
+                    _tipTextView.text = [NSString stringWithFormat:@"blood:%d",blood];
+                } DisposeBGResultBlock:^(NSDictionary *result) {
+                    NSLog(@"result:%@",result);
+                    _tipTextView.text = [NSString stringWithFormat:@"result:%@",result];
+                }DisposeBGStripOutBlock:^(BOOL stripOut) {
+                    NSLog(@"stripOut:%d",stripOut);
+                    _tipTextView.text = [NSString stringWithFormat:@"stripOut:%d",stripOut];
+                } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                    NSLog(@"errorID:%@",errorID);
+                    _tipTextView.text = [NSString stringWithFormat:@"errorID:%@",errorID];
+                }];
+            }
+        } DisposeBGErrorBlock:^(NSNumber *errorID) {
+            if([errorID isEqual:@4])
+            {
                 [bgInstance commandCreateBGtestWithUser:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
                     NSLog(@"Authentication Result:%d",result);
                     _tipTextView.text = [NSString stringWithFormat:@"Authentication Result:%d",result];
@@ -116,14 +143,28 @@
                     _tipTextView.text = [NSString stringWithFormat:@"errorID:%@",errorID];
                 }];
             }
-        } DisposeBGErrorBlock:^(NSNumber *errorID) {
-            
         }];
     }
 }
 
 -(void)DeviceDisConnectForBG1:(NSNotification *)tempNoti{
     
+}
+
+-(void)letUserEnableMicrophoneForBG1
+{
+    NSString *alertString = nil;
+    BOOL iPad = NO;
+    if (iPad) {
+        alertString = NSLocalizedString(@"\"iGluco\" would like to access the microphone. To enable access go to:iPad Settings > Privacy > Microphone > iGluco > set to On", @"");
+    }
+    else
+        alertString = NSLocalizedString(@"\"iGluco\" would like to access the microphone. To enable access go to:iPhone Settings > Privacy > Microphone > iGluco > set to On", @"");
+    [[[UIAlertView alloc] initWithTitle:nil
+                                message:alertString
+                               delegate:nil
+                      cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                      otherButtonTitles:nil]  show];
 }
 
 -(void)DeviceConnectForBG3:(NSNotification *)tempNoti{
@@ -160,7 +201,7 @@
     
     if(bgArray.count>0){
         BG5 *bgInstance = [bgArray objectAtIndex:0];
-        
+        NSString *oneCodeFlgStr=@"c2h45b8f77c4775e24fa221a7e93d79e74e75f";
         NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
         NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
         
@@ -197,55 +238,91 @@
 -(void)DeviceDisConnectForBG5:(NSNotification *)tempNoti{
     
 }
+- (IBAction)getBG5Energy:(id)sender {
+    BG5Controller *bgController = [BG5Controller shareIHBg5Controller];
+    NSArray *bgArray = [bgController getAllCurrentBG5Instace];
+    
+    if(bgArray.count>0){
+        BG5 *bgInstance = [bgArray objectAtIndex:0];
+        /* 支持电量显示功能 */
+        [bgInstance commandQueryBattery:^(NSNumber *energy) {
+            
+            int batteryPercent = [energy intValue];
+            // BG5充电时返回大于100的数据
+            if (batteryPercent>100)
+            {
+                batteryPercent=100;
+            }
+            /* 发通知显示电量 */
+            _tipTextView.text = [NSString stringWithFormat:@"%@\n电量为：%@",_tipTextView.text,energy];
+            
+        } DisposeErrorBlock:^(NSNumber *errorID) {
+            if([errorID isEqual:@112])
+            {
+                NSLog(@"这个BG5不支持要电量");
+            }
+            
+        }];
+        
+        
+    }
+}
 -(void)commandSendCode:(BG5 *)bgInstance{
+    NSString *oneCodeFlgStr=@"c2h45b8f77c4775e24fa221a7e93d79e74e75f";
+    
     NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
     NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
     NSDate *yourValidDate = [codeDic valueForKey:@"DueDate"];
     NSNumber *yourRemainNub = [codeDic valueForKey:@"StripNum"];
     
+    //根据需要间隔10s循环调用，以保证用户扫码期间，BG5保持连接。
+    [bgInstance commandKeepConnect:^(BOOL sendOk) {
+        NSLog(@"keep Connected:%d ",sendOk);
     //send code
-    [bgInstance commandSendBGCodeString:CodeStr bottleID:yourBottle validDate:yourValidDate remainNum:yourRemainNub DisposeBGSendCodeBlock:^(BOOL sendOk) {
-        NSLog(@"send code success");
-    } DisposeBGStartModel:^(BGOpenMode model) {
-        NSLog(@"BGOpenMode:%d",model);
-        //strip open mode
-        if (model==BGOpenMode_Hand) {
-            //start measure mode 0
-            [bgInstance commandCreateBGtestModel:BGMeasureMode_Blood DisposeBGStripInBlock:^(BOOL stripIn) {
-                NSLog(@"stripIn");
-            } DisposeBGBloodBlock:^(BOOL blood) {
-                NSLog(@"blood");
-            } DisposeBGResultBlock:^(NSDictionary *result) {
-                NSLog(@"result:%@",result);
-            } DisposeBGTestModelBlock:^(BGMeasureMode model) {
-                //0
-                //1 blood mode
-                NSLog(@"BGMeasureMode:%d",model);
-            } DisposeBGErrorBlock:^(NSNumber *errorID) {
-                NSLog(@"errorID:%@",errorID);
-            }];
-        }
-        else{
-            //start measure mode 1
-            [bgInstance commandCreateBGtestStripInBlock:^(BOOL stripIn) {
-                NSLog(@"stripIn");
-            } DisposeBGBloodBlock:^(BOOL blood) {
-                NSLog(@"blood");
-            } DisposeBGResultBlock:^(NSDictionary *result) {
-                NSLog(@"result:%@",result);
-            } DisposeBGTestModelBlock:^(BGMeasureMode model) {
-                //0
-                //1 blood mode
-                NSLog(@"BGMeasureMode:%d",model);
-            } DisposeBGErrorBlock:^(NSNumber *errorID) {
-                NSLog(@"errorID:%@",errorID);
-            }];
-        }
+        [bgInstance commandSendBGCodeString:CodeStr bottleID:yourBottle validDate:yourValidDate remainNum:yourRemainNub DisposeBGSendCodeBlock:^(BOOL sendOk) {
+            NSLog(@"send code success");
+        } DisposeBGStartModel:^(BGOpenMode model) {
+            NSLog(@"BGOpenMode:%d",model);
+            //strip open mode
+            if (model==BGOpenMode_Hand) {
+                //start measure mode 0
+                [bgInstance commandCreateBGtestModel:BGMeasureMode_Blood DisposeBGStripInBlock:^(BOOL stripIn) {
+                    NSLog(@"stripIn");
+                } DisposeBGBloodBlock:^(BOOL blood) {
+                    NSLog(@"blood");
+                } DisposeBGResultBlock:^(NSDictionary *result) {
+                    NSLog(@"result:%@",result);
+                } DisposeBGTestModelBlock:^(BGMeasureMode model) {
+                    //0
+                    //1 blood mode
+                    NSLog(@"BGMeasureMode:%d",model);
+                } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                    NSLog(@"errorID:%@",errorID);
+                }];
+            }
+            else{
+                //start measure mode 1
+                [bgInstance commandCreateBGtestStripInBlock:^(BOOL stripIn) {
+                    NSLog(@"stripIn");
+                } DisposeBGBloodBlock:^(BOOL blood) {
+                    NSLog(@"blood");
+                } DisposeBGResultBlock:^(NSDictionary *result) {
+                    NSLog(@"result:%@",result);
+                } DisposeBGTestModelBlock:^(BGMeasureMode model) {
+                    //0
+                    //1 blood mode
+                    NSLog(@"BGMeasureMode:%d",model);
+                } DisposeBGErrorBlock:^(NSNumber *errorID) {
+                    NSLog(@"errorID:%@",errorID);
+                }];
+            }
+            
+        } DisposeBGErrorBlock:^(NSNumber *errorID) {
+            NSLog(@"errorID:%@",errorID);
+        }];
+    } DisposeErrorBlock:^(NSNumber *errorID) {
         
-    } DisposeBGErrorBlock:^(NSNumber *errorID) {
-        NSLog(@"errorID:%@",errorID);
     }];
-    
 }
 
 
@@ -301,7 +378,8 @@
     if(bgArray.count>0){
         BG5L *bgInstance = [bgArray objectAtIndex:0];
         
-        NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:CodeStr];
+        NSString *oneCodeFlgStr=@"c2h45b8f77c4775e24fa221a7e93d79e74e75f";
+        NSDictionary *codeDic = [bgInstance codeStripStrAnalysis:oneCodeFlgStr];
         NSNumber *yourBottle = [codeDic valueForKey:@"BottleID"];
         
         
@@ -344,8 +422,9 @@
     NSDate *yourValidDate = [codeDic valueForKey:@"DueDate"];
     NSNumber *yourRemainNub = [codeDic valueForKey:@"StripNum"];
     
+    NSString *oneCodeFlgStr=@"c2h45b8f77c4775e24fa221a7e93d79e74e75f";
     //send code
-    [bgInstance commandSendBGCodeString:CodeStr bottleID:yourBottle validDate:yourValidDate remainNum:yourRemainNub DisposeBGSendCodeBlock:^(BOOL sendOk) {
+    [bgInstance commandSendBGCodeString:oneCodeFlgStr bottleID:yourBottle validDate:yourValidDate remainNum:yourRemainNub DisposeBGSendCodeBlock:^(BOOL sendOk) {
         NSLog(@"send code success");
     } DisposeBGStartModel:^(BGOpenMode model) {
         NSLog(@"BGOpenMode:%d",model);

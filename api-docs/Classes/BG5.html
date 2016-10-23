@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">iHealth </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">iHealth</a>
 			</p>
 			
 		</div>
@@ -73,6 +73,10 @@
 		<option value="//api/name/commandDeleteMemorryData:">- commandDeleteMemorryData:</option>
 		
 		<option value="//api/name/commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandKeepConnect:DisposeErrorBlock:">- commandKeepConnect:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandQueryBattery:DisposeErrorBlock:">- commandQueryBattery:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">- commandReadBGCodeDic:DisposeBGErrorBlock:</option>
 		
@@ -228,8 +232,8 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock,</code></th>
-						<td><p>The error code, please refer to the error list.</p></td>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 					<tr>
@@ -302,7 +306,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>The error code, please refer to the error list.</p></td>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 				</table>
@@ -418,12 +422,12 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGCodeDic</code></th>
-						<td><p>This block returns the information of the code, bottleID means the strip ID, Strips means the number of strips which has been used, Date means expired date.</p></td>
+						<td><p>This block returns the information of the code, Strips means the number of strips which has been used, Date means expired date.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns yes means deleted success.</p></td>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 				</table>
@@ -486,7 +490,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>bottleID</code></th>
-						<td><p>Generate from the QR code through some algorithms.</p></td>
+						<td><p>Generate from the QR code through some algorithms,ranging from 0-0xFFFFFFFF.</p></td>
 					</tr>
 				
 					<tr>
@@ -496,7 +500,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>num</code></th>
-						<td><p>the number of strips which is last. num = 0 will determine the measurement.</p></td>
+						<td><p>the number of strips which is last,ranging from 0-255. num = 0 will determine the measurement.</p></td>
 					</tr>
 				
 					<tr>
@@ -510,8 +514,8 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock，error</code></th>
-						<td><p>codes.</p></td>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 				</table>
@@ -589,7 +593,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes.</p></td>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 				</table>
@@ -672,7 +676,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>Returns error codes.</p></td>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
 				</table>
@@ -761,6 +765,134 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandQueryBattery:DisposeErrorBlock:" title="commandQueryBattery:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandQueryBattery:DisposeErrorBlock:">&ndash;&nbsp;commandQueryBattery:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query battery remaining energy</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandQueryBattery:(DisposeBGBatteryBlock)<em>disposeBatteryBlock</em> DisposeErrorBlock:(DisposeBGErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBatteryBlock</code></th>
+						<td><p>A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query battery remaining energy</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandKeepConnect:DisposeErrorBlock:" title="commandKeepConnect:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandKeepConnect:DisposeErrorBlock:">&ndash;&nbsp;commandKeepConnect:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Keep the connection
+Keep the connection to wait for user to scan code,need to loop call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandKeepConnect:(DisposeBG5KeepConnectBlock)<em>disposeBG5KeepConnectBlock</em> DisposeErrorBlock:(DisposeBGErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBG5KeepConnectBlock</code></th>
+						<td><p>A block returns the result of the keeping connection order,&lsquo;YES&rsquo; means setting success.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Keep the connection
+Keep the connection to wait for user to scan code,need to loop call.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -776,7 +908,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 youdao. All rights reserved. Updated: 2016-06-17</p>
+						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

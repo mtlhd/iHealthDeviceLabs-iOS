@@ -1,7 +1,7 @@
 # iHealth Device Developer 
 
 
-###Latest version: 2.0.5
+###Latest version: 2.0.7
 
 
 ###Documnentation
@@ -13,7 +13,7 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
     iHealth Bp3    iHealth Bp5   iHealth Bp7   iHealth Bp7S   iHealth Bp3l   iHealth KD926 iHealth KN550BT iHealth      Abi   ABPM   KD723
     
     HS: 
-    iHealth Hs3    iHealth Hs4   iHealth Hs4s(Same with Hs4)   iHealth Hs5  
+    iHealth Hs3    iHealth Hs4   iHealth Hs4s(Same with Hs4)   iHealth Hs5  iHealth Hs6 
     
     AM: 
     iHealth Am3    iHealth Am3s   iHealth Am4  
@@ -25,7 +25,9 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
     iHealth Po3     
 
 
+### Support Update iHealth Device for iOS
 
+    AM3 AM3S AM4 HS4 HS4S
 
 ### Relevant files and frameworks
 1、Import the following iHealthSDK files：   
@@ -36,10 +38,10 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
     
     
 	HS: 
-	HSHeader.h、HSMacroFile.h、HS3.h、HS3Controller.h、HS4.h、HS4Controller.h、 HS5.h、HS5Controller.h、
+	HSHeader.h、HSMacroFile.h、HS3.h、HS3Controller.h、HS4.h、HS4Controller.h、 HS5.h、HS5Controller.h、iHealthHS6.h
 	
 	AM: 
-	AMHeader.h、AMMacroFile.h、AM3.h、 AM3Controller.h、AM3S.h、AM3SController.h、AM4.h、AM4Controller.h、
+	AMHeader.h、AMMacroFile.h、AM3.h、 AM3Controller.h、AM3S.h、AM3SController.h、AM3S_V2.h、AM3SController_V2、AM4.h、AM4Controller.h、
 	
 	PO: 
 	POHeader.h、POMacroFile.h、PO3.h、PO3Controller.h、
@@ -48,9 +50,12 @@ This document describes how to use the iHealth Device SDK to accomplish the majo
     BGHeader.h、BGMacroFile.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h
 	
 	Common: 
-	User.h、ConnectDeviceController.h、ScanDeviceController.h、HSHeader.h
+	HealthUser.h、ConnectDeviceController.h、ScanDeviceController.h、HealthHeader.h
+
+    Update：
+    SDKUpdateDevice.h
 	
-	Library: iHealthLibrary.a、
+	Library: iHealthSDK2.0.7.a
 	
 	supports iOS 7.0 and above.
 
