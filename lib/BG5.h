@@ -144,7 +144,6 @@ typedef enum{
  */
 -(NSDictionary *)codeStripStrAnalysis:(NSString *)encodeString;
 
-<<<<<<< HEAD
 
 /**
  * Query battery remaining energy
@@ -161,13 +160,5 @@ typedef enum{
  */
 -(void)commandKeepConnect:(DisposeBG5KeepConnectBlock)disposeBG5KeepConnectBlock DisposeErrorBlock:(DisposeBGErrorBlock)disposeErrorBlock;
 
-=======
-///**
-// * Query battery remaining energy
-// * @param disposeBatteryBlock  A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.
-// * @param disposeErrorBlock  A block to return the error in ‘Establish measurement connection’.
-// */
--(void)commandQueryBattery:(DisposeBGBatteryBlock)disposeBatteryBlock DisposeErrorBlock:(DisposeBGErrorBlock)disposeErrorBlock;
->>>>>>> origin/master
 
 @end
