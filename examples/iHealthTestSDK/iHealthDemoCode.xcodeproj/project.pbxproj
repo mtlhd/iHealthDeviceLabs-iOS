@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181D66CC1DBCFF8800281F99 /* UpdateDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D66CB1DBCFF8800281F99 /* UpdateDeviceViewController.m */; };
-		185D39261DBA126E003324F1 /* iHealthSDK2.0.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 185D39251DBA126E003324F1 /* iHealthSDK2.0.7.a */; };
+		1861CBC51DDB009200754D1D /* iHealthSDK2.0.7.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1861CBC41DDB009200754D1D /* iHealthSDK2.0.7.1.a */; };
 		4D48B73F19D0F40D00BA5A84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B73E19D0F40D00BA5A84 /* Foundation.framework */; };
 		4D48B74119D0F40D00BA5A84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B74019D0F40D00BA5A84 /* CoreGraphics.framework */; };
 		4D48B74319D0F40D00BA5A84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D48B74219D0F40D00BA5A84 /* UIKit.framework */; };
@@ -97,7 +97,7 @@
 		185D39211DBA1260003324F1 /* POMacroFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POMacroFile.h; sourceTree = "<group>"; };
 		185D39221DBA1260003324F1 /* ScanDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanDeviceController.h; sourceTree = "<group>"; };
 		185D39231DBA1260003324F1 /* SDKUpdateDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKUpdateDevice.h; sourceTree = "<group>"; };
-		185D39251DBA126E003324F1 /* iHealthSDK2.0.7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = iHealthSDK2.0.7.a; sourceTree = "<group>"; };
+		1861CBC41DDB009200754D1D /* iHealthSDK2.0.7.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = iHealthSDK2.0.7.1.a; sourceTree = "<group>"; };
 		4D48B73B19D0F40D00BA5A84 /* iHealthDemoCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHealthDemoCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D48B73E19D0F40D00BA5A84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D48B74019D0F40D00BA5A84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,8 +147,8 @@
 				4D48B7A819D0FA8B00BA5A84 /* CoreBluetooth.framework in Frameworks */,
 				4D48B74119D0F40D00BA5A84 /* CoreGraphics.framework in Frameworks */,
 				4D48B74319D0F40D00BA5A84 /* UIKit.framework in Frameworks */,
-				185D39261DBA126E003324F1 /* iHealthSDK2.0.7.a in Frameworks */,
 				4D48B73F19D0F40D00BA5A84 /* Foundation.framework in Frameworks */,
+				1861CBC51DDB009200754D1D /* iHealthSDK2.0.7.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +166,7 @@
 		187C7AE81D3DFD230062067D /* AMGenerateSDK */ = {
 			isa = PBXGroup;
 			children = (
-				185D39251DBA126E003324F1 /* iHealthSDK2.0.7.a */,
+				1861CBC41DDB009200754D1D /* iHealthSDK2.0.7.1.a */,
 				185D38D31DBA1260003324F1 /* ABI.h */,
 				185D38D41DBA1260003324F1 /* ABIController.h */,
 				185D38D51DBA1260003324F1 /* ABPM.h */,
