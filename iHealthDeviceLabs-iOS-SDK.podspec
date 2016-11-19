@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name         = "iHealthLabs-iOS-SDK"
+  s.name         = "iHealthDeviceLabs-iOS-SDK"
   s.version      = "2.0.7.1"
-  s.summary      = "iHealthLabs iOS SDK."
+  s.summary      = "iHealth Device Labs iOS SDK."
   s.description  = <<-DESC
   iHealth Device SDK is used to accomplish the major operation: Connection Device, Online Measurement, Offline Measurement and iHealth Device Management
                    DESC
