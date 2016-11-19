@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.vendored_libraries = 'lib/libiHealthSDK2.0.7.1.a'
   s.header_dir = 'lib'
   s.preserve_paths      = 'lib/libiHealthSDK2.0.7.1.a'
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/iHealthDeviceLabs-iOS-SDK/lib/'
 end
