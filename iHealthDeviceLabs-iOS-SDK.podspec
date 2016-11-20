@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.source_files  = "lib/**/*.h"
   s.public_header_files = "lib/**/*.h"
   s.vendored_libraries = "lib/libiHealthSDK2.0.7.1.a"
-  s.header_dir = "lib/**
+  s.header_dir = "lib/**"
   s.preserve_paths      = "lib/libiHealthSDK2.0.7.1.a"
 end
